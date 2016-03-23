@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app
-        version="3.0"
-        xmlns="http://java.sun.com/xml/ns/javaee"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+
+         version="2.5">
     <display-name>Chess Engine</display-name>
     <servlet>
         <servlet-name>chessEngine</servlet-name>
@@ -21,4 +24,12 @@
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error/internalError</location>
+    </error-page>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error/notFound</location>
+    </error-page>
 </web-app>
