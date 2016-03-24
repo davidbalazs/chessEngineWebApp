@@ -1,0 +1,628 @@
+
+/* 
+ *	Name: Responsive layout;
+ *	Author: Andor Nagy;
+ *	Website : andornagy.com;
+ *	
+------------------------------------------
+ * 
+ *	Responsive Layout is lightweight css and html layout 
+ *	that can help you kickstart your website development.
+ *
+ *	You are free to use this framework for you own projects
+ *	and for client works. Credit is always welcome.
+ *
+ *	DO NOT sell it as your own work.
+ *  
+--------------------------------------------- */
+
+
+
+/* General Styles
+--------------------------------------------- */
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+
+
+/* Imports
+--------------------------------------------- */
+
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+
+
+/* Helper Classes
+--------------------------------------------- */
+
+.clearfix {
+	display: block;
+	clear: both;
+}
+
+
+/* Typography
+--------------------------------------------- */
+
+body {
+	background-color:#262626;
+	font-size:18px;
+	line-height: 32px;
+	color: #d3d3d3;
+	word-wrap:break-word !important;
+	font-family: 'Open Sans', sans-serif;
+}
+
+p {
+	margin: 0 0 24px;
+	margin: 0 0 2.4rem;
+	padding: 0;
+}
+
+
+/* Links
+--------------------------------------------- */
+
+a {
+	text-decoration: none;
+	color: #FF5722
+}
+
+a:hover {
+	text-decoration: underline; 
+	color: #E64A19;
+}
+
+
+
+/* Headings
+--------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #ff6600;
+	font-family: "Roboto Slab", sans-serif;
+	font-weight: 700;
+	line-height: 1.2;
+	margin: 0 0 16px;
+}
+
+h1 {
+	font-size: 40px;
+}
+
+h2 {
+	font-size: 30px;
+}
+
+h3 {
+	font-size: 24px;
+}
+
+h4 {
+	font-size: 20px;
+}
+
+h5 {
+	font-size: 18px;
+}
+
+h6 {
+	font-size: 16px;
+}
+
+
+
+/* Sections
+--------------------------------------------- */
+
+#container{
+	margin: 0 auto;
+	max-width: 1200px;
+}
+
+
+
+/* Header
+--------------------------------------------- */
+
+header {
+	width: 94%;
+	background-color: #262626;
+}
+
+header #title {
+	font-size: 50px;
+	color: #fff;
+}
+
+#header-column-logo{ float: left; width: 33%; }
+#header-image-center{ display: inline-block; width: 33%; }
+#header-second-menu-right{ float: right; width: 33%; }
+
+#header-column-logo img {
+margin-top:10%;
+}
+
+#header-second-menu-right ul {
+float:right;
+display:inline-block;
+margin-top:28%;
+}
+
+#header-second-menu-right li
+{
+display: inline;
+list-style-type: none;
+padding-right: 20px;
+}
+
+#header-second-menu-right a {
+color:#ffffff;
+font-size: 0.7em;
+}
+/* Navigation
+--------------------------------------------- */
+
+nav {
+	width: 97%;
+	padding: 0 1.5% 0 1.5%;
+	background-color: #ff6600;
+		
+	-moz-box-shadow:    inset  0  12x  12px -12px #ffffff, 
+                        inset  0 -12px 12px -12px #ffffff,
+							   0   0px  4px   2px #000000;
+    -webkit-box-shadow: inset  0  12px 12px -12px #ffffff, 
+                        inset  0 -12px 12px -12px #ffffff,
+						       0   0px  4px   2px #000000;
+     box-shadow:        inset  0  12px 12px -12px #ffffff, 
+                        inset  0 -12px 12px -12px #ffffff,
+						       0   0px  4px   2px #000000;
+}
+
+nav ul li {
+	display: inline-block;
+	padding: 3px 4% 3px 4% ;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: #69000a;
+	font-size: 1.1em;
+}
+
+nav ul li a:hover {
+	color: #000000;
+	text-decoration: none;
+}
+
+
+
+/* Content
+--------------------------------------------- */
+
+#content {
+	float: left;
+	padding: 1%;
+	width: 64%;
+}
+
+#main-page-chess-table {
+	margin-left:19%;
+	margin-bottom:3%;
+}
+
+#content h1{
+	text-align:center;
+}
+/* Sidebar
+--------------------------------------------- */
+
+#circles-section  img{
+	float:left;
+	margin-left:5%;
+}
+
+/* Sidebar
+--------------------------------------------- */
+
+aside {
+	float: right;
+	padding: 3%;
+	width: 24%;
+}
+
+.aside-box {
+	margin-top:20px;
+	border-radius: 25px;
+	background-color: #333333;
+	width: 100%;
+	padding-top: 10%;
+	padding-bottom: 2%;
+}
+
+.aside-box-header {
+	background-color: #ff6600;
+	width: 100%;
+	text-align:center;
+	
+	-moz-box-shadow:    inset  0  12x  12px -12px #ffffff, 
+                        inset  0 -12px 12px -12px #ffffff,
+							   0  2px   1px #090909;
+    -webkit-box-shadow: inset  0  12px 12px -12px #ffffff, 
+                        inset  0 -12px 12px -12px #ffffff,
+						       0  2px   1px #090909;
+     box-shadow:        inset  0  12px 12px -12px #ffffff, 
+                        inset  0 -12px 12px -12px #ffffff,
+						       0   2px   1px #090909;
+}
+
+.aside-box-header  span{
+	color: #69000a;
+	font-size: 1em;
+}
+
+.aside-box-header  h5{
+	font-size: 1em;
+	padding:0px;
+}
+
+.aside-box-content {
+	margin-top:5px;
+	padding:4%;
+	font-size: 0.8em;
+	line-height: 20px;
+}
+.aside-box-content hr {
+	border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #333, #ccc, #333);
+}
+.aside-box-content .center {
+	text-align:center;
+}
+.aside-box-content a {
+	text-decoration:none;
+}
+
+.aside-box-content img {
+	width:267px;
+}
+.aside-box-content p {
+	width:267px;
+	margin:0px;
+}
+.aside-box-content .latest-news-date {
+	font-size: 0.6em;
+	color:#b9b9b9;
+	margin-top:1%;
+}
+
+/* Footer
+--------------------------------------------- */
+
+footer{
+	width: 94%;
+	padding: 3%;
+	background-color: #1b1b1b;
+	border-top: 5px solid #2d2d2d;
+	color: #fff;
+	text-align: center;
+}
+
+
+
+/* Media Queries
+--------------------------------------------- */
+
+@media all and (max-width : 768px) {
+
+	header {
+		text-align: center;
+	}
+
+	nav {
+		text-align: center;
+	}
+
+	#content {
+		width: 94%;
+		padding: 3%;	
+	}
+
+	#sidebar {
+		width: 94%;
+		padding: 3%;
+		border-top: 3px solid #E64A19;
+	}
+
+}
+
+/* Login block
+--------------------------------------------- */
+
+.login-block {
+	width:320px;
+	 padding: 20px;
+    background: #383838;
+	border: 5px #ff656c;
+    border-radius: 15px;
+    margin: 15% auto;
+	-webkit-box-shadow: 0px 0px 30px 1px #000000;
+	-moz-box-shadow: 0px 0px 30px 1px #000000;
+	box-shadow: 0px 0px 30px 1px #000000;
+}
+
+.login-block h1 {
+    text-align: center;
+}
+.login-block input {
+	width:100%;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	padding: 10px; 10px;
+	border: 1px solid #383838;
+	outline: none;
+}
+
+.login-block input:focus {
+	border: 1px solid #ff6600;
+}
+
+.login-block button {
+	width:100%;
+	height: 40px;
+	background: #ff6600;
+	border-radius: 13px;
+	margin-bottom: 20px;
+	padding: 10px; 10px;
+	border: 1px solid #383838;
+	outline: none;
+	color: #fff;
+	font-weight: bold;
+	font-size:1em;
+	
+}
+
+.login-block button:hover {
+    background: #ff9853;
+}
+
+.login-block a:hover {
+    color: #ff9853;
+	text-decoration:none;
+}
+
+.login-block .login-block-register {
+	float:right;
+}
+
+.login-block .login-block-recover-password {
+	float:left;
+}
+
+/*Load saved game list
+--------------------------------------------- */
+.container-list hr{
+	border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right,#696969, #262626);
+}
+
+.container-list li{
+	margin-left:2%;
+}
+
+.container-list span{
+	font-size:0.6em;
+	margin-right:20%;
+}
+
+.container-list a{
+	text-decoration:none;
+	color:#d3d3d3;
+}
+
+.container-list a:hover{
+	text-decoration:none;
+	color:#FF5722;
+}
+
+.load-saved-match-crud-icon {
+	float:right;
+	padding:5px;
+	width:20px;
+}
+
+.load-saved-match-crud-icons {
+
+}
+
+/*Statistics
+--------------------------------------------- */
+.statistics-last-login{
+float:left;
+}
+.statistics-load-saved-game{
+float:right;
+}
+.statistics-box {
+	float:left;
+	margin-left:2%;
+	border-radius: 25px;
+	background-color: #333333;
+	width: 26%;
+	padding:2%;
+}
+
+.statistics-box .title{
+	float:left;
+}
+
+.statistics-box .score{
+	float:right;
+	margin-right:10%;
+	color:#00ff1e;
+}
+.statistics-box .statistics-highlight-green {
+	color:#00ff18;
+}
+
+.statistics-box .statistics-highlight-yellow {
+	color:#ffc000;
+}
+
+.statistics-box .statistics-highlight-red {
+	color:#ff0000;
+}
+.statistics-box .statistics-highlight-orange {
+	color:#ff7800;
+}
+
+.statistics-box p {
+font-size:0.8em;
+}
+
+.reset-statistics {
+float:right;
+	width:30%;
+	height: 40px;
+	background: #ff6600;
+	border-radius: 13px;
+	margin:0 auto;
+	padding: 10px; 10px;
+	border: 1px solid #383838;
+	outline: none;
+	color: #fff;
+	font-weight: bold;
+	font-size:1em;
+}
+
+.reset-statistics:hover {
+    background: #ff9853;
+}
+
+/*Users management
+--------------------------------------------- */
+.users-management-table {
+	width:100%;
+}
+
+.users-management-table td {
+	border:1px solid #505050;
+	text-align:center;
+}
+
+.users-management-table img {
+	margin-top:1%;
+	width:15%;
+}
+
+.users-management-actions-table  {
+	width:100%;
+}
+
+.users-management-actions-table td {
+	border:1px solid #505050;
+	text-align:center;
+}
+
+.users-management-actions-table td:nth-child(3) {
+	width:20%;
+}
+
+/*Play chess
+--------------------------------------------- */
+
+.play-chess-table {
+	margin:5% auto;	
+}
+
+/*Chess problems
+--------------------------------------------- */
+#chess-problem-message {
+	text-align:center;
+}
+
+/*Chess strategies
+--------------------------------------------- */
+
+.chess-strategy-move-table {
+width:60%;
+margin-left:20%;
+}
+.chess-strategy-move-table td {
+text-align:center;
+width:45%;
+}
+
+.chess-strategy-move-table td:hover { 
+   background-color: #747474;
+   cursor:pointer;
+}
+
+.chess-strategy-move-table td:nth-child(1):hover { 
+   background-color: #333333;
+   cursor:default;
+}
+
+.chess-strategy-move-table td:nth-child(1){
+width:10%;
+}
+/*Contact us 
+--------------------------------------------- */
+.contact-us-form input {
+	width:50%;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	padding: 10px; 10px;
+	border: 2px solid #383838;
+	outline: none;
+}
+
+.contact-us-form input:focus {
+	border: 2px solid #ff6600;
+}
+
+.contact-us-form textarea {
+	width:100%;
+	height:20%;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	padding: 10px; 10px;
+	border: 2px solid #383838;
+	outline: none;
+}
+
+.contact-us-form textarea:focus {
+	border: 2px solid #ff6600;
+}
+
+.contact-us-form button {
+	width:100%;
+	height: 40px;
+	background: #ff6600;
+	border-radius: 13px;
+	margin:0 auto;
+	padding: 10px; 10px;
+	border: 1px solid #383838;
+	outline: none;
+	color: #fff;
+	font-weight: bold;
+	font-size:1em;
+	
+}
+
+.contact-us-form button:hover {
+    background: #ff9853;
+}

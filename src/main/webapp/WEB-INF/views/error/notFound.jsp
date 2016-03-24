@@ -1,9 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
-    <h1>Not found :(</h1>
-</body>
-</html>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="template" tagdir="/WEB-INF/tags/pageTemplates" %>
+<template:mainPageTemplate>
+            <h1>Page not found :(</h1>
+</template:mainPageTemplate>
+
