@@ -9,5 +9,3 @@
 
     <script type="text/javascript" src="<c:url value="/resources/js/custom.js" />"></script>
 </template:genericPageTemplate>
-
-<c:url value="/resources/img/chesspieces/wikipedia/bB.png" />
