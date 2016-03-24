@@ -10,11 +10,11 @@ public class ErrorController {
 
     @RequestMapping(value = "notFound", method = RequestMethod.GET)
     public String notFound() {
-        return "error/notFound";
+        return "pages/notFoundPage";
     }
 
     @RequestMapping(value = "internalError", method = RequestMethod.GET)
     public String internalError() {
-        return "error/internalError";
+        return "pages/internalErrorPage";
     }
 }

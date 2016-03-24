@@ -1,15 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="template" tagdir="/WEB-INF/tags/pageTemplates" %>
-<template:mainPageTemplate pageTitle="">
 
-    <img src="<c:url value="/resources/pictures/chess-table.jpg"/>" id="main-page-chess-table">
-
-    <h2>Welcome to Virtual Chess Engine!</h2>
+<template:mainPageTemplate pageTitle="About us">
     <p>
-        Virtual chess engine is the right place to improve your chess skills. Here you have the chance to play chess
-        with a virtual chess player, or simply just solve chess problems. You can also
-        learn new chess techniques or strategies.
+        Virtual chess engine is a challenge for you to win a matches against the virtual chess player. We are
+        continuously update the virtual chess player to offer you the best experience and
+        a good opponent.
     </p>
     <h2>What you can do on this site</h2>
     <p>
@@ -17,5 +14,6 @@
         as a registered user. You will have a set o statistics and you will be able to save your
         games and come back to them later.
     </p>
-
+    <p>If you have any questions, don't hesitate to <a href="contact-us.html">contact us</a>!</p>
 </template:mainPageTemplate>
+
