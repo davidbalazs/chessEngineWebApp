@@ -1,4 +1,4 @@
-package com.davidbalazs.chess.controller;
+package com.davidbalazs.chess.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,0 +1,18 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+    <alias name="defaultChessMoveFacade" alias="chessMoveFacade"/>
+    <bean id="defaultChessMoveFacade" class="com.davidbalazs.chess.facades.impl.DefaultChessMoveFacade">
+        <property name="chessPositionConverter" ref="chessPositionConverter"/>
+        <property name="chessMoveConverter" ref="chessMoveConverter"/>
+        <property name="moveAlgorithm" ref="moveAlgorithm"/>
+    </bean>
+
+    <bean id="chessPositionConverter" class="com.davidbalazs.chess.converters.ChessPositionConverter"/>
+
+    <bean id="chessMoveConverter" class="com.davidbalazs.chess.converters.ChessMoveConverter">
+        <property name="moveService" ref="moveService"/>
+    </bean>
+</beans>
