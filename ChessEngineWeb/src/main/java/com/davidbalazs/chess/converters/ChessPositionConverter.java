@@ -11,7 +11,18 @@ public class ChessPositionConverter {
         String[] chessTableLines = chessPositionFen.split("/");
         int index = 64;
         for (String chessTableLine : chessTableLines) {
-
+            char[] chessTableLineChars = chessTableLine.toCharArray();
+            for (char fenCharacter : chessTableLineChars) {
+                if (Character.isDigit(fenCharacter)) {
+                    index = index - Character.getNumericValue(fenCharacter);
+                } else {
+                    index--;
+                    switch (fenCharacter) {
+                        case 'k':
+                            break;
+                    }
+                }
+            }
         }
 
         return new ChessPosition();
