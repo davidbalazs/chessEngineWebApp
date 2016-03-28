@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ChessEngineWeb:war">
+    <output-path>$PROJECT_DIR$/ChessEngineWeb/target</output-path>
+    <root id="archive" name="ChessEngineWeb.war">
+      <element id="artifact" artifact-name="ChessEngineWeb:war exploded" />
+    </root>
+  </artifact>
+</component>

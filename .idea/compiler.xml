@@ -22,13 +22,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="ChessEngineCore" />
         <module name="ChessEngineVirtualPlayer" />
-        <module name="chessEngineWebApp" />
+        <module name="ChessEngineWeb" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="ChessEngineVirtualPlayer" target="1.8" />
-      <module name="chessEngineWebApp" target="1.8" />
+      <module name="ChessEngineCore" target="1.5" />
+      <module name="ChessEngineVirtualPlayer" target="1.5" />
+      <module name="ChessEngineWeb" target="1.5" />
+      <module name="chessEngineWebApp" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

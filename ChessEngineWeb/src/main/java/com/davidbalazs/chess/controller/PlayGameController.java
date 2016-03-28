@@ -1,5 +1,6 @@
 package com.davidbalazs.chess.controller;
 
+import com.davidbalazs.chess.algorithms.MoveAlgorithm;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,7 +21,6 @@ public class PlayGameController {
     public String generateNextMove(@RequestParam("chessPositionFen") String chessPositionFen,
                                    @RequestParam("sideToMove") String sideToMove,
                                    @RequestParam("virtualPlayerLevel") String virtualPlayerLevel) {
-
         return "";
     }
 }

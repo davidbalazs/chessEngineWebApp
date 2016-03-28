@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ChessEngineCore/ChessEngineCore.iml" filepath="$PROJECT_DIR$/ChessEngineCore/ChessEngineCore.iml" />
       <module fileurl="file://$PROJECT_DIR$/ChessEngineVirtualPlayer/ChessEngineVirtualPlayer.iml" filepath="$PROJECT_DIR$/ChessEngineVirtualPlayer/ChessEngineVirtualPlayer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ChessEngineWeb/ChessEngineWeb.iml" filepath="$PROJECT_DIR$/ChessEngineWeb/ChessEngineWeb.iml" />
       <module fileurl="file://$PROJECT_DIR$/chessEngineWebApp.iml" filepath="$PROJECT_DIR$/chessEngineWebApp.iml" />
     </modules>
   </component>

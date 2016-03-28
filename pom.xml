@@ -3,8 +3,13 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.davidbalazs.chess</groupId>
     <artifactId>ChessEngineWebApp</artifactId>
-    <packaging>war</packaging>
+    <packaging>pom</packaging>
     <version>1.0.0</version>
+    <modules>
+        <module>ChessEngineWeb</module>
+        <module>ChessEngineVirtualPlayer</module>
+        <module>ChessEngineCore</module>
+    </modules>
     <name>ChessEngineWebApp Maven Webapp</name>
     <url>http://maven.apache.org</url>
 
