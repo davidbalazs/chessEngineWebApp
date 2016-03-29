@@ -27,7 +27,7 @@
         <property name="possibleMoveGenerators">
             <list>
                 <ref bean="pawnPossibleMoveGenerator"/>
-                <!--<ref bean="knightPossibleMovesGenerator"/>-->
+                <ref bean="knightPossibleMovesGenerator"/>
                 <ref bean="rookPossibleMovesGenerator"/>
                 <ref bean="kingPossibleMovesGenerator"/>
             </list>
