@@ -39,6 +39,7 @@ public class PlayGameController {
         ChessMoveData chessMoveData = chessMoveFacade.getNextMove(chessPositionFen, sideToMoveEnum, Integer.parseInt(virtualPlayerLevel));
         LOGGER.info("move:" + chessMoveData.getInitialPosition().getX() + "" + chessMoveData.getInitialPosition().getY()
                 + "final: " + chessMoveData.getFinalPosition().getX() + "" + chessMoveData.getFinalPosition().getY());
+        LOGGER.info("if you get stack overflow error, set VM options: -Xss2048k");
         System.gc();
         return chessMoveData;
     }
