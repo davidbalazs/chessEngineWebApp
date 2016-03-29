@@ -25,6 +25,7 @@ public class ChessPositionConverter {
             }
         }
 
+        //TODO: replace this return with the chessposition created earlier.
         return new ChessPosition();
     }
 }
