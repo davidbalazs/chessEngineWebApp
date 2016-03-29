@@ -7,5 +7,5 @@
     <script src="<c:url value="/resources/js/chess.js" />"></script>
     <div id="board" style="width:650px;" class="play-chess-table"></div>
 
-    <script type="text/javascript" src="<c:url value="/resources/js/custom.js" />"></script>
+    <script type="text/javascript" src="<c:url value="/resources/js/customPlayChessGame.js" />"></script>
 </template:genericPageTemplate>

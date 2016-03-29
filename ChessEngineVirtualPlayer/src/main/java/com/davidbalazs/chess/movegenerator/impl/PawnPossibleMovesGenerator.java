@@ -85,7 +85,7 @@ public class PawnPossibleMovesGenerator implements PossibleMovesGenerator {
                 int generatedMove = moveService.createMove(pieceType, new PiecePosition(i % 8 + distanceToInitialPositionX,
                         i / 8 + distanceToInitialPositionY), new PiecePosition(i % 8, i / 8), false, false, null, capturedPiece, null, false, false);
                 possibleMoves.add(generatedMove);
-                LOGGER.info("new move:" + moveService.getFriendlyFormat(generatedMove));
+                LOGGER.debug("new move:" + moveService.getFriendlyFormat(generatedMove));
                 //TODO: instead of false, see if black king will be in check by this new pawn move.
             }
         }
@@ -100,7 +100,7 @@ public class PawnPossibleMovesGenerator implements PossibleMovesGenerator {
                 int generatedMove = moveService.createMove(pieceType, new PiecePosition(i % 8 + distanceToInitialPositionX,
                         i / 8 + distanceToInitialPositionY), new PiecePosition(i % 8, i / 8), false, false, null, capturedPiece, possiblePromotionPiece, false, false);
                 possibleMoves.add(generatedMove);
-                LOGGER.info("new move:" + moveService.getFriendlyFormat(generatedMove));
+                LOGGER.debug("new move:" + moveService.getFriendlyFormat(generatedMove));
                 //TODO: instead of false, see if black king will be in check by this new pawn move.
             }
         }
@@ -115,7 +115,7 @@ public class PawnPossibleMovesGenerator implements PossibleMovesGenerator {
                 int generatedMove = moveService.createMove(pieceType, new PiecePosition(i % 8 + distanceToInitialPositionX,
                         i / 8 + distanceToInitialPositionY), new PiecePosition(i % 8, i / 8), false, false, null, capturedPiece, possiblePromotionPiece, false, false);
                 possibleMoves.add(generatedMove);
-                LOGGER.info("new move:" + moveService.getFriendlyFormat(generatedMove));
+                LOGGER.debug("new move:" + moveService.getFriendlyFormat(generatedMove));
                 //TODO: instead of false, see if black king will be in check by this new pawn move.
             }
         }

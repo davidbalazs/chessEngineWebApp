@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Required;
  */
 public class ChessMoveConverter {
     private MoveService moveService;
+    private static final char[] fieldLocationLetter = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'};
 
     public ChessMoveData convert(int move) {
         PiecePositionData initialPositionData = getPiecePositionData(moveService.getInitialPosition(move));
@@ -20,9 +21,8 @@ public class ChessMoveConverter {
     }
 
     private PiecePositionData getPiecePositionData(PiecePosition piecePositionModel) {
-        return new PiecePositionData(piecePositionModel.getX(), piecePositionModel.getY());
+        return new PiecePositionData(fieldLocationLetter[piecePositionModel.getX()], piecePositionModel.getY()+1);
     }
-
     @Required
     public void setMoveService(MoveService moveService) {
         this.moveService = moveService;

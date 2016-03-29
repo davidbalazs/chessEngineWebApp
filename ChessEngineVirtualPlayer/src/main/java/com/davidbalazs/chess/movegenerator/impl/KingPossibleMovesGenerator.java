@@ -91,7 +91,7 @@ public class KingPossibleMovesGenerator implements PossibleMovesGenerator {
 
     public int generateMove(FriendlyPieceType pieceType, PiecePosition initialPosition, PiecePosition finalPosition, FriendlyPieceType capturedPiece) {
         int generatedMove = moveService.createMove(pieceType, initialPosition, finalPosition, false, false, null, capturedPiece, null, false, false);
-        LOGGER.info("new move:" + moveService.getFriendlyFormat(generatedMove));
+        LOGGER.debug("new move:" + moveService.getFriendlyFormat(generatedMove));
         return generatedMove;
     }
 

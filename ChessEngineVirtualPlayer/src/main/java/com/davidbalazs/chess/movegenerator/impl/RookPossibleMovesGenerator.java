@@ -101,7 +101,7 @@ public class RookPossibleMovesGenerator implements PossibleMovesGenerator {
                 generatedMove = moveService.updateWithOppositeKingStateAfterMove(generatedMove, kingStateAfterMove);
 
                 possibleMoves.add(generatedMove);
-                LOGGER.info("new move:" + moveService.getFriendlyFormat(generatedMove));
+                LOGGER.debug("new move:" + moveService.getFriendlyFormat(generatedMove));
             }
         }
     }

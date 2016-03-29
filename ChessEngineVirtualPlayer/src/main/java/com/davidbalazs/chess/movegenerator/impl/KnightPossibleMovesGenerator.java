@@ -77,7 +77,7 @@ public class KnightPossibleMovesGenerator implements PossibleMovesGenerator {
                 int generatedMove = moveService.createMove(pieceType, new PiecePosition(i % 8 + distanceToInitialPositionX,
                         i / 8 + distanceToInitialPositionY), new PiecePosition(i % 8, i / 8), false, false, null, capturePiece, null, false, false);
                 possibleMoves.add(generatedMove);
-                LOGGER.info("new move:" + moveService.getFriendlyFormat(generatedMove));
+                LOGGER.debug("new move:" + moveService.getFriendlyFormat(generatedMove));
                 //TODO: instead of false, see if black king will be in check by this new pawn move.
             }
         }

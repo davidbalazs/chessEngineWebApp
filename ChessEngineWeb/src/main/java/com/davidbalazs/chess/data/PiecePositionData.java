@@ -4,19 +4,19 @@ package com.davidbalazs.chess.data;
  * @author: david.balazs@iquestgroup.com
  */
 public class PiecePositionData {
-    private int x;
+    private char x;
     private int y;
 
-    public PiecePositionData(int x, int y) {
+    public PiecePositionData(char x, int y) {
         this.x = x;
         this.y = y;
     }
 
-    public int getX() {
+    public char getX() {
         return x;
     }
 
-    public void setX(int x) {
+    public void setX(char x) {
         this.x = x;
     }
 
