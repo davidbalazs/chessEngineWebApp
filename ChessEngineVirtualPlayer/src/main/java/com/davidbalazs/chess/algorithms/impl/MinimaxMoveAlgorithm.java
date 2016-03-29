@@ -36,9 +36,9 @@ public class MinimaxMoveAlgorithm implements MoveAlgorithm {
     }
 
     private MinimaxEntity max(ChessPosition chessPosition, int depth) {
-        LOGGER.error("max is called. Depth=" + depth);
+        LOGGER.debug("max is called. Depth=" + depth);
         if (depth == 0) {
-            LOGGER.error("evaluation function gets called");
+            LOGGER.debug("evaluation function gets called");
             int valueOfEvaluation = evaluationFunction.evaluate(chessPosition);
             return new MinimaxEntity(0, valueOfEvaluation);
         }
@@ -47,7 +47,7 @@ public class MinimaxMoveAlgorithm implements MoveAlgorithm {
 
         TreeSet<Integer> possibleMoves = moveGenerator.generateWhiteMoves(chessPosition);
 
-        LOGGER.error("max (depth = " + depth + " and number of generated moves=" + possibleMoves.size() + " )");
+        LOGGER.debug("max (depth = " + depth + " and number of generated moves=" + possibleMoves.size() + " )");
         MinimaxEntity minEntity;
         MinimaxEntity maxEntity = new MinimaxEntity(Integer.MIN_VALUE);
         numberOfGeneratedMoves += possibleMoves.size();
@@ -68,9 +68,9 @@ public class MinimaxMoveAlgorithm implements MoveAlgorithm {
     }
 
     private MinimaxEntity min(ChessPosition chessPosition, int depth) {
-        LOGGER.error("min is called. Depth=" + depth);
+        LOGGER.debug("min is called. Depth=" + depth);
         if (depth == 0) {
-            LOGGER.error("evaluation function gets called");
+            LOGGER.debug("evaluation function gets called");
             int valueOfEvaluation = 0 - evaluationFunction.evaluate(chessPosition);
             return new MinimaxEntity(0, valueOfEvaluation);
         }
@@ -78,7 +78,7 @@ public class MinimaxMoveAlgorithm implements MoveAlgorithm {
         depth--;
 
         TreeSet<Integer> possibleMoves = moveGenerator.generateBlackMoves(chessPosition);
-        LOGGER.error("min (depth = " + depth + " and number of generated moves=" + possibleMoves.size() + " )");
+        LOGGER.debug("min (depth = " + depth + " and number of generated moves=" + possibleMoves.size() + " )");
         MinimaxEntity maxEntity;
         MinimaxEntity minEntity = new MinimaxEntity(Integer.MAX_VALUE);
         numberOfGeneratedMoves += possibleMoves.size();
