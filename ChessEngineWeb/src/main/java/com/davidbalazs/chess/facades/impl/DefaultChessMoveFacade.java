@@ -17,7 +17,7 @@ public class DefaultChessMoveFacade implements ChessMoveFacade {
     private MoveAlgorithm moveAlgorithm;
     private ChessMoveConverter chessMoveConverter;
 
-    public ChessMoveData getNextMove(String chessPositionFen, PlayerColorData sideToMove, int virtualPlayerLevel) {
+    public String getNextMove(String chessPositionFen, PlayerColorData sideToMove, int virtualPlayerLevel) {
         ChessPosition chessPosition = chessPositionConverter.convert(chessPositionFen);
 
         int move;

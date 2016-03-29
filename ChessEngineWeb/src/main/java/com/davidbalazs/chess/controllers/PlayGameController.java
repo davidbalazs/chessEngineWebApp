@@ -30,7 +30,7 @@ public class PlayGameController {
 
     @RequestMapping(value = "next-move", method = RequestMethod.GET)
     @ResponseBody
-    public ChessMoveData generateNextMove(@RequestParam("chessPositionFen") String chessPositionFen,
+    public String generateNextMove(@RequestParam("chessPositionFen") String chessPositionFen,
                                           @RequestParam("sideToMove") String sideToMove,
                                           @RequestParam("virtualPlayerLevel") String virtualPlayerLevel) {
         LOGGER.info(MessageFormat.format("received request to generate next move for [fen position: {0}, sideToMove {1}, virtualPlayerLevel {2}.", chessPositionFen, sideToMove, virtualPlayerLevel));

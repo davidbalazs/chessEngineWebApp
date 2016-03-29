@@ -39,14 +39,10 @@ var onSnapEnd = function() {
 
 function makeAjaxCallForNextMove() {
       $.ajax({
-        url: 'http://localhost:9090/playgame/next-move?chessPositionFen=2R5/8/8/2K4k/8/8/8/8&sideToMove=WHITE&virtualPlayerLevel=1',
+        url: "http://localhost:9090/playgame/next-move?chessPositionFen="+board.fen()+"&sideToMove=BLACK&virtualPlayerLevel=1",
         type: "GET",
-        success: function() {
-          var move = game.move({
-            from:'A7' ,
-            to: 'A6',
-            promotion: 'q' // NOTE: always promote to a queen for example simplicity
-          });
+        success: function(move) {
+          board.move(move);
         }
       });
 };

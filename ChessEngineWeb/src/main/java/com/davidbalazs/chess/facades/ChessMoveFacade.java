@@ -7,5 +7,5 @@ import com.davidbalazs.chess.data.PlayerColorData;
  * @author: david.balazs@iquestgroup.com
  */
 public interface ChessMoveFacade {
-    ChessMoveData getNextMove(String chessPositionFen, PlayerColorData sideToMove, int virtualPlayerLevel);
+    String getNextMove(String chessPositionFen, PlayerColorData sideToMove, int virtualPlayerLevel);
 }

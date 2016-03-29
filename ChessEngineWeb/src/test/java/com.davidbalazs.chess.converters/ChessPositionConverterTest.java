@@ -27,7 +27,6 @@ public class ChessPositionConverterTest {
 
         ChessPosition expectedChessPosition = chessBoardService.initializeChessBoard();
         assertEquals(expectedChessPosition, chessPosition);
-        chessBoardService.displayChessBoard(chessPositionConverter.convert("2R5/8/8/2K4k/8/8/8/8"));
     }
 
     @Test(expected = ChessFenRepresentationException.class)
