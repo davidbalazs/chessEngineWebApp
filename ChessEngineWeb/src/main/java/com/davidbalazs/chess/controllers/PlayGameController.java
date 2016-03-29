@@ -37,8 +37,9 @@ public class PlayGameController {
         PlayerColorData sideToMoveEnum = PlayerColorData.valueOf(sideToMove);
 
         ChessMoveData chessMoveData = chessMoveFacade.getNextMove(chessPositionFen, sideToMoveEnum, Integer.parseInt(virtualPlayerLevel));
-        System.out.println("move:"+chessMoveData.getInitialPosition().getX()+""+chessMoveData.getInitialPosition().getY()
-        +"final: "+chessMoveData.getFinalPosition().getX()+""+chessMoveData.getFinalPosition().getY());
-        return chessMoveFacade.getNextMove(chessPositionFen, sideToMoveEnum, Integer.parseInt(virtualPlayerLevel));
+        LOGGER.info("move:" + chessMoveData.getInitialPosition().getX() + "" + chessMoveData.getInitialPosition().getY()
+                + "final: " + chessMoveData.getFinalPosition().getX() + "" + chessMoveData.getFinalPosition().getY());
+        System.gc();
+        return chessMoveData;
     }
 }

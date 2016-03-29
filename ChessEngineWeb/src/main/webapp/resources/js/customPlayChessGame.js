@@ -1,8 +1,6 @@
+var counter=0;
 var board,
-    game = new Chess(),
-    statusEl = $('#status'),
-    fenEl = $('#fen'),
-    pgnEl = $('#pgn');
+    game = new Chess();
 
 // do not pick up pieces if the game is over
 // only pick up pieces for White
@@ -37,16 +35,22 @@ var onSnapEnd = function () {
 
 function makeAjaxCallForNextMove() {
     $.ajax({
-        url: "http://localhost:9090/playgame/next-move?chessPositionFen=" + board.fen() + "&sideToMove=BLACK&virtualPlayerLevel=4",
+        url: "http://localhost:9090/playgame/next-move?chessPositionFen=" + board.fen() + "&sideToMove=BLACK&virtualPlayerLevel=2",
         type: "GET",
         success: function (move) {
-            game.move({
+            var moveStatusObject=game.move({
                 from: move.initialPosition.x+move.initialPosition.y,
                 to: move.finalPosition.x+move.finalPosition.y,
                 promotion: 'q' // NOTE: always promote to a queen for example simplicity
             });
 
+            if (moveStatusObject === null) {
+                $("#status").html("virtual player made a wrong move: from "+move.initialPosition.x+move.initialPosition.y+ "to "+ move.finalPosition.x+move.finalPosition.y);
+            }
+
             board.position(game.fen());
+            counter++;
+            $("#message").html(counter);
         }
     });
 };
@@ -79,9 +83,7 @@ var updateStatus = function () {
         }
     }
 
-    statusEl.html(status);
-    fenEl.html(game.fen());
-    pgnEl.html(game.pgn());
+    $("#status").html(status);
 };
 
 var cfg = {

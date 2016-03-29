@@ -4,6 +4,7 @@
 
 <template:genericPageTemplate pageTitle="Play" includeChessScripts="true">
     <p align="center" id="message"></p>
+    <p align="center" id="status"></p>
     <script src="<c:url value="/resources/js/chess.js" />"></script>
     <div id="board" style="width:650px;" class="play-chess-table"></div>
 
