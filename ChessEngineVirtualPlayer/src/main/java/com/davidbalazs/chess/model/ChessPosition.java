@@ -135,4 +135,25 @@ public class ChessPosition {
     public void setBlackKing(long blackKing) {
         this.blackKing = blackKing;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        ChessPosition that = (ChessPosition) o;
+
+        if (whitePawns != that.whitePawns) return false;
+        if (whiteKnights != that.whiteKnights) return false;
+        if (whiteBishops != that.whiteBishops) return false;
+        if (whiteRooks != that.whiteRooks) return false;
+        if (whiteQueens != that.whiteQueens) return false;
+        if (blackPawns != that.blackPawns) return false;
+        if (blackKnights != that.blackKnights) return false;
+        if (blackBishops != that.blackBishops) return false;
+        if (blackRooks != that.blackRooks) return false;
+        if (blackQueens != that.blackQueens) return false;
+        if (whiteKing != that.whiteKing) return false;
+        return blackKing == that.blackKing;
+    }
 }

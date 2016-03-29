@@ -16,7 +16,7 @@ public class ChessPositionConverter {
     public ChessPosition convert(String chessPositionFen) {
         //TODO: implement this method.
         String[] chessTableLines = chessPositionFen.split("/");
-        int index = 64;
+        int index = 63;
         ChessPosition chessPosition = new ChessPosition();
         for (String chessTableLine : chessTableLines) {
             if (chessTableLines.length != 8) {
@@ -24,8 +24,9 @@ public class ChessPositionConverter {
             }
 
             char[] chessTableLineChars = chessTableLine.toCharArray();
-            for (int i = chessTableLineChars.length - 1; i >= 0; i--) {
-                char fenCharacter = chessTableLineChars[i];
+            for(int i=chessTableLineChars.length-1; i>=0; i--) {
+                char fenCharacter=chessTableLineChars[i];
+//            for (char fenCharacter : chessTableLineChars) {
                 if (Character.isDigit(fenCharacter)) {
                     index = index - Character.getNumericValue(fenCharacter);
                 } else {
