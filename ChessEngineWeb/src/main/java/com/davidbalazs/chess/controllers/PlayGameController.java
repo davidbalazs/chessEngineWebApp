@@ -30,11 +30,15 @@ public class PlayGameController {
 
     @RequestMapping(value = "next-move", method = RequestMethod.GET)
     @ResponseBody
-    public String generateNextMove(@RequestParam("chessPositionFen") String chessPositionFen,
+    public ChessMoveData generateNextMove(@RequestParam("chessPositionFen") String chessPositionFen,
                                           @RequestParam("sideToMove") String sideToMove,
                                           @RequestParam("virtualPlayerLevel") String virtualPlayerLevel) {
         LOGGER.info(MessageFormat.format("received request to generate next move for [fen position: {0}, sideToMove {1}, virtualPlayerLevel {2}.", chessPositionFen, sideToMove, virtualPlayerLevel));
         PlayerColorData sideToMoveEnum = PlayerColorData.valueOf(sideToMove);
+
+        ChessMoveData chessMoveData = chessMoveFacade.getNextMove(chessPositionFen, sideToMoveEnum, Integer.parseInt(virtualPlayerLevel));
+        System.out.println("move:"+chessMoveData.getInitialPosition().getX()+""+chessMoveData.getInitialPosition().getY()
+        +"final: "+chessMoveData.getFinalPosition().getX()+""+chessMoveData.getFinalPosition().getY());
         return chessMoveFacade.getNextMove(chessPositionFen, sideToMoveEnum, Integer.parseInt(virtualPlayerLevel));
     }
 }
