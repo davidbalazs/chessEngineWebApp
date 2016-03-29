@@ -28,10 +28,27 @@ var onDrop = function(source, target) {
   updateStatus();
 };
 
+
+
 // update the board position after the piece snap 
 // for castling, en passant, pawn promotion
 var onSnapEnd = function() {
   board.position(game.fen());
+  makeAjaxCallForNextMove();
+};
+
+function makeAjaxCallForNextMove() {
+      $.ajax({
+        url: 'http://localhost:9090/playgame/next-move?chessPositionFen=2R5/8/8/2K4k/8/8/8/8&sideToMove=WHITE&virtualPlayerLevel=1',
+        type: "GET",
+        success: function() {
+          var move = game.move({
+            from:'A7' ,
+            to: 'A6',
+            promotion: 'q' // NOTE: always promote to a queen for example simplicity
+          });
+        }
+      });
 };
 
 var updateStatus = function() {

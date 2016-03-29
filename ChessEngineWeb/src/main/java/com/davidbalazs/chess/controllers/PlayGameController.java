@@ -33,7 +33,7 @@ public class PlayGameController {
     public ChessMoveData generateNextMove(@RequestParam("chessPositionFen") String chessPositionFen,
                                           @RequestParam("sideToMove") String sideToMove,
                                           @RequestParam("virtualPlayerLevel") String virtualPlayerLevel) {
-        LOGGER.info(MessageFormat.format("received request to generate next move for [fen position: {0}, sideToMove {1}, virtualPlayerLevel {2}.",chessPositionFen,sideToMove,virtualPlayerLevel));
+        LOGGER.info(MessageFormat.format("received request to generate next move for [fen position: {0}, sideToMove {1}, virtualPlayerLevel {2}.", chessPositionFen, sideToMove, virtualPlayerLevel));
         PlayerColorData sideToMoveEnum = PlayerColorData.valueOf(sideToMove);
         return chessMoveFacade.getNextMove(chessPositionFen, sideToMoveEnum, Integer.parseInt(virtualPlayerLevel));
     }
