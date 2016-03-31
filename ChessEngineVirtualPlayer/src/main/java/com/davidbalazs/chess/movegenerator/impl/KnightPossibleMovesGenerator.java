@@ -1,10 +1,7 @@
 package com.davidbalazs.chess.movegenerator.impl;
 
 import com.davidbalazs.chess.constants.BitboardConstants;
-import com.davidbalazs.chess.model.ChessPosition;
-import com.davidbalazs.chess.model.FriendlyPieceType;
-import com.davidbalazs.chess.model.PiecePosition;
-import com.davidbalazs.chess.model.Player;
+import com.davidbalazs.chess.model.*;
 import com.davidbalazs.chess.movegenerator.PossibleMovesGenerator;
 import com.davidbalazs.chess.processor.BitBoardProcessor;
 import com.davidbalazs.chess.service.FriendlyChessBoardService;
@@ -37,12 +34,12 @@ public class KnightPossibleMovesGenerator implements PossibleMovesGenerator {
 
     @Override
     public TreeSet<Integer> generateWhiteMoves(ChessPosition chessPosition) {
-        return generatePossibleKnightMoves(chessPosition, chessPosition.getWhiteKnights(), bitBoardProcessor.getWhitePiecesBitboard(chessPosition), FriendlyPieceType.WHITE_KNIGHT);
+        return generatePossibleKnightMoves(chessPosition, chessPosition.getWhiteKnights(), bitBoardProcessor.getWhitePiecesBitboard(chessPosition) | chessPosition.getWhiteKing(), FriendlyPieceType.WHITE_KNIGHT);
     }
 
     @Override
     public TreeSet<Integer> generateBlackMoves(ChessPosition chessPosition) {
-        return generatePossibleKnightMoves(chessPosition, chessPosition.getBlackKnights(), bitBoardProcessor.getBlackPiecesBitboard(chessPosition), FriendlyPieceType.BLACK_KNIGHT);
+        return generatePossibleKnightMoves(chessPosition, chessPosition.getBlackKnights(), bitBoardProcessor.getBlackPiecesBitboard(chessPosition) | chessPosition.getBlackKing(), FriendlyPieceType.BLACK_KNIGHT);
     }
 
     private TreeSet<Integer> generatePossibleKnightMoves(ChessPosition chessPosition, long knightBitboard, long samePlayerOccupiedPositions, FriendlyPieceType knightColor) {
@@ -84,6 +81,18 @@ public class KnightPossibleMovesGenerator implements PossibleMovesGenerator {
 
                 ChessPosition chessPositionAfterMove = chessBoardService.applyMove(chessPosition, generatedMove);
                 if (!doesMovePutHisKingInCheck(chessPositionAfterMove, pieceType.getPlayer())) {
+                    KingState kingStateAfterMove = null;
+                    if (Player.WHITE.equals(pieceType.getPlayer())) {
+                        if (!kingService.isWhiteKingInCheck(chessPosition)) {
+                            kingStateAfterMove = kingService.getBlackKingStateAfterMove(chessPosition, generatedMove);
+                        }
+                    } else {
+                        if (!kingService.isBlackKingInCheck(chessPosition)) {
+                            kingStateAfterMove = kingService.getWhiteKingStateAfterMove(chessPosition, generatedMove);
+                        }
+                    }
+
+                    generatedMove = moveService.updateWithOppositeKingStateAfterMove(generatedMove, kingStateAfterMove);
                     possibleMoves.add(generatedMove);
                     LOGGER.debug("new move:" + moveService.getFriendlyFormat(generatedMove));
                     //TODO: instead of false, see if black king will be in check by this new pawn move.

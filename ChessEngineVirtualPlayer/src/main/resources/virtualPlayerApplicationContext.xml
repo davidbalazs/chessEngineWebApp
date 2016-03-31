@@ -77,6 +77,7 @@
             <list>
                 <ref bean="rookPseudoLegalMovesGenerator"/>
                 <ref bean="knightPseudoLegalMovesGenerator"/>
+                <ref bean="pawnPseudoLegalMovesGenerator"/>
             </list>
         </property>
     </bean>
@@ -90,6 +91,9 @@
           class="com.davidbalazs.chess.pseudolegalmoves.impl.KnightPseudoLegalMovesGenerator">
         <property name="bitBoardProcessor" ref="bitBoardProcessor"/>
     </bean>
+
+    <bean id="pawnPseudoLegalMovesGenerator"
+          class="com.davidbalazs.chess.pseudolegalmoves.impl.PawnPseudoLegalMovesGenerator"/>
 
     <bean id="bitBoardProcessor" class="com.davidbalazs.chess.processor.BitBoardProcessor"/>
 

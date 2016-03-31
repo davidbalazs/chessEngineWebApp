@@ -46,7 +46,6 @@ public class PawnPossibleMovesGenerator implements PossibleMovesGenerator {
         populatePossibleMovesListFromBitboard(chessPosition, possibleMoves, FriendlyPieceType.WHITE_PAWN, pawnMove1Forward, 0, -1, false, FriendlyPieceType.WHITE_QUEEN);
         populatePossibleMovesListFromBitboard(chessPosition, possibleMoves, FriendlyPieceType.WHITE_PAWN, pawnMove2Forward, 0, -2, false, FriendlyPieceType.WHITE_QUEEN);
 
-        //TODO: add captured piece to this method.
         populatePossibleMovesListFromBitboard(chessPosition, possibleMoves, FriendlyPieceType.WHITE_PAWN, pawnCaptureLeft, 1, -1, true, FriendlyPieceType.WHITE_QUEEN);
         populatePossibleMovesListFromBitboard(chessPosition, possibleMoves, FriendlyPieceType.WHITE_PAWN, pawnCaptureRight, -1, -1, true, FriendlyPieceType.WHITE_QUEEN);
 
@@ -68,7 +67,6 @@ public class PawnPossibleMovesGenerator implements PossibleMovesGenerator {
         populatePossibleMovesListFromBitboard(chessPosition, possibleMoves, FriendlyPieceType.BLACK_PAWN, pawnMove1Forward, 0, 1, false, FriendlyPieceType.BLACK_QUEEN);
         populatePossibleMovesListFromBitboard(chessPosition, possibleMoves, FriendlyPieceType.BLACK_PAWN, pawnMove2Forward, 0, 2, false, FriendlyPieceType.BLACK_QUEEN);
 
-        //TODO: add captured piece to this method.
         populatePossibleMovesListFromBitboard(chessPosition, possibleMoves, FriendlyPieceType.BLACK_PAWN, pawnCaptureLeft, 1, 1, true, FriendlyPieceType.BLACK_QUEEN);
         populatePossibleMovesListFromBitboard(chessPosition, possibleMoves, FriendlyPieceType.BLACK_PAWN, pawnCaptureRight, -1, 1, true, FriendlyPieceType.BLACK_QUEEN);
 

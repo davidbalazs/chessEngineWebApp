@@ -26,7 +26,7 @@ public class Main {
         MinimaxMoveAlgorithm minimaxMoveAlgorithm = applicationContext.getBean("moveAlgorithm", MinimaxMoveAlgorithm.class);
         long startTime = System.nanoTime();
 //        for (int i = 0; i < 10000; i++) {
-//        moveGenerator.generateWhiteMoves(chessPosition);
+        moveGenerator.generateWhiteMoves(chessPosition);
 //        }
 //
 //        for (int i = 0; i < 64; i++) {
@@ -37,12 +37,12 @@ public class Main {
 
 //        ChessPosition newChessPosition = friendlyChessBoardService.applyMove(chessPosition, 43302);
 //        friendlyChessBoardService.displayChessBoard(newChessPosition);
-        int nextMoveForWhite = minimaxMoveAlgorithm.getNextWhiteMove(chessPosition, 6);
-        System.out.println("next move for white is:" + moveService.getFriendlyFormat(nextMoveForWhite));
-
-        long endTime = System.nanoTime();
-        long duration = (endTime - startTime) / 1000000;  //divide by 1000000 to get milliseconds.
-        System.out.println("duration:" + duration);
-        System.out.println("number of generated moves:" + minimaxMoveAlgorithm.numberOfGeneratedMoves);
+//        int nextMoveForWhite = minimaxMoveAlgorithm.getNextWhiteMove(chessPosition, 6);
+//        System.out.println("next move for white is:" + moveService.getFriendlyFormat(nextMoveForWhite));
+//
+//        long endTime = System.nanoTime();
+//        long duration = (endTime - startTime) / 1000000;  //divide by 1000000 to get milliseconds.
+//        System.out.println("duration:" + duration);
+//        System.out.println("number of generated moves:" + minimaxMoveAlgorithm.numberOfGeneratedMoves);
     }
 }
