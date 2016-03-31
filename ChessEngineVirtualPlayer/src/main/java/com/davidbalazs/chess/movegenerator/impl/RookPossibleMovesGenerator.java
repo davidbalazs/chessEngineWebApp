@@ -4,6 +4,7 @@ import com.davidbalazs.chess.constants.BitboardConstants;
 import com.davidbalazs.chess.model.*;
 import com.davidbalazs.chess.movegenerator.PossibleMovesGenerator;
 import com.davidbalazs.chess.processor.BitBoardProcessor;
+import com.davidbalazs.chess.service.FriendlyChessBoardService;
 import com.davidbalazs.chess.service.KingService;
 import com.davidbalazs.chess.service.MoveService;
 import org.apache.log4j.Logger;
@@ -20,6 +21,7 @@ public class RookPossibleMovesGenerator implements PossibleMovesGenerator {
     private BitBoardProcessor bitBoardProcessor;
     private MoveService moveService;
     private KingService kingService;
+    private FriendlyChessBoardService chessBoardService;
 
     @Override
     public TreeSet<Integer> generateWhiteMoves(ChessPosition chessPosition) {
@@ -91,11 +93,15 @@ public class RookPossibleMovesGenerator implements PossibleMovesGenerator {
                 int generatedMove = moveService.createMove(pieceType, initialPosition, new PiecePosition(i % 8, i / 8),
                         false, false, null, capturedPiece, null, false, false);
 
-                KingState kingStateAfterMove;
+                KingState kingStateAfterMove = null;
                 if (Player.WHITE.equals(pieceType.getPlayer())) {
-                    kingStateAfterMove = kingService.getBlackKingStateAfterMove(chessPosition, generatedMove);
+                    if (!kingService.isWhiteKingInCheck(chessPosition)) {
+                        kingStateAfterMove = kingService.getBlackKingStateAfterMove(chessPosition, generatedMove);
+                    }
                 } else {
-                    kingStateAfterMove = kingService.getWhiteKingStateAfterMove(chessPosition, generatedMove);
+                    if (!kingService.isBlackKingInCheck(chessPosition)) {
+                        kingStateAfterMove = kingService.getWhiteKingStateAfterMove(chessPosition, generatedMove);
+                    }
                 }
 
                 generatedMove = moveService.updateWithOppositeKingStateAfterMove(generatedMove, kingStateAfterMove);
@@ -119,5 +125,10 @@ public class RookPossibleMovesGenerator implements PossibleMovesGenerator {
     @Required
     public void setKingService(KingService kingService) {
         this.kingService = kingService;
+    }
+
+    @Required
+    public void setChessBoardService(FriendlyChessBoardService chessBoardService) {
+        this.chessBoardService = chessBoardService;
     }
 }

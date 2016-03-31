@@ -4,7 +4,6 @@ import com.davidbalazs.chess.model.ChessPosition;
 import com.davidbalazs.chess.movegenerator.PossibleMovesGenerator;
 import org.springframework.beans.factory.annotation.Required;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.TreeSet;
@@ -19,6 +18,7 @@ public class MainPossibleMovesGenerator implements PossibleMovesGenerator {
     public TreeSet<Integer> generateWhiteMoves(ChessPosition chessPosition) {
         //todo: assertNotNull(possibleMoveGenerators);
 
+//     todo:   before generating the next move, check if there is an attacked piece.
         TreeSet<Integer> generatedMoves = new TreeSet<Integer>(Collections.reverseOrder());
 
         for (PossibleMovesGenerator possibleMovesGenerator : possibleMoveGenerators) {

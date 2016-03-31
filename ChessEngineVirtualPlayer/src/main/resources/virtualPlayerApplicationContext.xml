@@ -56,6 +56,7 @@
         <property name="bitBoardProcessor" ref="bitBoardProcessor"/>
         <property name="moveService" ref="moveService"/>
         <property name="kingService" ref="kingService"/>
+        <property name="chessBoardService" ref="friendlyChessBoardService"/>
     </bean>
 
     <bean id="kingPossibleMovesGenerator"

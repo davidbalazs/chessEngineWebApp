@@ -1,10 +1,10 @@
-var counter=0;
+var counter = 0;
 var board,
     game = new Chess();
 
 // do not pick up pieces if the game is over
 // only pick up pieces for White
-var onDragStart = function(source, piece, position, orientation) {
+var onDragStart = function (source, piece, position, orientation) {
     if (game.in_checkmate() === true || game.in_draw() === true ||
         piece.search(/^b/) !== -1) {
         return false;
@@ -35,17 +35,17 @@ var onSnapEnd = function () {
 
 function makeAjaxCallForNextMove() {
     $.ajax({
-        url: "http://localhost:9090/playgame/next-move?chessPositionFen=" + board.fen() + "&sideToMove=BLACK&virtualPlayerLevel=2",
+        url: "http://localhost:9090/playgame/next-move?chessPositionFen=" + board.fen() + "&sideToMove=BLACK&virtualPlayerLevel=4",
         type: "GET",
         success: function (move) {
-            var moveStatusObject=game.move({
-                from: move.initialPosition.x+move.initialPosition.y,
-                to: move.finalPosition.x+move.finalPosition.y,
+            var moveStatusObject = game.move({
+                from: move.initialPosition.x + move.initialPosition.y,
+                to: move.finalPosition.x + move.finalPosition.y,
                 promotion: 'q' // NOTE: always promote to a queen for example simplicity
             });
 
             if (moveStatusObject === null) {
-                $("#status").html("virtual player made a wrong move: from "+move.initialPosition.x+move.initialPosition.y+ "to "+ move.finalPosition.x+move.finalPosition.y);
+                $("#status").html("virtual player made a wrong move: from " + move.initialPosition.x + move.initialPosition.y + "to " + move.finalPosition.x + move.finalPosition.y);
             }
 
             board.position(game.fen());
