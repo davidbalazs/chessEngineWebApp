@@ -10,11 +10,11 @@ import com.davidbalazs.chess.model.FriendlyPieceType;
  */
 public class DefaultEvaluationFunction implements EvaluationFunction {
 
-    private static final int PAWN_MATERIAL_VALUE = 10;
-    private static final int KNIGHT_MATERIAL_VALUE = 30;
-    private static final int BISHOP_MATERIAL_VALUE = 35;
-    private static final int ROOK_MATERIAL_VALUE = 50;
-    private static final int QUEEN_MATERIAL_VALUE = 100;
+    private static final int PAWN_MATERIAL_VALUE = 70;
+    private static final int KNIGHT_MATERIAL_VALUE = 90;
+    private static final int BISHOP_MATERIAL_VALUE = 100;
+    private static final int ROOK_MATERIAL_VALUE = 150;
+    private static final int QUEEN_MATERIAL_VALUE = 300;
     private static final int[] KNIGHT_BEST_POSITIONS_MASK = {
             -50, -40, -30, -30, -30, -30, -40, -50,
             -40, -20, 0, 0, 0, 0, -20, -40,
@@ -54,7 +54,7 @@ public class DefaultEvaluationFunction implements EvaluationFunction {
         int kingPosition = evaluateKingPosition(chessPosition);
         int positionalEvaluation = evaluateWhitePositional(chessPosition) - evaluateBlackPositional(chessPosition);
         int distanceBetweenKingsEvaluation = evaluateDistancewBetweenKings(materialAdvantage, computeDistanceBetweenKings(chessPosition));
-        return materialAdvantage + kingSafety + kingPosition + positionalEvaluation;
+        return 20 * materialAdvantage + kingSafety + kingPosition + positionalEvaluation;
     }
 
     private int evaluateDistancewBetweenKings(int materialAdvantage, double distanceBetweenKings) {

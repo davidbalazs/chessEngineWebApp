@@ -4,8 +4,11 @@ import com.davidbalazs.chess.constants.BitboardConstants;
 import com.davidbalazs.chess.model.ChessPosition;
 import com.davidbalazs.chess.model.FriendlyPieceType;
 import com.davidbalazs.chess.model.PiecePosition;
+import com.davidbalazs.chess.model.Player;
 import com.davidbalazs.chess.movegenerator.PossibleMovesGenerator;
 import com.davidbalazs.chess.processor.BitBoardProcessor;
+import com.davidbalazs.chess.service.FriendlyChessBoardService;
+import com.davidbalazs.chess.service.KingService;
 import com.davidbalazs.chess.service.MoveService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Required;
@@ -29,6 +32,8 @@ public class KnightPossibleMovesGenerator implements PossibleMovesGenerator {
     public static final Logger LOGGER = Logger.getLogger(KnightPossibleMovesGenerator.class);
     private BitBoardProcessor bitBoardProcessor;
     private MoveService moveService;
+    private KingService kingService;
+    private FriendlyChessBoardService chessBoardService;
 
     @Override
     public TreeSet<Integer> generateWhiteMoves(ChessPosition chessPosition) {
@@ -76,11 +81,20 @@ public class KnightPossibleMovesGenerator implements PossibleMovesGenerator {
 
                 int generatedMove = moveService.createMove(pieceType, new PiecePosition(i % 8 + distanceToInitialPositionX,
                         i / 8 + distanceToInitialPositionY), new PiecePosition(i % 8, i / 8), false, false, null, capturePiece, null, false, false);
-                possibleMoves.add(generatedMove);
-                LOGGER.debug("new move:" + moveService.getFriendlyFormat(generatedMove));
-                //TODO: instead of false, see if black king will be in check by this new pawn move.
+
+                ChessPosition chessPositionAfterMove = chessBoardService.applyMove(chessPosition, generatedMove);
+                if (!doesMovePutHisKingInCheck(chessPositionAfterMove, pieceType.getPlayer())) {
+                    possibleMoves.add(generatedMove);
+                    LOGGER.debug("new move:" + moveService.getFriendlyFormat(generatedMove));
+                    //TODO: instead of false, see if black king will be in check by this new pawn move.
+                }
             }
         }
+    }
+
+    private boolean doesMovePutHisKingInCheck(ChessPosition chessPositionAfterMove, Player playerColor) {
+        return (Player.WHITE.equals(playerColor) && kingService.isWhiteKingInCheck(chessPositionAfterMove)) ||
+                (Player.BLACK.equals(playerColor) && kingService.isBlackKingInCheck(chessPositionAfterMove));
     }
 
     @Required
@@ -91,5 +105,15 @@ public class KnightPossibleMovesGenerator implements PossibleMovesGenerator {
     @Required
     public void setMoveService(MoveService moveService) {
         this.moveService = moveService;
+    }
+
+    @Required
+    public void setKingService(KingService kingService) {
+        this.kingService = kingService;
+    }
+
+    @Required
+    public void setChessBoardService(FriendlyChessBoardService chessBoardService) {
+        this.chessBoardService = chessBoardService;
     }
 }

@@ -93,23 +93,31 @@ public class RookPossibleMovesGenerator implements PossibleMovesGenerator {
                 int generatedMove = moveService.createMove(pieceType, initialPosition, new PiecePosition(i % 8, i / 8),
                         false, false, null, capturedPiece, null, false, false);
 
-                KingState kingStateAfterMove = null;
-                if (Player.WHITE.equals(pieceType.getPlayer())) {
-                    if (!kingService.isWhiteKingInCheck(chessPosition)) {
-                        kingStateAfterMove = kingService.getBlackKingStateAfterMove(chessPosition, generatedMove);
+                ChessPosition chessPositionAfterMove = chessBoardService.applyMove(chessPosition, generatedMove);
+                if (!doesMovePutHisKingInCheck(chessPositionAfterMove, pieceType.getPlayer())) {
+                    KingState kingStateAfterMove = null;
+                    if (Player.WHITE.equals(pieceType.getPlayer())) {
+                        if (!kingService.isWhiteKingInCheck(chessPosition)) {
+                            kingStateAfterMove = kingService.getBlackKingStateAfterMove(chessPosition, generatedMove);
+                        }
+                    } else {
+                        if (!kingService.isBlackKingInCheck(chessPosition)) {
+                            kingStateAfterMove = kingService.getWhiteKingStateAfterMove(chessPosition, generatedMove);
+                        }
                     }
-                } else {
-                    if (!kingService.isBlackKingInCheck(chessPosition)) {
-                        kingStateAfterMove = kingService.getWhiteKingStateAfterMove(chessPosition, generatedMove);
-                    }
+
+                    generatedMove = moveService.updateWithOppositeKingStateAfterMove(generatedMove, kingStateAfterMove);
+
+                    possibleMoves.add(generatedMove);
+                    LOGGER.debug("new move:" + moveService.getFriendlyFormat(generatedMove));
                 }
-
-                generatedMove = moveService.updateWithOppositeKingStateAfterMove(generatedMove, kingStateAfterMove);
-
-                possibleMoves.add(generatedMove);
-                LOGGER.debug("new move:" + moveService.getFriendlyFormat(generatedMove));
             }
         }
+    }
+
+    private boolean doesMovePutHisKingInCheck(ChessPosition chessPositionAfterMove, Player playerColor) {
+        return (Player.WHITE.equals(playerColor) && kingService.isWhiteKingInCheck(chessPositionAfterMove)) ||
+                (Player.BLACK.equals(playerColor) && kingService.isBlackKingInCheck(chessPositionAfterMove));
     }
 
     @Required

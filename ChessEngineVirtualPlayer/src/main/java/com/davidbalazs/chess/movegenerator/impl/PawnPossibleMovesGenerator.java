@@ -4,8 +4,11 @@ import com.davidbalazs.chess.constants.BitboardConstants;
 import com.davidbalazs.chess.model.ChessPosition;
 import com.davidbalazs.chess.model.FriendlyPieceType;
 import com.davidbalazs.chess.model.PiecePosition;
+import com.davidbalazs.chess.model.Player;
 import com.davidbalazs.chess.movegenerator.PossibleMovesGenerator;
 import com.davidbalazs.chess.processor.BitBoardProcessor;
+import com.davidbalazs.chess.service.FriendlyChessBoardService;
+import com.davidbalazs.chess.service.KingService;
 import com.davidbalazs.chess.service.MoveService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Required;
@@ -24,6 +27,8 @@ public class PawnPossibleMovesGenerator implements PossibleMovesGenerator {
     public static final Logger LOGGER = Logger.getLogger(PawnPossibleMovesGenerator.class);
     private BitBoardProcessor bitBoardProcessor;
     private MoveService moveService;
+    private KingService kingService;
+    private FriendlyChessBoardService chessBoardService;
 
     @Override
     public TreeSet<Integer> generateWhiteMoves(ChessPosition chessPosition) {
@@ -70,43 +75,30 @@ public class PawnPossibleMovesGenerator implements PossibleMovesGenerator {
         return possibleMoves;
     }
 
-    private void populatePossibleMovesListFromBitboard(ChessPosition chessPosition, TreeSet<Integer> possibleMoves, FriendlyPieceType pieceType, long possibleMovesBitboard, int distanceToInitialPositionX, int distanceToInitialPositionY, boolean isCapture, FriendlyPieceType possiblePromotionPiece) {
+    private void populatePossibleMovesListFromBitboard(ChessPosition chessPosition, TreeSet<Integer> possibleMoves, FriendlyPieceType pieceType,
+                                                       long possibleMovesBitboard, int distanceToInitialPositionX, int distanceToInitialPositionY,
+                                                       boolean isCapture, FriendlyPieceType possiblePromotionPiece) {
         if (possibleMovesBitboard == 0) {
             return;
         }
 
         //the last RANK is checked in the next for, because when a pawn reaches the last rank, it will be prommoted to another piece.
-        for (int i = 8; i < 56; i++) {
-            if (((possibleMovesBitboard >> i) & 1L) == 1) {
-                FriendlyPieceType capturedPiece = null;
-                if (isCapture) {
-                    capturedPiece = bitBoardProcessor.getPieceAtPosition(i % 8, i / 8, chessPosition);
-                }
-                int generatedMove = moveService.createMove(pieceType, new PiecePosition(i % 8 + distanceToInitialPositionX,
-                        i / 8 + distanceToInitialPositionY), new PiecePosition(i % 8, i / 8), false, false, null, capturedPiece, null, false, false);
-                possibleMoves.add(generatedMove);
-                LOGGER.debug("new move:" + moveService.getFriendlyFormat(generatedMove));
-                //TODO: instead of false, see if black king will be in check by this new pawn move.
-            }
-        }
+        generatePossibleMovesFromBitboardSection(chessPosition, possibleMoves, pieceType, possibleMovesBitboard, distanceToInitialPositionX, distanceToInitialPositionY,
+                isCapture, null, 8, 56);
 
         //There will be only promotions of white pawns
-        for (int i = 56; i < 64; i++) {
-            if (((possibleMovesBitboard >> i) & 1L) == 1) {
-                FriendlyPieceType capturedPiece = null;
-                if (isCapture) {
-                    capturedPiece = bitBoardProcessor.getPieceAtPosition(i % 8, i / 8, chessPosition);
-                }
-                int generatedMove = moveService.createMove(pieceType, new PiecePosition(i % 8 + distanceToInitialPositionX,
-                        i / 8 + distanceToInitialPositionY), new PiecePosition(i % 8, i / 8), false, false, null, capturedPiece, possiblePromotionPiece, false, false);
-                possibleMoves.add(generatedMove);
-                LOGGER.debug("new move:" + moveService.getFriendlyFormat(generatedMove));
-                //TODO: instead of false, see if black king will be in check by this new pawn move.
-            }
-        }
+        generatePossibleMovesFromBitboardSection(chessPosition, possibleMoves, pieceType, possibleMovesBitboard, distanceToInitialPositionX, distanceToInitialPositionY,
+                isCapture, possiblePromotionPiece, 56, 64);
 
         //There will be only promotions of black pawns
-        for (int i = 0; i < 8; i++) {
+        generatePossibleMovesFromBitboardSection(chessPosition, possibleMoves, pieceType, possibleMovesBitboard, distanceToInitialPositionX, distanceToInitialPositionY,
+                isCapture, possiblePromotionPiece, 0, 8);
+    }
+
+    private void generatePossibleMovesFromBitboardSection(ChessPosition chessPosition, TreeSet<Integer> possibleMoves, FriendlyPieceType pieceType, long possibleMovesBitboard,
+                                                          int distanceToInitialPositionX, int distanceToInitialPositionY, boolean isCapture, FriendlyPieceType possiblePromotionPiece,
+                                                          int bitboardIterationStart, int bitboardIterationEnd) {
+        for (int i = bitboardIterationStart; i < bitboardIterationEnd; i++) {
             if (((possibleMovesBitboard >> i) & 1L) == 1) {
                 FriendlyPieceType capturedPiece = null;
                 if (isCapture) {
@@ -114,11 +106,20 @@ public class PawnPossibleMovesGenerator implements PossibleMovesGenerator {
                 }
                 int generatedMove = moveService.createMove(pieceType, new PiecePosition(i % 8 + distanceToInitialPositionX,
                         i / 8 + distanceToInitialPositionY), new PiecePosition(i % 8, i / 8), false, false, null, capturedPiece, possiblePromotionPiece, false, false);
-                possibleMoves.add(generatedMove);
-                LOGGER.debug("new move:" + moveService.getFriendlyFormat(generatedMove));
-                //TODO: instead of false, see if black king will be in check by this new pawn move.
+
+                ChessPosition chessPositionAfterMove = chessBoardService.applyMove(chessPosition, generatedMove);
+                if (!doesMovePutHisKingInCheck(chessPositionAfterMove, pieceType.getPlayer())) {
+                    possibleMoves.add(generatedMove);
+                    LOGGER.debug("new move:" + moveService.getFriendlyFormat(generatedMove));
+                    //TODO: instead of false, see if black king will be in check by this new pawn move.
+                }
             }
         }
+    }
+
+    private boolean doesMovePutHisKingInCheck(ChessPosition chessPositionAfterMove, Player playerColor) {
+        return (Player.WHITE.equals(playerColor) && kingService.isWhiteKingInCheck(chessPositionAfterMove)) ||
+                (Player.BLACK.equals(playerColor) && kingService.isBlackKingInCheck(chessPositionAfterMove));
     }
 
     @Required
@@ -129,5 +130,15 @@ public class PawnPossibleMovesGenerator implements PossibleMovesGenerator {
     @Required
     public void setMoveService(MoveService moveService) {
         this.moveService = moveService;
+    }
+
+    @Required
+    public void setKingService(KingService kingService) {
+        this.kingService = kingService;
+    }
+
+    @Required
+    public void setChessBoardService(FriendlyChessBoardService chessBoardService) {
+        this.chessBoardService = chessBoardService;
     }
 }
