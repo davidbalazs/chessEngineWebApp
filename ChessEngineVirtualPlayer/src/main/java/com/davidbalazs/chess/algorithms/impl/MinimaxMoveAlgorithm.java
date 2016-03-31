@@ -22,9 +22,6 @@ public class MinimaxMoveAlgorithm implements MoveAlgorithm {
     private FriendlyChessBoardService chessBoardService;
     private MoveService moveService;
 
-    //TODO: delete this
-    public long numberOfGeneratedMoves = 0;
-
     @Override
     public int getNextWhiteMove(ChessPosition chessPosition, int virtualPlayerLevel) {
         return max(chessPosition, virtualPlayerLevel).getMove();
@@ -39,7 +36,7 @@ public class MinimaxMoveAlgorithm implements MoveAlgorithm {
         LOGGER.debug("max is called. Depth=" + depth);
         if (depth == 0) {
             LOGGER.debug("evaluation function gets called");
-            int valueOfEvaluation = evaluationFunction.evaluate(chessPosition);
+            long valueOfEvaluation = evaluationFunction.evaluate(chessPosition);
             return new MinimaxEntity(0, valueOfEvaluation);
         }
 
@@ -49,11 +46,10 @@ public class MinimaxMoveAlgorithm implements MoveAlgorithm {
 
         LOGGER.debug("max (depth = " + depth + " and number of generated moves=" + possibleMoves.size() + " )");
         MinimaxEntity minEntity;
-        MinimaxEntity maxEntity = new MinimaxEntity(Integer.MIN_VALUE);
-        numberOfGeneratedMoves += possibleMoves.size();
+        MinimaxEntity maxEntity = new MinimaxEntity(Long.MIN_VALUE);
         for (int move : possibleMoves) {
             if (moveService.isCheckMate(move)) {
-                return new MinimaxEntity(move, Integer.MAX_VALUE);
+                return new MinimaxEntity(move, Long.MAX_VALUE);
             }
 
             minEntity = min(chessBoardService.applyMove(chessPosition, move), depth);
@@ -71,7 +67,7 @@ public class MinimaxMoveAlgorithm implements MoveAlgorithm {
         LOGGER.debug("min is called. Depth=" + depth);
         if (depth == 0) {
             LOGGER.debug("evaluation function gets called");
-            int valueOfEvaluation = 0 - evaluationFunction.evaluate(chessPosition);
+            long valueOfEvaluation = 0 - evaluationFunction.evaluate(chessPosition);
             return new MinimaxEntity(0, valueOfEvaluation);
         }
 
@@ -80,11 +76,10 @@ public class MinimaxMoveAlgorithm implements MoveAlgorithm {
         TreeSet<Integer> possibleMoves = moveGenerator.generateBlackMoves(chessPosition);
         LOGGER.debug("min (depth = " + depth + " and number of generated moves=" + possibleMoves.size() + " )");
         MinimaxEntity maxEntity;
-        MinimaxEntity minEntity = new MinimaxEntity(Integer.MAX_VALUE);
-        numberOfGeneratedMoves += possibleMoves.size();
+        MinimaxEntity minEntity = new MinimaxEntity(Long.MAX_VALUE);
         for (int move : possibleMoves) {
             if (moveService.isCheckMate(move)) {
-                return new MinimaxEntity(move, Integer.MIN_VALUE);
+                return new MinimaxEntity(move, Long.MIN_VALUE);
             }
 
             maxEntity = max(chessBoardService.applyMove(chessPosition, move), depth);

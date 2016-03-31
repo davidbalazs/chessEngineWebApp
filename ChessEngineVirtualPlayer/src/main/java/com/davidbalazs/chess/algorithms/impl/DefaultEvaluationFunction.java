@@ -48,21 +48,21 @@ public class DefaultEvaluationFunction implements EvaluationFunction {
             0, 0, 0, 0, 0, 0, 0, 0
     };
 
-    public int evaluate(ChessPosition chessPosition) {
-        int materialAdvantage = computeMaterialAdvantage(chessPosition);
-        int kingSafety = computeKingSafety(chessPosition);
-        int kingPosition = evaluateKingPosition(chessPosition);
-        int positionalEvaluation = evaluateWhitePositional(chessPosition) - evaluateBlackPositional(chessPosition);
-        int distanceBetweenKingsEvaluation = evaluateDistancewBetweenKings(materialAdvantage, computeDistanceBetweenKings(chessPosition));
-        return 20 * materialAdvantage + kingSafety + kingPosition + positionalEvaluation;
+    public long evaluate(ChessPosition chessPosition) {
+        long materialAdvantage = computeMaterialAdvantage(chessPosition);
+        long kingSafety = computeKingSafety(chessPosition);
+        long kingPosition = evaluateKingPosition(chessPosition);
+        long positionalEvaluation = evaluateWhitePositional(chessPosition) - evaluateBlackPositional(chessPosition);
+        long distanceBetweenKingsEvaluation = evaluateDistancewBetweenKings(materialAdvantage, computeDistanceBetweenKings(chessPosition));
+        return materialAdvantage + kingSafety + kingPosition + positionalEvaluation;
     }
 
-    private int evaluateDistancewBetweenKings(int materialAdvantage, double distanceBetweenKings) {
+    private long evaluateDistancewBetweenKings(long materialAdvantage, double distanceBetweenKings) {
         return 0;
     }
 
-    private int computeMaterialAdvantage(ChessPosition chessPosition) {
-        int materialAdvantage = 0;
+    private long computeMaterialAdvantage(ChessPosition chessPosition) {
+        long materialAdvantage = 0;
 
         int numberOfWhitePawns = getNumberOfPiecesOnBitboard(chessPosition.getWhitePawns());
         int numberOfBlackPawns = getNumberOfPiecesOnBitboard(chessPosition.getBlackPawns());
@@ -92,26 +92,26 @@ public class DefaultEvaluationFunction implements EvaluationFunction {
         return materialAdvantage;
     }
 
-    private int evaluateWhitePositional(ChessPosition chessPosition) {
-        int knightPositionEvaluation = evaluateBitboard(chessPosition.getWhiteKnights(), KNIGHT_BEST_POSITIONS_MASK);
-        int pawnPositionEvaluation = evaluateBitboard(chessPosition.getWhitePawns(), WHITE_PAWN_BEST_POSITIONS_MASK);
+    private long evaluateWhitePositional(ChessPosition chessPosition) {
+        long knightPositionEvaluation = evaluateBitboard(chessPosition.getWhiteKnights(), KNIGHT_BEST_POSITIONS_MASK);
+        long pawnPositionEvaluation = evaluateBitboard(chessPosition.getWhitePawns(), WHITE_PAWN_BEST_POSITIONS_MASK);
 
         return knightPositionEvaluation + pawnPositionEvaluation;
     }
 
-    private int evaluateBlackPositional(ChessPosition chessPosition) {
-        int knightPositionEvaluation = evaluateBitboard(chessPosition.getBlackKnights(), KNIGHT_BEST_POSITIONS_MASK);
-        int pawnPositionEvaluation = evaluateBitboard(chessPosition.getBlackPawns(), BLACK_PAWN_BEST_POSITIONS_MASK);
+    private long evaluateBlackPositional(ChessPosition chessPosition) {
+        long knightPositionEvaluation = evaluateBitboard(chessPosition.getBlackKnights(), KNIGHT_BEST_POSITIONS_MASK);
+        long pawnPositionEvaluation = evaluateBitboard(chessPosition.getBlackPawns(), BLACK_PAWN_BEST_POSITIONS_MASK);
 
         return knightPositionEvaluation + pawnPositionEvaluation;
     }
 
-    private int evaluateBitboard(long bitboard, int[] positionEvaluationMask) {
+    private long evaluateBitboard(long bitboard, int[] positionEvaluationMask) {
         if (bitboard == 0) {
             return 0;
         }
 
-        int evaluationValue = 0;
+        long evaluationValue = 0;
 
         for (int i = 0; i < 64; i++) {
             if (((bitboard >> i) & 1L) == 1) {

@@ -5,14 +5,14 @@ package com.davidbalazs.chess.model;
  */
 public class MinimaxEntity {
     private int move;
-    private int evaluationScore;
+    private long evaluationScore;
 
-    public MinimaxEntity(int move, int evaluationScore) {
+    public MinimaxEntity(int move, long evaluationScore) {
         this.move = move;
         this.evaluationScore = evaluationScore;
     }
 
-    public MinimaxEntity(int evaluationScore) {
+    public MinimaxEntity(long evaluationScore) {
         this.evaluationScore = evaluationScore;
     }
 
@@ -27,11 +27,11 @@ public class MinimaxEntity {
         this.move = move;
     }
 
-    public int getEvaluationScore() {
+    public long getEvaluationScore() {
         return evaluationScore;
     }
 
-    public void setEvaluationScore(int evaluationScore) {
+    public void setEvaluationScore(long evaluationScore) {
         this.evaluationScore = evaluationScore;
     }
 }
