@@ -15,4 +15,6 @@
     <bean id="chessMoveConverter" class="com.davidbalazs.chess.converters.ChessMoveConverter">
         <property name="moveService" ref="moveService"/>
     </bean>
+
+    <bean id="mainPageEnhancer" class="com.davidbalazs.chess.controllers.enhancers.MainPageEnhancer"/>
 </beans>
