@@ -67,7 +67,7 @@ public class MinimaxMoveAlgorithm implements MoveAlgorithm {
         LOGGER.debug("min is called. Depth=" + depth);
         if (depth == 0) {
             LOGGER.debug("evaluation function gets called");
-            long valueOfEvaluation = 0 - evaluationFunction.evaluate(chessPosition);
+            long valueOfEvaluation = evaluationFunction.evaluate(chessPosition);
             return new MinimaxEntity(0, valueOfEvaluation);
         }
 

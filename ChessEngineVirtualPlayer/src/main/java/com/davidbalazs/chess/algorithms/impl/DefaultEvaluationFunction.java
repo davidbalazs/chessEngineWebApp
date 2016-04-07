@@ -54,7 +54,7 @@ public class DefaultEvaluationFunction implements EvaluationFunction {
         long kingPosition = evaluateKingPosition(chessPosition);
         long positionalEvaluation = evaluateWhitePositional(chessPosition) - evaluateBlackPositional(chessPosition);
         long distanceBetweenKingsEvaluation = evaluateDistancewBetweenKings(materialAdvantage, computeDistanceBetweenKings(chessPosition));
-        return materialAdvantage + kingSafety + kingPosition + positionalEvaluation;
+        return 100 * materialAdvantage + kingSafety + kingPosition + positionalEvaluation;
     }
 
     private long evaluateDistancewBetweenKings(long materialAdvantage, double distanceBetweenKings) {
