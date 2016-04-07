@@ -26,8 +26,10 @@ public class Main {
         MinimaxMoveAlgorithm minimaxMoveAlgorithm = applicationContext.getBean("moveAlgorithm", MinimaxMoveAlgorithm.class);
         long startTime = System.nanoTime();
 //        for (int i = 0; i < 10000; i++) {
-        moveGenerator.generateWhiteMoves(chessPosition);
+//        moveGenerator.generateWhiteMoves(chessPosition);
 //        }
+
+
 //
 //        for (int i = 0; i < 64; i++) {
 //            ChessPosition chessPosition1 = new ChessPosition();

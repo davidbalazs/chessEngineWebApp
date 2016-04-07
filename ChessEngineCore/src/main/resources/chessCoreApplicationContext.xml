@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+    <import resource="hibernateConfiguration.xml"/>
+
+    <alias name="defaultLatestNewsSideBarDao" alias="latestNewsSideBarDao"/>
+    <bean id="defaultLatestNewsSideBarDao" class="com.davidbalazs.chess.daos.impl.DefaultLatestNewsSideBarDao"/>
+
+    <alias name="defaultLatestNewsSideBarService" alias="latestNewsSideBarService"/>
+    <bean id="defaultLatestNewsSideBarService"
+          class="com.davidbalazs.chess.service.impl.DefaultLatestNewsSideBarService"/>
+</beans>

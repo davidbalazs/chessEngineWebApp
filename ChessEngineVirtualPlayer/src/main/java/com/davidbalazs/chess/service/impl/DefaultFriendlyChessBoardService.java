@@ -175,6 +175,14 @@ public class DefaultFriendlyChessBoardService implements FriendlyChessBoardServi
         long newBitboardForMovedPiece = movedPieceBitboard & initialPositionMask;
         newBitboardForMovedPiece = newBitboardForMovedPiece | finalPositionMask;
         setBitboardForPiece(newChessPosition, movedPiece, newBitboardForMovedPiece);
+
+        FriendlyPieceType capturedPiece = moveService.getCapturedPiece(move);
+        if (capturedPiece != null && !FriendlyPieceType.NONE.equals(capturedPiece)) {
+            long capturedPieceBitboard = getBitboardOfPiece(newChessPosition, capturedPiece);
+            long newCapturedPieceBitboard = capturedPieceBitboard & ~finalPositionMask;
+            setBitboardForPiece(newChessPosition, capturedPiece, newCapturedPieceBitboard);
+        }
+
         return newChessPosition;
     }
 
