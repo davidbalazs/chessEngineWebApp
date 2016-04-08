@@ -14,23 +14,23 @@ public class KnightPseudoLegalMovesGenerator implements PseudoLegalMovesGenerato
 
     @Override
     public long getWhiteAttaksBitboard(ChessPosition chessPosition) {
-        return getAttaksBitboard(chessPosition.getWhiteKnights(), bitBoardProcessor.getWhitePiecesBitboard(chessPosition) | chessPosition.getWhiteKing());
+        return getAttaksBitboard(chessPosition.getWhiteKnights());
     }
 
     @Override
     public long getBlackAttaksBitboard(ChessPosition chessPosition) {
-        return getAttaksBitboard(chessPosition.getBlackKnights(), bitBoardProcessor.getBlackPiecesBitboard(chessPosition) | chessPosition.getBlackKing());
+        return getAttaksBitboard(chessPosition.getBlackKnights());
     }
 
-    private long getAttaksBitboard(long knightBitboard, long samePlayerOccupiedPositions) {
-        long seeKnightMoves = (knightBitboard >> 6) & ~BitboardConstants.FILE_A & ~BitboardConstants.FILE_B & ~samePlayerOccupiedPositions;
-        long sseKnightMoves = (knightBitboard >> 15) & ~BitboardConstants.FILE_A & ~samePlayerOccupiedPositions;
-        long sswKnightMoves = (knightBitboard >> 17) & ~BitboardConstants.FILE_H & ~samePlayerOccupiedPositions;
-        long swwKnightMoves = (knightBitboard >> 10) & ~BitboardConstants.FILE_H & ~BitboardConstants.FILE_G & ~samePlayerOccupiedPositions;
-        long nwwKnightMoves = (knightBitboard << 6) & ~BitboardConstants.FILE_H & ~BitboardConstants.FILE_G & ~samePlayerOccupiedPositions;
-        long nnwKnightMoves = (knightBitboard << 15) & ~BitboardConstants.FILE_H & ~samePlayerOccupiedPositions;
-        long nneKnightMoves = (knightBitboard << 17) & ~BitboardConstants.FILE_A & ~samePlayerOccupiedPositions;
-        long neeKnightMoves = (knightBitboard << 10) & ~BitboardConstants.FILE_A & ~BitboardConstants.FILE_B & ~samePlayerOccupiedPositions;
+    private long getAttaksBitboard(long knightBitboard) {
+        long seeKnightMoves = (knightBitboard >> 6) & ~BitboardConstants.FILE_A & ~BitboardConstants.FILE_B;
+        long sseKnightMoves = (knightBitboard >> 15) & ~BitboardConstants.FILE_A;
+        long sswKnightMoves = (knightBitboard >> 17) & ~BitboardConstants.FILE_H;
+        long swwKnightMoves = (knightBitboard >> 10) & ~BitboardConstants.FILE_H & ~BitboardConstants.FILE_G;
+        long nwwKnightMoves = (knightBitboard << 6) & ~BitboardConstants.FILE_H & ~BitboardConstants.FILE_G;
+        long nnwKnightMoves = (knightBitboard << 15) & ~BitboardConstants.FILE_H;
+        long nneKnightMoves = (knightBitboard << 17) & ~BitboardConstants.FILE_A;
+        long neeKnightMoves = (knightBitboard << 10) & ~BitboardConstants.FILE_A & ~BitboardConstants.FILE_B;
 
         return seeKnightMoves | sseKnightMoves | sswKnightMoves | swwKnightMoves | nwwKnightMoves | nnwKnightMoves | nneKnightMoves | neeKnightMoves;
     }

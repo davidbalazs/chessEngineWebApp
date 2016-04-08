@@ -1,8 +1,10 @@
 package com.davidbalazs.chess;
 
 import com.davidbalazs.chess.algorithms.impl.MinimaxMoveAlgorithm;
+import com.davidbalazs.chess.constants.DummyChessPositions;
 import com.davidbalazs.chess.model.ChessPosition;
 import com.davidbalazs.chess.movegenerator.impl.MainPossibleMovesGenerator;
+import com.davidbalazs.chess.pseudolegalmoves.impl.MainPseudoLegalMovesGenerator;
 import com.davidbalazs.chess.service.FriendlyChessBoardService;
 import com.davidbalazs.chess.service.MoveService;
 import com.davidbalazs.chess.service.impl.DefaultFriendlyChessBoardService;
@@ -16,16 +18,21 @@ public class Main {
     public static void main(String[] args) {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("virtualPlayerApplicationContext.xml");
         FriendlyChessBoardService friendlyChessBoardService = applicationContext.getBean("friendlyChessBoardService", DefaultFriendlyChessBoardService.class);
-        ChessPosition chessPosition = friendlyChessBoardService.initializeChessBoard();
+        ChessPosition chessPosition = friendlyChessBoardService.initializeChessBoard(DummyChessPositions.dummyChessPosition1());
 
         friendlyChessBoardService.displayChessBoard(chessPosition);
 
         MainPossibleMovesGenerator moveGenerator = applicationContext.getBean("possibleMovesGenerator", MainPossibleMovesGenerator.class);
+        MainPseudoLegalMovesGenerator pseudoLegalMoveGenerator = applicationContext.getBean("mainPseudoLegalMovesGenerator", MainPseudoLegalMovesGenerator.class);
+        long whiteAttacksBitboard = pseudoLegalMoveGenerator.getWhiteAttaksBitboard(chessPosition);
+        ChessPosition chessPosition1 = new ChessPosition();
+        chessPosition1.setWhiteBishops(whiteAttacksBitboard);
+//        friendlyChessBoardService.displayChessBoard(chessPosition1);
         MoveService moveService = applicationContext.getBean("moveService", DefaultMoveService.class);
         MinimaxMoveAlgorithm minimaxMoveAlgorithm = applicationContext.getBean("moveAlgorithm", MinimaxMoveAlgorithm.class);
         long startTime = System.nanoTime();
 //        for (int i = 0; i < 10000; i++) {
-        moveGenerator.generateWhiteMoves(chessPosition);
+        moveGenerator.generateBlackMoves(chessPosition);
 //        }
 
 
