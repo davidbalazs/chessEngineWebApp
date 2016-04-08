@@ -12,11 +12,8 @@ import org.springframework.beans.factory.annotation.Required;
 import java.util.Collections;
 import java.util.TreeSet;
 
-/**
- * Created by David on 10/31/2015.
- */
-public class LineSlidingPiecePossibleMovesGenerator {
-    public static final Logger LOGGER = Logger.getLogger(LineSlidingPiecePossibleMovesGenerator.class);
+public class DiagonalSlidingPiecePossibleMovesGenerator {
+    public static final Logger LOGGER = Logger.getLogger(DiagonalSlidingPiecePossibleMovesGenerator.class);
     private BitBoardProcessor bitBoardProcessor;
     private MoveService moveService;
     private KingService kingService;
@@ -24,24 +21,25 @@ public class LineSlidingPiecePossibleMovesGenerator {
 
     public TreeSet<Integer> generateWhiteMoves(ChessPosition chessPosition, FriendlyPieceType movedPiece) {
         long movedPieceBitboard;
-        if (FriendlyPieceType.WHITE_ROOK.equals(movedPiece)) {
-            movedPieceBitboard = chessPosition.getWhiteRooks();
+        if (FriendlyPieceType.WHITE_BISHOP.equals(movedPiece)) {
+            movedPieceBitboard = chessPosition.getWhiteBishops();
         } else if (FriendlyPieceType.WHITE_QUEEN.equals(movedPiece)) {
             movedPieceBitboard = chessPosition.getWhiteQueens();
         } else {
-            throw new IllegalArgumentException("Wrong movedPiece provided as parameter. The provided piece type is not a sliding piece (rook or queen) for white. Provided piece is:" + movedPiece);
+            throw new IllegalArgumentException("Wrong movedPiece provided as parameter. The provided piece type is not a diagonal sliding piece (bishop or queen) for white. Provided piece is:" + movedPiece);
         }
+
         return generateMoves(chessPosition, movedPieceBitboard, bitBoardProcessor.getBlackPiecesBitboard(chessPosition), movedPiece);
     }
 
     public TreeSet<Integer> generateBlackMoves(ChessPosition chessPosition, FriendlyPieceType movedPiece) {
         long movedPieceBitboard;
-        if (FriendlyPieceType.BLACK_ROOK.equals(movedPiece)) {
-            movedPieceBitboard = chessPosition.getBlackRooks();
+        if (FriendlyPieceType.BLACK_BISHOP.equals(movedPiece)) {
+            movedPieceBitboard = chessPosition.getBlackBishops();
         } else if (FriendlyPieceType.BLACK_QUEEN.equals(movedPiece)) {
             movedPieceBitboard = chessPosition.getBlackQueens();
         } else {
-            throw new IllegalArgumentException("Wrong movedPiece provided as parameter. The provided piece type is not a sliding piece (rook or queen) for black. Provided piece is:" + movedPiece);
+            throw new IllegalArgumentException("Wrong movedPiece provided as parameter. The provided piece type is not a diagonal sliding piece (bishop or queen) for black. Provided piece is:" + movedPiece);
         }
 
         return generateMoves(chessPosition, movedPieceBitboard, bitBoardProcessor.getWhitePiecesBitboard(chessPosition), movedPiece);
@@ -51,10 +49,10 @@ public class LineSlidingPiecePossibleMovesGenerator {
         TreeSet<Integer> possibleMoves = new TreeSet<>(Collections.reverseOrder());
         for (int i = 0; i < 64; i++) {
             if (((slidingPieceBitboard >> i) & 1L) == 1) {
-                long possibleMovesBitboardToRight = generatePossibleMovesBitboardToRight(i, chessPosition, opponentBotboard);
-                long possibleMovesBitboardToLeft = generatePossibleMovesBitboardToLeft(i, chessPosition, opponentBotboard);
-                long possibleMovesBitboardToTop = generatePossibleMovesBitboardToTop(i, chessPosition, opponentBotboard);
-                long possibleMovesBitboardToBottom = generatePossibleMovesBitboardToBottom(i, chessPosition, opponentBotboard);
+                long possibleMovesBitboardToRight = generatePossibleMovesBitboardToUpRight(i, chessPosition, opponentBotboard);
+                long possibleMovesBitboardToLeft = generatePossibleMovesBitboardToUpLeft(i, chessPosition, opponentBotboard);
+                long possibleMovesBitboardToTop = generatePossibleMovesBitboardToDownRight(i, chessPosition, opponentBotboard);
+                long possibleMovesBitboardToBottom = generatePossibleMovesBitboardToDownLeft(i, chessPosition, opponentBotboard);
 
                 long possibleMovesBitboard = possibleMovesBitboardToRight | possibleMovesBitboardToLeft | possibleMovesBitboardToTop | possibleMovesBitboardToBottom;
 
@@ -65,35 +63,41 @@ public class LineSlidingPiecePossibleMovesGenerator {
         return possibleMoves;
     }
 
-    private long generatePossibleMovesBitboardToRight(int i, ChessPosition chessPosition, long opponentBitboard) {
+    private long generatePossibleMovesBitboardToUpRight(int i, ChessPosition chessPosition, long opponentBitboard) {
         long occupiedBitboard = bitBoardProcessor.getOccupiedPositions(chessPosition);
-        long possibleMovesToRight = BitboardConstants.lineSlidingRight[i] & occupiedBitboard;
-        possibleMovesToRight = possibleMovesToRight << 1 | possibleMovesToRight << 2 | possibleMovesToRight << 3 | possibleMovesToRight << 4 | possibleMovesToRight << 5 | possibleMovesToRight << 6;
-        return getBitboardFromNumber(possibleMovesToRight, BitboardConstants.lineSlidingRight[i], opponentBitboard, occupiedBitboard);
+        long possibleMovesToUpRight = BitboardConstants.diagonalSlidingUpRight[i] & occupiedBitboard;
+        possibleMovesToUpRight = possibleMovesToUpRight << 9 | possibleMovesToUpRight << 18 | possibleMovesToUpRight << 27 |
+                possibleMovesToUpRight << 36 | possibleMovesToUpRight << 45 | possibleMovesToUpRight << 54;
+        return getBitboardFromNumber(possibleMovesToUpRight, BitboardConstants.diagonalSlidingUpRight[i], opponentBitboard, occupiedBitboard);
 
     }
 
-    private long generatePossibleMovesBitboardToLeft(int i, ChessPosition chessPosition, long opponentBitboard) {
+    private long generatePossibleMovesBitboardToUpLeft(int i, ChessPosition chessPosition, long opponentBitboard) {
+        long occupiedBitboard = bitBoardProcessor.getOccupiedPositions(chessPosition);
+        long possibleMovesToUpLeft = BitboardConstants.diagonalSlidingUpLeft[i] & occupiedBitboard;
+        possibleMovesToUpLeft = possibleMovesToUpLeft >> 9 | possibleMovesToUpLeft >> 18 | possibleMovesToUpLeft >> 27 |
+                possibleMovesToUpLeft >> 36 | possibleMovesToUpLeft >> 45 | possibleMovesToUpLeft >> 54;
+        return getBitboardFromNumber(possibleMovesToUpLeft, BitboardConstants.diagonalSlidingUpLeft[i], opponentBitboard, occupiedBitboard);
+    }
+
+    private long generatePossibleMovesBitboardToDownRight(int i, ChessPosition chessPosition, long opponentBitboard) {
+        long occupiedBitboard = bitBoardProcessor.getOccupiedPositions(chessPosition);
+        long possibleMovesToDownRight = BitboardConstants.diagonalSlidingDownRight[i] & occupiedBitboard;
+        possibleMovesToDownRight = possibleMovesToDownRight << 7 | possibleMovesToDownRight << 14 | possibleMovesToDownRight << 21 |
+                possibleMovesToDownRight << 28 | possibleMovesToDownRight << 35 | possibleMovesToDownRight << 42;
+        return getBitboardFromNumber(possibleMovesToDownRight, BitboardConstants.diagonalSlidingDownRight[i], opponentBitboard, occupiedBitboard);
+    }
+
+    private long generatePossibleMovesBitboardToDownLeft(int i, ChessPosition chessPosition, long opponentBitboard) {
+
         //TODO: call .getOccupiedPositions only once in the generate moves method and send the occupiedPositionsBitboard as parameter for all these 4 methods.
         long occupiedBitboard = bitBoardProcessor.getOccupiedPositions(chessPosition);
-        long possibleMovesToLeft = BitboardConstants.lineSlidingLeft[i] & occupiedBitboard;
-        possibleMovesToLeft = possibleMovesToLeft >> 1 | possibleMovesToLeft >> 2 | possibleMovesToLeft >> 3 | possibleMovesToLeft >> 4 | possibleMovesToLeft >> 5 | possibleMovesToLeft >> 6;
-        return getBitboardFromNumber(possibleMovesToLeft, BitboardConstants.lineSlidingLeft[i], opponentBitboard, occupiedBitboard);
+        long possibleMovesToDownLeft = BitboardConstants.diagonalSlidingDownLeft[i] & occupiedBitboard;
+        possibleMovesToDownLeft = possibleMovesToDownLeft >> 7 | possibleMovesToDownLeft >> 14 | possibleMovesToDownLeft >> 21 |
+                possibleMovesToDownLeft >> 28 | possibleMovesToDownLeft >> 35 | possibleMovesToDownLeft >> 42;
+        return getBitboardFromNumber(possibleMovesToDownLeft, BitboardConstants.diagonalSlidingDownLeft[i], opponentBitboard, occupiedBitboard);
     }
 
-    private long generatePossibleMovesBitboardToTop(int i, ChessPosition chessPosition, long opponentBitboard) {
-        long occupiedBitboard = bitBoardProcessor.getOccupiedPositions(chessPosition);
-        long possibleMovesToTop = BitboardConstants.lineSlidingUp[i] & occupiedBitboard;
-        possibleMovesToTop = possibleMovesToTop << 8 | possibleMovesToTop << 16 | possibleMovesToTop << 24 | possibleMovesToTop << 32 | possibleMovesToTop << 40 | possibleMovesToTop << 48;
-        return getBitboardFromNumber(possibleMovesToTop, BitboardConstants.lineSlidingUp[i], opponentBitboard, occupiedBitboard);
-    }
-
-    private long generatePossibleMovesBitboardToBottom(int i, ChessPosition chessPosition, long opponentBitboard) {
-        long occupiedBitboard = bitBoardProcessor.getOccupiedPositions(chessPosition);
-        long possibleMovesToBottom = BitboardConstants.lineSlidingDown[i] & occupiedBitboard;
-        possibleMovesToBottom = possibleMovesToBottom >> 8 | possibleMovesToBottom >> 16 | possibleMovesToBottom >> 24 | possibleMovesToBottom >> 32 | possibleMovesToBottom >> 40 | possibleMovesToBottom >> 48;
-        return getBitboardFromNumber(possibleMovesToBottom, BitboardConstants.lineSlidingDown[i], opponentBitboard, occupiedBitboard);
-    }
 
     private long getBitboardFromNumber(long bitboardNumber, long precomputedBitboard, long opponentBitboard, long occupiedBitboard) {
         bitboardNumber = bitboardNumber & precomputedBitboard;
@@ -154,4 +158,3 @@ public class LineSlidingPiecePossibleMovesGenerator {
         this.chessBoardService = chessBoardService;
     }
 }
-

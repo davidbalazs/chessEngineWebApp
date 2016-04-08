@@ -35,7 +35,7 @@ var onSnapEnd = function () {
 
 function makeAjaxCallForNextMove() {
     $.ajax({
-        url: "http://localhost:9090/playgame/next-move?chessPositionFen=" + board.fen() + "&sideToMove=BLACK&virtualPlayerLevel=4",
+        url: "http://localhost:9090/playgame/next-move?chessPositionFen=" + board.fen() + "&sideToMove=BLACK&virtualPlayerLevel=2",
         type: "GET",
         success: function (move) {
             var moveStatusObject = game.move({
@@ -46,12 +46,12 @@ function makeAjaxCallForNextMove() {
 
             if (moveStatusObject === null) {
                 $("#status").html("virtual player made a wrong move: from " + move.initialPosition.x + move.initialPosition.y + "to " + move.finalPosition.x + move.finalPosition.y);
+            } else {
+                board.position(game.fen());
+                counter++;
+                $("#message").html(counter);
+                updateStatus();
             }
-
-            board.position(game.fen());
-            counter++;
-            $("#message").html(counter);
-            updateStatus();
         }
     });
 };

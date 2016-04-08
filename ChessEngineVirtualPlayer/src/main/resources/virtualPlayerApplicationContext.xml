@@ -30,6 +30,8 @@
                 <ref bean="knightPossibleMovesGenerator"/>
                 <ref bean="rookPossibleMovesGenerator"/>
                 <ref bean="kingPossibleMovesGenerator"/>
+                <ref bean="bishopPossibleMovesGenerator"/>
+                <ref bean="queenPossibleMovesGenerator"/>
             </list>
         </property>
     </bean>
@@ -53,14 +55,32 @@
     <bean id="lineSlidingPiecePossibleMovesGenerator"
           class="com.davidbalazs.chess.movegenerator.impl.LineSlidingPiecePossibleMovesGenerator">
         <property name="bitBoardProcessor" ref="bitBoardProcessor"/>
+        <property name="chessBoardService" ref="friendlyChessBoardService"/>
+        <property name="kingService" ref="kingService"/>
+        <property name="moveService" ref="moveService"/>
     </bean>
 
-    <bean id="rookPossibleMovesGenerator"
-          class="com.davidbalazs.chess.movegenerator.impl.RookPossibleMovesGenerator">
+    <!--this should not be added directly to mainPossibleMovesGenerator, because it is a generic piece type. It should be used by rook and by queen move generators.-->
+    <bean id="diagonalSlidingPiecePossibleMovesGenerator"
+          class="com.davidbalazs.chess.movegenerator.impl.DiagonalSlidingPiecePossibleMovesGenerator">
         <property name="bitBoardProcessor" ref="bitBoardProcessor"/>
-        <property name="moveService" ref="moveService"/>
-        <property name="kingService" ref="kingService"/>
         <property name="chessBoardService" ref="friendlyChessBoardService"/>
+        <property name="kingService" ref="kingService"/>
+        <property name="moveService" ref="moveService"/>
+    </bean>
+
+    <bean id="bishopPossibleMovesGenerator"
+          class="com.davidbalazs.chess.movegenerator.impl.BishopPossibleMovesGenerator">
+        <property name="diagonalSlidingPiecePossibleMovesGenerator" ref="diagonalSlidingPiecePossibleMovesGenerator"/>
+    </bean>
+
+    <bean id="rookPossibleMovesGenerator" class="com.davidbalazs.chess.movegenerator.impl.RookPossibleMovesGenerator">
+        <property name="lineSlidingPiecePossibleMovesGenerator" ref="lineSlidingPiecePossibleMovesGenerator"/>
+    </bean>
+
+    <bean id="queenPossibleMovesGenerator" class="com.davidbalazs.chess.movegenerator.impl.QueenPossibleMovesGenerator">
+        <property name="lineSlidingPiecePossibleMovesGenerator" ref="lineSlidingPiecePossibleMovesGenerator"/>
+        <property name="diagonalSlidingPiecePossibleMovesGenerator" ref="diagonalSlidingPiecePossibleMovesGenerator"/>
     </bean>
 
     <bean id="kingPossibleMovesGenerator"
@@ -78,13 +98,36 @@
                 <ref bean="rookPseudoLegalMovesGenerator"/>
                 <ref bean="knightPseudoLegalMovesGenerator"/>
                 <ref bean="pawnPseudoLegalMovesGenerator"/>
+                <ref bean="bishopPseudoLegalMovesGenerator"/>
+                <ref bean="queenPseudoLegalMovesGenerator"/>
             </list>
         </property>
     </bean>
 
     <bean id="rookPseudoLegalMovesGenerator"
           class="com.davidbalazs.chess.pseudolegalmoves.impl.RookPseudoLegalMovesGenerator">
+        <property name="lineSlidingPseudoLegalMovesGenerator" ref="lineSlidingPseudoLegalMovesGenerator"/>
+    </bean>
+
+    <bean id="queenPseudoLegalMovesGenerator"
+          class="com.davidbalazs.chess.pseudolegalmoves.impl.QueenPseudoLegalMovesGenerator">
+        <property name="lineSlidingPseudoLegalMovesGenerator" ref="lineSlidingPseudoLegalMovesGenerator"/>
+        <property name="diagonalSlidingPseudoLegalMovesGenerator" ref="diagonalSlidingPseudoLegalMovesGenerator"/>
+    </bean>
+
+    <bean id="lineSlidingPseudoLegalMovesGenerator"
+          class="com.davidbalazs.chess.pseudolegalmoves.impl.LineSlidingPseudoLegalMovesGenerator">
         <property name="bitBoardProcessor" ref="bitBoardProcessor"/>
+    </bean>
+
+    <bean id="diagonalSlidingPseudoLegalMovesGenerator"
+          class="com.davidbalazs.chess.pseudolegalmoves.impl.DiagonalSlidingPseudoLegalMovesGenerator">
+        <property name="bitBoardProcessor" ref="bitBoardProcessor"/>
+    </bean>
+
+    <bean id="bishopPseudoLegalMovesGenerator"
+          class="com.davidbalazs.chess.pseudolegalmoves.impl.BishopPseudoLegalMovesGenerator">
+        <property name="diagonalSlidingPseudoLegalMovesGenerator" ref="diagonalSlidingPseudoLegalMovesGenerator"/>
     </bean>
 
     <bean id="knightPseudoLegalMovesGenerator"
