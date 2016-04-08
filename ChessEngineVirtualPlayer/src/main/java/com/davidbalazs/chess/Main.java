@@ -1,6 +1,7 @@
 package com.davidbalazs.chess;
 
 import com.davidbalazs.chess.algorithms.impl.MinimaxMoveAlgorithm;
+import com.davidbalazs.chess.constants.BitboardConstants;
 import com.davidbalazs.chess.constants.DummyChessPositions;
 import com.davidbalazs.chess.model.ChessPosition;
 import com.davidbalazs.chess.movegenerator.impl.MainPossibleMovesGenerator;
@@ -19,7 +20,7 @@ public class Main {
         FriendlyChessBoardService friendlyChessBoardService = applicationContext.getBean("friendlyChessBoardService", DefaultFriendlyChessBoardService.class);
         ChessPosition chessPosition = friendlyChessBoardService.initializeChessBoard(DummyChessPositions.dummyChessPosition3());
 
-        friendlyChessBoardService.displayChessBoard(chessPosition);
+//        friendlyChessBoardService.displayChessBoard(chessPosition);
 
         MainPossibleMovesGenerator moveGenerator = applicationContext.getBean("possibleMovesGenerator", MainPossibleMovesGenerator.class);
         MoveService moveService = applicationContext.getBean("moveService", DefaultMoveService.class);
@@ -46,5 +47,11 @@ public class Main {
 //        long duration = (endTime - startTime) / 1000000;  //divide by 1000000 to get milliseconds.
 //        System.out.println("duration:" + duration);
 //        System.out.println("number of generated moves:" + minimaxMoveAlgorithm.numberOfGeneratedMoves);
+
+        ChessPosition chessPosition1 = new ChessPosition();
+        for (int i = 0; i < 64; i++) {
+            chessPosition1.setWhiteBishops(BitboardConstants.diagonalSlidingDownRight[i]);
+            friendlyChessBoardService.displayChessBoard(chessPosition1);
+        }
     }
 }
