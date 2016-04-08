@@ -4,6 +4,7 @@ import com.davidbalazs.chess.exceptions.NoSuchPieceException;
 import com.davidbalazs.chess.model.*;
 import com.davidbalazs.chess.service.FriendlyChessBoardService;
 import com.davidbalazs.chess.service.MoveService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Required;
 
 import java.util.Arrays;
@@ -13,6 +14,7 @@ import java.util.List;
  * Created by David on 9/28/2015.
  */
 public class DefaultFriendlyChessBoardService implements FriendlyChessBoardService {
+    public static final Logger LOGGER = Logger.getLogger(DefaultFriendlyChessBoardService.class);
 
     private MoveService moveService;
 
@@ -153,7 +155,7 @@ public class DefaultFriendlyChessBoardService implements FriendlyChessBoardServi
     }
 
     public void displayChessBoard(ChessPosition chessPosition) {
-        System.out.println(getFriendlyChessPosition(chessPosition));
+        LOGGER.debug("\n" + getFriendlyChessPosition(chessPosition));
     }
 
     @Override

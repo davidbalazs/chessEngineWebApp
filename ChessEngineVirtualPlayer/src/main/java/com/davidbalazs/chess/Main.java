@@ -1,7 +1,6 @@
 package com.davidbalazs.chess;
 
 import com.davidbalazs.chess.algorithms.impl.MinimaxMoveAlgorithm;
-import com.davidbalazs.chess.constants.DummyChessPositions;
 import com.davidbalazs.chess.model.ChessPosition;
 import com.davidbalazs.chess.movegenerator.impl.MainPossibleMovesGenerator;
 import com.davidbalazs.chess.service.FriendlyChessBoardService;
@@ -17,7 +16,7 @@ public class Main {
     public static void main(String[] args) {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("virtualPlayerApplicationContext.xml");
         FriendlyChessBoardService friendlyChessBoardService = applicationContext.getBean("friendlyChessBoardService", DefaultFriendlyChessBoardService.class);
-        ChessPosition chessPosition = friendlyChessBoardService.initializeChessBoard(DummyChessPositions.dummyChessPosition3());
+        ChessPosition chessPosition = friendlyChessBoardService.initializeChessBoard();
 
         friendlyChessBoardService.displayChessBoard(chessPosition);
 

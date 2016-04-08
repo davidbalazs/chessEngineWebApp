@@ -75,16 +75,17 @@ public class DiagonalSlidingPiecePossibleMovesGenerator {
     private long generatePossibleMovesBitboardToUpLeft(int i, ChessPosition chessPosition, long opponentBitboard) {
         long occupiedBitboard = bitBoardProcessor.getOccupiedPositions(chessPosition);
         long possibleMovesToUpLeft = BitboardConstants.diagonalSlidingUpLeft[i] & occupiedBitboard;
-        possibleMovesToUpLeft = possibleMovesToUpLeft >> 9 | possibleMovesToUpLeft >> 18 | possibleMovesToUpLeft >> 27 |
-                possibleMovesToUpLeft >> 36 | possibleMovesToUpLeft >> 45 | possibleMovesToUpLeft >> 54;
+        possibleMovesToUpLeft = possibleMovesToUpLeft << 7 | possibleMovesToUpLeft << 14 | possibleMovesToUpLeft << 21 |
+                possibleMovesToUpLeft << 28 | possibleMovesToUpLeft << 35 | possibleMovesToUpLeft << 42;
         return getBitboardFromNumber(possibleMovesToUpLeft, BitboardConstants.diagonalSlidingUpLeft[i], opponentBitboard, occupiedBitboard);
     }
 
     private long generatePossibleMovesBitboardToDownRight(int i, ChessPosition chessPosition, long opponentBitboard) {
         long occupiedBitboard = bitBoardProcessor.getOccupiedPositions(chessPosition);
         long possibleMovesToDownRight = BitboardConstants.diagonalSlidingDownRight[i] & occupiedBitboard;
-        possibleMovesToDownRight = possibleMovesToDownRight << 7 | possibleMovesToDownRight << 14 | possibleMovesToDownRight << 21 |
-                possibleMovesToDownRight << 28 | possibleMovesToDownRight << 35 | possibleMovesToDownRight << 42;
+        possibleMovesToDownRight = possibleMovesToDownRight >> 7 | possibleMovesToDownRight >> 14 | possibleMovesToDownRight >> 21 |
+                possibleMovesToDownRight >> 28 | possibleMovesToDownRight >> 35 | possibleMovesToDownRight >> 42;
+
         return getBitboardFromNumber(possibleMovesToDownRight, BitboardConstants.diagonalSlidingDownRight[i], opponentBitboard, occupiedBitboard);
     }
 
@@ -93,8 +94,9 @@ public class DiagonalSlidingPiecePossibleMovesGenerator {
         //TODO: call .getOccupiedPositions only once in the generate moves method and send the occupiedPositionsBitboard as parameter for all these 4 methods.
         long occupiedBitboard = bitBoardProcessor.getOccupiedPositions(chessPosition);
         long possibleMovesToDownLeft = BitboardConstants.diagonalSlidingDownLeft[i] & occupiedBitboard;
-        possibleMovesToDownLeft = possibleMovesToDownLeft >> 7 | possibleMovesToDownLeft >> 14 | possibleMovesToDownLeft >> 21 |
-                possibleMovesToDownLeft >> 28 | possibleMovesToDownLeft >> 35 | possibleMovesToDownLeft >> 42;
+
+        possibleMovesToDownLeft = possibleMovesToDownLeft >> 9 | possibleMovesToDownLeft >> 18 | possibleMovesToDownLeft >> 27 |
+                possibleMovesToDownLeft >> 36 | possibleMovesToDownLeft >> 45 | possibleMovesToDownLeft >> 54;
         return getBitboardFromNumber(possibleMovesToDownLeft, BitboardConstants.diagonalSlidingDownLeft[i], opponentBitboard, occupiedBitboard);
     }
 
