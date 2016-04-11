@@ -4,7 +4,7 @@
 
 <%@ attribute name="pageTitle" type="java.lang.String" required="true" %>
 
-<template:genericPageTemplate pageTitle="${pageTitle}">
+<template:genericPageTemplate pageTitle="${pageTitle}" includeChessScripts="true">
 
     <div id="container">
 

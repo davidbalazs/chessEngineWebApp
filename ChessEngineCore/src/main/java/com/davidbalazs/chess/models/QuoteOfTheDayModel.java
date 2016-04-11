@@ -1,8 +1,6 @@
 package com.davidbalazs.chess.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by David on 4/5/2016.
@@ -10,6 +8,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "QUOTE_OF_THE_DAY")
 public class QuoteOfTheDayModel {
+    @Id
+    @Column(name="ID")
+    @GeneratedValue
+    private long id;
+
     @Column(name = "QUOTE")
     private String quote;
 
@@ -33,5 +36,21 @@ public class QuoteOfTheDayModel {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public boolean isEnabled() {
+        return isEnabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        isEnabled = enabled;
     }
 }

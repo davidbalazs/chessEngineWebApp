@@ -18,5 +18,6 @@
 
     <bean id="mainPageEnhancer" class="com.davidbalazs.chess.controllers.enhancers.MainPageEnhancer">
         <property name="latestNewsSideBarService" ref="latestNewsSideBarService"/>
+        <property name="quoteOfTheDayService" ref="quoteOfTheDayService"/>
     </bean>
 </beans>

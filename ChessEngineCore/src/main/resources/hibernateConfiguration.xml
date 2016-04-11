@@ -23,7 +23,7 @@ http://www.springframework.org/schema/tx/spring-tx.xsd">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
                 <prop key="hibernate.show_sql">true</prop>
-                <prop key="hibernate.hbm2ddl.auto">create</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
 
                 <!-- Configuring Connection Pool -->
                 <prop key="hibernate.c3p0.min_size">5</prop>
@@ -45,8 +45,8 @@ http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/chessenginedatabase"/>
+        <property name="url" value="jdbc:mysql://localhost:3307/chessenginedatabase"/>
         <property name="username" value="root"/>
-        <property name="password" value=""/>
+        <property name="password" value="root"/>
     </bean>
 </beans>
