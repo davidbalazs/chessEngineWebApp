@@ -7,9 +7,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Date;
 
-/**
- * Created by David on 4/5/2016.
- */
 @Entity
 @Table(name = "LATEST_NEWS")
 public class LatestNewsEntityModel {

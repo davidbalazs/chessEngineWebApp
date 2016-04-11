@@ -19,7 +19,6 @@ public class MainPageController {
     @Resource(name = "mainPageEnhancer")
     private MainPageEnhancer mainPageEnhancer;
 
-
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String loadHomePage(Model model) {
         mainPageEnhancer.enhanceModelWithSideBar(model);

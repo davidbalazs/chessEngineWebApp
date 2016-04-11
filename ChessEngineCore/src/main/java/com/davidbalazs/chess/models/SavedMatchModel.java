@@ -1,5 +1,7 @@
 package com.davidbalazs.chess.models;
 
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import java.util.Date;
 import java.util.List;
 
@@ -10,6 +12,8 @@ public class SavedMatchModel {
     private String name;
     private PlayerColor playerColor;
     private Date date;
+
+    @Enumerated(EnumType.STRING)
     private MatchStatus status;
     private VirtualPlayerLevel virtualPlayerLevel;
     private List<MoveEntityModel> moves;
