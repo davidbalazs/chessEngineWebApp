@@ -3,7 +3,7 @@ package com.davidbalazs.chess.algorithms.impl;
 import com.davidbalazs.chess.model.ChessPosition;
 import com.davidbalazs.chess.model.FriendlyPiecePosition;
 import com.davidbalazs.chess.model.FriendlyPieceType;
-import com.davidbalazs.chess.service.impl.DefaultFriendlyChessBoardService;
+import com.davidbalazs.chess.services.impl.DefaultFriendlyChessBoardService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;

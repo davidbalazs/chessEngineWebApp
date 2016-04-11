@@ -12,5 +12,7 @@
 
     <alias name="defaultLatestNewsSideBarService" alias="latestNewsSideBarService"/>
     <bean id="defaultLatestNewsSideBarService"
-          class="com.davidbalazs.chess.service.impl.DefaultLatestNewsSideBarService"/>
+          class="com.davidbalazs.chess.services.impl.DefaultLatestNewsSideBarService">
+        <property name="latestNewsSideBarDao" ref="latestNewsSideBarDao"/>
+    </bean>
 </beans>

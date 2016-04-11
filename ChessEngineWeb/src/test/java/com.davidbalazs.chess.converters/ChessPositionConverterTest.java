@@ -3,7 +3,7 @@ package com.davidbalazs.chess.converters;
 import com.davidbalazs.chess.exceptions.ChessFenRepresentationException;
 import com.davidbalazs.chess.model.ChessPosition;
 import com.davidbalazs.chess.service.FriendlyChessBoardService;
-import com.davidbalazs.chess.service.impl.DefaultFriendlyChessBoardService;
+import com.davidbalazs.chess.services.impl.DefaultFriendlyChessBoardService;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;

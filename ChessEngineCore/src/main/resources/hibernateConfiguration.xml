@@ -9,6 +9,10 @@ http://www.springframework.org/schema/tx/spring-tx.xsd">
     <!--hibernate configuration -->
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
+
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="packagesToScan" value="com.davidbalazs.chess.models"/>
         <property name="dataSource" ref="dataSource"/>
@@ -19,7 +23,7 @@ http://www.springframework.org/schema/tx/spring-tx.xsd">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
                 <prop key="hibernate.show_sql">true</prop>
-                <prop key="hibernate.hbm2ddl.auto">false</prop>
+                <prop key="hibernate.hbm2ddl.auto">create</prop>
 
                 <!-- Configuring Connection Pool -->
                 <prop key="hibernate.c3p0.min_size">5</prop>
@@ -29,10 +33,6 @@ http://www.springframework.org/schema/tx/spring-tx.xsd">
                 <prop key="hibernate.c3p0.idle_test_period">2000</prop>
             </props>
         </property>
-    </bean>
-
-    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-        <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
 
 

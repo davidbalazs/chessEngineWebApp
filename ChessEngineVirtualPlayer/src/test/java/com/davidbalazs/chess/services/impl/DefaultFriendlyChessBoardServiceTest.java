@@ -1,4 +1,4 @@
-package com.davidbalazs.chess.service.impl;
+package com.davidbalazs.chess.services.impl;
 
 import com.davidbalazs.chess.model.ChessPosition;
 import com.davidbalazs.chess.model.FriendlyPiecePosition;

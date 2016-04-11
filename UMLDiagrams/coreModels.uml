@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.davidbalazs.chess.models</OriginalElement>
+  <nodes>
+    <node x="380.0" y="-117.0">com.davidbalazs.chess.models.MoveEntityModel</node>
+    <node x="-153.5" y="20.5">com.davidbalazs.chess.models.PlayerColor</node>
+    <node x="616.25" y="-495.75">com.davidbalazs.chess.models.ChessStrategyModel</node>
+    <node x="344.75" y="-362.0">com.davidbalazs.chess.models.ChessStrategyEntityModel</node>
+    <node x="417.0" y="206.0">com.davidbalazs.chess.models.VirtualPlayerLevel</node>
+    <node x="855.25" y="-30.0">com.davidbalazs.chess.models.MessageModel</node>
+    <node x="28.75" y="-212.0">com.davidbalazs.chess.models.ProblemModel</node>
+    <node x="874.5" y="123.0">com.davidbalazs.chess.models.QuoteOfTheDayModel</node>
+    <node x="869.5" y="-458.25">com.davidbalazs.chess.models.ChessStrategyCategory</node>
+    <node x="44.25" y="-33.5">com.davidbalazs.chess.models.SavedMatchModel</node>
+    <node x="864.75" y="-191.5">com.davidbalazs.chess.models.LatestNewsEntityModel</node>
+    <node x="0.0" y="206.0">com.davidbalazs.chess.models.MatchStatus</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.davidbalazs.chess.models.ProblemModel" target="com.davidbalazs.chess.models.MoveEntityModel">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.davidbalazs.chess.models.ChessStrategyModel" target="com.davidbalazs.chess.models.ChessStrategyCategory">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.davidbalazs.chess.models.SavedMatchModel" target="com.davidbalazs.chess.models.MatchStatus">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.davidbalazs.chess.models.ChessStrategyEntityModel" target="com.davidbalazs.chess.models.MoveEntityModel">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.davidbalazs.chess.models.SavedMatchModel" target="com.davidbalazs.chess.models.PlayerColor">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.davidbalazs.chess.models.SavedMatchModel" target="com.davidbalazs.chess.models.VirtualPlayerLevel">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.davidbalazs.chess.models.SavedMatchModel" target="com.davidbalazs.chess.models.MoveEntityModel">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.davidbalazs.chess.models.ChessStrategyModel" target="com.davidbalazs.chess.models.ChessStrategyEntityModel">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="322.0" y="-65.5" />
+  <SelectedNodes>
+    <node>com.davidbalazs.chess.models.QuoteOfTheDayModel</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

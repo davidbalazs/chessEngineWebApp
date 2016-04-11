@@ -16,5 +16,7 @@
         <property name="moveService" ref="moveService"/>
     </bean>
 
-    <bean id="mainPageEnhancer" class="com.davidbalazs.chess.controllers.enhancers.MainPageEnhancer"/>
+    <bean id="mainPageEnhancer" class="com.davidbalazs.chess.controllers.enhancers.MainPageEnhancer">
+        <property name="latestNewsSideBarService" ref="latestNewsSideBarService"/>
+    </bean>
 </beans>

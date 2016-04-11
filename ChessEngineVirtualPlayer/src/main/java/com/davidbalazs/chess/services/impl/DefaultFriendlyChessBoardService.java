@@ -1,4 +1,4 @@
-package com.davidbalazs.chess.service.impl;
+package com.davidbalazs.chess.services.impl;
 
 import com.davidbalazs.chess.exceptions.NoSuchPieceException;
 import com.davidbalazs.chess.model.*;

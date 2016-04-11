@@ -7,8 +7,8 @@ import com.davidbalazs.chess.movegenerator.impl.MainPossibleMovesGenerator;
 import com.davidbalazs.chess.pseudolegalmoves.impl.MainPseudoLegalMovesGenerator;
 import com.davidbalazs.chess.service.FriendlyChessBoardService;
 import com.davidbalazs.chess.service.MoveService;
-import com.davidbalazs.chess.service.impl.DefaultFriendlyChessBoardService;
-import com.davidbalazs.chess.service.impl.DefaultMoveService;
+import com.davidbalazs.chess.services.impl.DefaultFriendlyChessBoardService;
+import com.davidbalazs.chess.services.impl.DefaultMoveService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
