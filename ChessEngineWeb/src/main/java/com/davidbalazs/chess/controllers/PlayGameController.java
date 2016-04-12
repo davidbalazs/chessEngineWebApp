@@ -20,6 +20,7 @@ import java.text.MessageFormat;
 @RequestMapping(value = "playgame/")
 public class PlayGameController {
     public static final Logger LOGGER = Logger.getLogger(PlayGameController.class);
+    private static final String RECEIVED_REQUEST_LOG_MESSAGE = "received request to generate next move for [fen position: {0}, sideToMove {1}, virtualPlayerLevel {2}.";
     @Resource(name = "chessMoveFacade")
     private ChessMoveFacade chessMoveFacade;
 
@@ -33,7 +34,7 @@ public class PlayGameController {
     public ChessMoveData generateNextMove(@RequestParam("chessPositionFen") String chessPositionFen,
                                           @RequestParam("sideToMove") String sideToMove,
                                           @RequestParam("virtualPlayerLevel") String virtualPlayerLevel) {
-        LOGGER.info(MessageFormat.format("received request to generate next move for [fen position: {0}, sideToMove {1}, virtualPlayerLevel {2}.", chessPositionFen, sideToMove, virtualPlayerLevel));
+        LOGGER.info(MessageFormat.format(RECEIVED_REQUEST_LOG_MESSAGE, chessPositionFen, sideToMove, virtualPlayerLevel));
         PlayerColorData sideToMoveEnum = PlayerColorData.valueOf(sideToMove);
 
         ChessMoveData chessMoveData = chessMoveFacade.getNextMove(chessPositionFen, sideToMoveEnum, Integer.parseInt(virtualPlayerLevel));

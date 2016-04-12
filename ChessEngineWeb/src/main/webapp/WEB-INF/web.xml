@@ -32,4 +32,15 @@
         <error-code>404</error-code>
         <location>/error/notFound</location>
     </error-page>
+
+    <filter>
+        <filter-name>Timing Filter</filter-name>
+        <filter-class>com.davidbalazs.chess.filters.ResponseTimeMeasurerFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>Timing Filter</filter-name>
+        <url-pattern>/playgame/*</url-pattern>
+    </filter-mapping>
+
 </web-app>
