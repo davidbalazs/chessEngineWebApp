@@ -7,7 +7,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "QUOTE_OF_THE_DAY")
-public class QuoteOfTheDayModel {
+public class QuoteModel {
     @Id
     @Column(name="ID")
     @GeneratedValue
@@ -19,8 +19,8 @@ public class QuoteOfTheDayModel {
     @Column(name = "AUTHOR")
     private String author;
 
-    @Column(name = "IS_ENABLED")
-    private boolean isEnabled;
+    @Column(name = "IS_QUOTE_OF_THE_DAY")
+    private boolean isQuoteOfTheDay;
 
     public String getQuote() {
         return quote;
@@ -46,11 +46,11 @@ public class QuoteOfTheDayModel {
         this.id = id;
     }
 
-    public boolean isEnabled() {
-        return isEnabled;
+    public boolean isQuoteOfTheDay() {
+        return isQuoteOfTheDay;
     }
 
-    public void setEnabled(boolean enabled) {
-        isEnabled = enabled;
+    public void setQuoteOfTheDay(boolean quoteOfTheDay) {
+        isQuoteOfTheDay = quoteOfTheDay;
     }
 }

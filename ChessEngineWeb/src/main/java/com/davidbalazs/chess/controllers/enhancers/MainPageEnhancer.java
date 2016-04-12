@@ -1,16 +1,15 @@
 package com.davidbalazs.chess.controllers.enhancers;
 
+import com.davidbalazs.chess.services.ChessProblemService;
 import com.davidbalazs.chess.services.LatestNewsSideBarService;
 import com.davidbalazs.chess.services.QuoteOfTheDayService;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.ui.Model;
 
-/**
- * Created by David on 4/4/2016.
- */
 public class MainPageEnhancer {
     private LatestNewsSideBarService latestNewsSideBarService;
     private QuoteOfTheDayService quoteOfTheDayService;
+    private ChessProblemService chessProblemService;
 
     public void enhanceModelWithSideBar(Model model) {
         enhanceModelWithLatestNewsSideBar(model);
@@ -19,6 +18,7 @@ public class MainPageEnhancer {
     }
 
     private void enhanceModelWithProblemOfTheDaySideBar(Model model) {
+        model.addAttribute("chessProblemOfTheDay", chessProblemService.getProblemOfTheDay());
     }
 
     private void enhanceModelWithQuoteOfTheDaySideBar(Model model) {
@@ -37,5 +37,10 @@ public class MainPageEnhancer {
     @Required
     public void setQuoteOfTheDayService(QuoteOfTheDayService quoteOfTheDayService) {
         this.quoteOfTheDayService = quoteOfTheDayService;
+    }
+
+    @Required
+    public void setChessProblemService(ChessProblemService chessProblemService) {
+        this.chessProblemService = chessProblemService;
     }
 }

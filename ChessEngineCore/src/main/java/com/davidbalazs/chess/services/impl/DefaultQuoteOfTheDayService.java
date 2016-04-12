@@ -1,7 +1,7 @@
 package com.davidbalazs.chess.services.impl;
 
 import com.davidbalazs.chess.daos.QuoteOfTheDayDao;
-import com.davidbalazs.chess.models.QuoteOfTheDayModel;
+import com.davidbalazs.chess.models.QuoteModel;
 import com.davidbalazs.chess.services.QuoteOfTheDayService;
 import org.springframework.beans.factory.annotation.Required;
 
@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Required;
 public class DefaultQuoteOfTheDayService implements QuoteOfTheDayService {
     private QuoteOfTheDayDao quoteOfTheDayDao;
     @Override
-    public QuoteOfTheDayModel getQuoteOfTheDay() {
+    public QuoteModel getQuoteOfTheDay() {
         return quoteOfTheDayDao.getQuoteOfTheDay();
     }
 

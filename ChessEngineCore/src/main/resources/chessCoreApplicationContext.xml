@@ -13,6 +13,9 @@
     <alias name="defaultQuoteOfTheDayDao" alias="quoteOfTheDayDao"/>
     <bean id="defaultQuoteOfTheDayDao" class="com.davidbalazs.chess.daos.impl.DefaultQuoteOfTheDayDao"/>
 
+    <alias name="defaultChessProblemDao" alias="chessProblemDao"/>
+    <bean id="defaultChessProblemDao" class="com.davidbalazs.chess.daos.impl.DefaultChessProblemDao"/>
+
     <alias name="defaultLatestNewsSideBarService" alias="latestNewsSideBarService"/>
     <bean id="defaultLatestNewsSideBarService"
           class="com.davidbalazs.chess.services.impl.DefaultLatestNewsSideBarService">
@@ -22,5 +25,10 @@
     <alias name="defaultQuoteOfTheDayService" alias="quoteOfTheDayService"/>
     <bean id="defaultQuoteOfTheDayService" class="com.davidbalazs.chess.services.impl.DefaultQuoteOfTheDayService">
         <property name="quoteOfTheDayDao" ref="quoteOfTheDayDao"/>
+    </bean>
+
+    <alias name="defaultChessProblemService" alias="chessProblemService"/>
+    <bean id="defaultChessProblemService" class="com.davidbalazs.chess.services.impl.DefaultChessProblemService">
+        <property name="chessProblemDao" ref="chessProblemDao"/>
     </bean>
 </beans>
