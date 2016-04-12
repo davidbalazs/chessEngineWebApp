@@ -14,7 +14,6 @@ public class ChessPositionConverter {
     private static final String CHESS_FEN_REPRESENTATION_EXCEPTION_WRONG_NUMBER_OF_LINES_MESSAGE = "Wrong FEN representation: [{0}]. The number of strings split by '/' should be 8.";
 
     public ChessPosition convert(String chessPositionFen) {
-        //TODO: implement this method.
         String[] chessTableLines = chessPositionFen.split("/");
         int index = 63;
         ChessPosition chessPosition = new ChessPosition();
@@ -26,7 +25,6 @@ public class ChessPositionConverter {
             char[] chessTableLineChars = chessTableLine.toCharArray();
             for(int i=chessTableLineChars.length-1; i>=0; i--) {
                 char fenCharacter=chessTableLineChars[i];
-//            for (char fenCharacter : chessTableLineChars) {
                 if (Character.isDigit(fenCharacter)) {
                     index = index - Character.getNumericValue(fenCharacter);
                 } else {

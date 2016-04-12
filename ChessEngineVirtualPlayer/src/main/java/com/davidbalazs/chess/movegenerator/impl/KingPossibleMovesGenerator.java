@@ -4,9 +4,12 @@ import com.davidbalazs.chess.constants.BitboardConstants;
 import com.davidbalazs.chess.model.ChessPosition;
 import com.davidbalazs.chess.model.FriendlyPieceType;
 import com.davidbalazs.chess.model.PiecePosition;
+import com.davidbalazs.chess.model.Player;
 import com.davidbalazs.chess.movegenerator.PossibleMovesGenerator;
 import com.davidbalazs.chess.processor.BitBoardProcessor;
 import com.davidbalazs.chess.pseudolegalmoves.PseudoLegalMovesGenerator;
+import com.davidbalazs.chess.service.FriendlyChessBoardService;
+import com.davidbalazs.chess.service.KingService;
 import com.davidbalazs.chess.service.MoveService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Required;
@@ -22,6 +25,8 @@ public class KingPossibleMovesGenerator implements PossibleMovesGenerator {
     private BitBoardProcessor bitBoardProcessor;
     private MoveService moveService;
     private PseudoLegalMovesGenerator pseudoLegalMovesGenerator;
+    private KingService kingService;
+    private FriendlyChessBoardService chessBoardService;
 
     @Override
     public TreeSet<Integer> generateWhiteMoves(ChessPosition chessPosition) {
@@ -49,6 +54,7 @@ public class KingPossibleMovesGenerator implements PossibleMovesGenerator {
         return generateKingMoves(chessPosition, blackKingPosition, whiteKingPosition, blackPieces, whitePieces, enemyAttacksBitboard, FriendlyPieceType.BLACK_KING);
     }
 
+    //TODO: vezi daca nu dau sah prin deschidere la regele adversarului.
     private TreeSet<Integer> generateKingMoves(ChessPosition chessPosition, int kingPosition, int enemyKingPosition, long piecesBitboard, long enemyPiecesBitboard, long enemyAttacksBitboard, FriendlyPieceType pieceType) {
         long precomputedKingMoves = BitboardConstants.precomputedKingMoves[kingPosition];
         long precomputedEnemyKingMoves = BitboardConstants.precomputedKingMoves[enemyKingPosition];
@@ -56,7 +62,7 @@ public class KingPossibleMovesGenerator implements PossibleMovesGenerator {
         TreeSet<Integer> possibleMoves = new TreeSet<>(Collections.reverseOrder());
 
         long kingPossibleMovesWithoutCapture = precomputedKingMoves & ~piecesBitboard & ~enemyPiecesBitboard & ~precomputedEnemyKingMoves & ~enemyAttacksBitboard;
-        populatePossibleMovesListFromBitboardWithoutCapture(possibleMoves, pieceType, kingPossibleMovesWithoutCapture, kingPosition);
+        populatePossibleMovesListFromBitboardWithoutCapture(possibleMoves, pieceType, kingPossibleMovesWithoutCapture, kingPosition,chessPosition);
 
         long kingPossibleMovesWithCapture = precomputedKingMoves & ~piecesBitboard & enemyPiecesBitboard & ~precomputedEnemyKingMoves & ~enemyAttacksBitboard;
         populatePossibleMovesListFromBitboardWithCapture(possibleMoves, pieceType, kingPossibleMovesWithCapture, chessPosition, kingPosition);
@@ -64,19 +70,30 @@ public class KingPossibleMovesGenerator implements PossibleMovesGenerator {
         return possibleMoves;
     }
 
-    public void populatePossibleMovesListFromBitboardWithoutCapture(TreeSet<Integer> possibleMoves, FriendlyPieceType pieceType, long possibleMovesBitboard, int kingPosition) {
+    private void populatePossibleMovesListFromBitboardWithoutCapture(TreeSet<Integer> possibleMoves, FriendlyPieceType pieceType, long possibleMovesBitboard, int kingPosition, ChessPosition chessPosition) {
         if (possibleMovesBitboard == 0) {
             return;
         }
 
         for (int i = 0; i < 64; i++) {
             if (((possibleMovesBitboard >> i) & 1L) == 1) {
-                possibleMoves.add(generateMove(pieceType, new PiecePosition(kingPosition % 8, kingPosition / 8), new PiecePosition(i % 8, i / 8), null));
+                int generatedMove = generateMove(pieceType, new PiecePosition(kingPosition % 8, kingPosition / 8), new PiecePosition(i % 8, i / 8), null);
+
+                ChessPosition chessPositionAfterMove = chessBoardService.applyMove(chessPosition, generatedMove);
+                if (!doesMovePutHisKingInCheck(chessPositionAfterMove, pieceType.getPlayer())) {
+                    LOGGER.debug("new move:" + moveService.getFriendlyFormat(generatedMove));
+                    possibleMoves.add(generatedMove);
+                }
             }
         }
     }
 
-    public void populatePossibleMovesListFromBitboardWithCapture(TreeSet<Integer> possibleMoves, FriendlyPieceType pieceType, long possibleMovesBitboard, ChessPosition chessPosition, int kingPosition) {
+    private boolean doesMovePutHisKingInCheck(ChessPosition chessPositionAfterMove, Player playerColor) {
+        return (Player.WHITE.equals(playerColor) && kingService.isWhiteKingInCheck(chessPositionAfterMove)) ||
+                (Player.BLACK.equals(playerColor) && kingService.isBlackKingInCheck(chessPositionAfterMove));
+    }
+
+    private void populatePossibleMovesListFromBitboardWithCapture(TreeSet<Integer> possibleMoves, FriendlyPieceType pieceType, long possibleMovesBitboard, ChessPosition chessPosition, int kingPosition) {
         if (possibleMovesBitboard == 0) {
             return;
         }
@@ -84,14 +101,20 @@ public class KingPossibleMovesGenerator implements PossibleMovesGenerator {
         for (int i = 0; i < 64; i++) {
             if (((possibleMovesBitboard >> i) & 1L) == 1) {
                 FriendlyPieceType capturedPiece = bitBoardProcessor.getPieceAtPosition(i % 8, i / 8, chessPosition);
-                possibleMoves.add(generateMove(pieceType, new PiecePosition(kingPosition % 8, kingPosition / 8), new PiecePosition(i % 8, i / 8), capturedPiece));
+                int generatedMove = generateMove(pieceType, new PiecePosition(kingPosition % 8, kingPosition / 8), new PiecePosition(i % 8, i / 8), capturedPiece);
+
+                ChessPosition chessPositionAfterMove = chessBoardService.applyMove(chessPosition, generatedMove);
+                if (!doesMovePutHisKingInCheck(chessPositionAfterMove, pieceType.getPlayer())) {
+                    LOGGER.debug("new move:" + moveService.getFriendlyFormat(generatedMove));
+                    possibleMoves.add(generatedMove);
+                }
             }
         }
     }
 
-    public int generateMove(FriendlyPieceType pieceType, PiecePosition initialPosition, PiecePosition finalPosition, FriendlyPieceType capturedPiece) {
+    private int generateMove(FriendlyPieceType pieceType, PiecePosition initialPosition, PiecePosition finalPosition, FriendlyPieceType capturedPiece) {
         int generatedMove = moveService.createMove(pieceType, initialPosition, finalPosition, false, false, null, capturedPiece, null, false, false);
-        LOGGER.debug("new move:" + moveService.getFriendlyFormat(generatedMove));
+
         return generatedMove;
     }
 
@@ -108,5 +131,15 @@ public class KingPossibleMovesGenerator implements PossibleMovesGenerator {
     @Required
     public void setPseudoLegalMovesGenerator(PseudoLegalMovesGenerator pseudoLegalMovesGenerator) {
         this.pseudoLegalMovesGenerator = pseudoLegalMovesGenerator;
+    }
+
+    @Required
+    public void setKingService(KingService kingService) {
+        this.kingService = kingService;
+    }
+
+    @Required
+    public void setChessBoardService(FriendlyChessBoardService chessBoardService) {
+        this.chessBoardService = chessBoardService;
     }
 }

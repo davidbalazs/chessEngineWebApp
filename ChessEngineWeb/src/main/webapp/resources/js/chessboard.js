@@ -38,7 +38,7 @@ function validPieceCode(code) {
   return (code.search(/^[bw][KQRNBP]$/) !== -1);
 }
 
-// TODO: this whole function could probably be replaced with a single regex
+// TO DO: this whole function could probably be replaced with a single regex
 function validFen(fen) {
   if (typeof fen !== 'string') return false;
 
@@ -1296,7 +1296,7 @@ widget.clear = function(useAnimation) {
 
 /*
 // get or set config properties
-// TODO: write this, GitHub Issue #1
+// TO DO: write this, GitHub Issue #1
 widget.config = function(arg1, arg2) {
   // get the current config
   if (arguments.length === 0) {
@@ -1326,7 +1326,7 @@ widget.flip = function() {
 };
 
 /*
-// TODO: write this, GitHub Issue #5
+// TO DO: write this, GitHub Issue #5
 widget.highlight = function() {
 
 };

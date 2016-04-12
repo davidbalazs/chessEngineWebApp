@@ -755,7 +755,7 @@ window['Chess'] = window['Chess'] || function(fen) {
   }
 
   function in_threefold_repetition() {
-    /* TODO: while this function is fine for casual use, a better
+    /* to do: while this function is fine for casual use, a better
      * implementation would use a Zobrist key (instead of FEN). the
      * Zobrist key would be maintained in the make_move/undo_move functions,
      * avoiding the costly that we do below.
@@ -1235,7 +1235,7 @@ window['Chess'] = window['Chess'] || function(fen) {
 
       /* add the PGN header headerrmation */
       for (var i in header) {
-        /* TODO: order of enumerated properties in header object is not
+        /* TO DO: order of enumerated properties in header object is not
          * guaranteed, see ECMA-262 spec (section 12.6.4)
          */
         result.push('[' + i + ' \"' + header[i] + '\"]' + newline);

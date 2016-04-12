@@ -160,7 +160,6 @@ public class DefaultFriendlyChessBoardService implements FriendlyChessBoardServi
 
     @Override
     public ChessPosition applyMove(ChessPosition chessPosition, int move) {
-        //TODO: apply move works only without capturing pieces. Moves that have captured pieces won't be applied correctly.
         ChessPosition newChessPosition = new ChessPosition();
         populateChessPosition(chessPosition, newChessPosition);
 

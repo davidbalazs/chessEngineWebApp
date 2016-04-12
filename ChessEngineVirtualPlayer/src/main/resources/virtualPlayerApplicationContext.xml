@@ -88,6 +88,8 @@
         <property name="bitBoardProcessor" ref="bitBoardProcessor"/>
         <property name="moveService" ref="moveService"/>
         <property name="pseudoLegalMovesGenerator" ref="pseudoLegalMovesGenerator"/>
+        <property name="kingService" ref="kingService"/>
+        <property name="chessBoardService" ref="friendlyChessBoardService"/>
     </bean>
 
     <alias name="mainPseudoLegalMovesGenerator" alias="pseudoLegalMovesGenerator"/>

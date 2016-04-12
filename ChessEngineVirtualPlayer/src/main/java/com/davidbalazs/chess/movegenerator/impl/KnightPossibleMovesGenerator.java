@@ -25,7 +25,6 @@ import java.util.TreeSet;
  * Created by David on 10/27/2015.
  */
 public class KnightPossibleMovesGenerator implements PossibleMovesGenerator {
-    //TODO add capture moves
     public static final Logger LOGGER = Logger.getLogger(KnightPossibleMovesGenerator.class);
     private BitBoardProcessor bitBoardProcessor;
     private MoveService moveService;
@@ -74,10 +73,10 @@ public class KnightPossibleMovesGenerator implements PossibleMovesGenerator {
         for (int i = 0; i < 64; i++) {
             if (((possibleMovesBitboard >> i) & 1L) == 1) {
 
-                FriendlyPieceType capturePiece = bitBoardProcessor.getPieceAtPosition(i % 8, i / 8, chessPosition);
+                FriendlyPieceType capturedPiece = bitBoardProcessor.getPieceAtPosition(i % 8, i / 8, chessPosition);
 
                 int generatedMove = moveService.createMove(pieceType, new PiecePosition(i % 8 + distanceToInitialPositionX,
-                        i / 8 + distanceToInitialPositionY), new PiecePosition(i % 8, i / 8), false, false, null, capturePiece, null, false, false);
+                        i / 8 + distanceToInitialPositionY), new PiecePosition(i % 8, i / 8), false, false, null, capturedPiece, null, false, false);
 
                 ChessPosition chessPositionAfterMove = chessBoardService.applyMove(chessPosition, generatedMove);
                 if (!doesMovePutHisKingInCheck(chessPositionAfterMove, pieceType.getPlayer())) {
@@ -95,7 +94,6 @@ public class KnightPossibleMovesGenerator implements PossibleMovesGenerator {
                     generatedMove = moveService.updateWithOppositeKingStateAfterMove(generatedMove, kingStateAfterMove);
                     possibleMoves.add(generatedMove);
                     LOGGER.debug("new move:" + moveService.getFriendlyFormat(generatedMove));
-                    //TODO: instead of false, see if black king will be in check by this new pawn move.
                 }
             }
         }

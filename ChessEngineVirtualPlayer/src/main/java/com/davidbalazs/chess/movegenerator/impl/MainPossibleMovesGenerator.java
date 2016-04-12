@@ -16,10 +16,8 @@ public class MainPossibleMovesGenerator implements PossibleMovesGenerator {
 
     @Override
     public TreeSet<Integer> generateWhiteMoves(ChessPosition chessPosition) {
-        //todo: assertNotNull(possibleMoveGenerators);
-
 //     todo:   before generating the next move, check if there is an attacked piece.
-        TreeSet<Integer> generatedMoves = new TreeSet<Integer>(Collections.reverseOrder());
+        TreeSet<Integer> generatedMoves = new TreeSet<>(Collections.reverseOrder());
 
         for (PossibleMovesGenerator possibleMovesGenerator : possibleMoveGenerators) {
             generatedMoves.addAll(possibleMovesGenerator.generateWhiteMoves(chessPosition));
@@ -30,9 +28,7 @@ public class MainPossibleMovesGenerator implements PossibleMovesGenerator {
 
     @Override
     public TreeSet<Integer> generateBlackMoves(ChessPosition chessPosition) {
-        //todo: assertNotNull(possibleMoveGenerators);
-
-        TreeSet<Integer> generatedMoves = new TreeSet<Integer>(Collections.reverseOrder());
+        TreeSet<Integer> generatedMoves = new TreeSet<>(Collections.reverseOrder());
 
         for (PossibleMovesGenerator possibleMovesGenerator : possibleMoveGenerators) {
             generatedMoves.addAll(possibleMovesGenerator.generateBlackMoves(chessPosition));
