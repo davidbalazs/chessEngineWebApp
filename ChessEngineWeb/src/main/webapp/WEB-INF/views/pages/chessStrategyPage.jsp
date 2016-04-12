@@ -8,9 +8,9 @@
         </c:when>
         <c:otherwise>
             ${chessStrategy.name}
-            <script src="js/chess.js"></script>
+            <script src="<c:url value="/resources/js/chess.js"/>"></script>
             <div id="board" style="width:650px;" class="play-chess-table"></div>
-            <script type="text/javascript" src="js/custom.js"></script>
+            <script type="text/javascript" src="<c:url value="/resources/js/custom.js"/>"></script>
         </c:otherwise>
     </c:choose>
 </template:mainPageTemplate>

@@ -9,7 +9,7 @@
         <c:otherwise>
             <ul class="container-list">
                 <c:forEach items="${chessStrategies}" var="chessStrategy" varStatus="loopStatus">
-                    <li><a href="/chessStrategy/display-strategy?id=${chessStrategy.id}">${chessStrategy.name}
+                    <li><a href="<c:url value="/chessStrategy/display-strategy?id=${chessStrategy.id}"/>">${chessStrategy.name}
                         (${chessStrategy.category})</a></li>
 
                     <c:if test="${!loopStatus.last}">
