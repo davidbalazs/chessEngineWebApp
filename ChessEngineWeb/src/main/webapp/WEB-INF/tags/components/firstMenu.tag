@@ -5,7 +5,7 @@
     <div id="container">
         <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="chess-strategies.html">Strategies</a></li>
+            <li><a href="/chessStrategy/display-all">Strategies</a></li>
             <li><a href="#">How it works</a></li>
             <li><a href="statistics.html">Statistics</a></li>
             <li><a href="/aboutus/">About us</a></li>

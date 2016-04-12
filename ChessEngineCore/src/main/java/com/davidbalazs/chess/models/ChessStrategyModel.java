@@ -1,13 +1,24 @@
 package com.davidbalazs.chess.models;
 
+import javax.persistence.*;
 import java.util.List;
 
-/**
- * @author: david.balazs@iquestgroup.com
- */
+@Entity
+@Table(name = "CHESS_STRATEGY")
 public class ChessStrategyModel {
+    @Id
+    @Column(name = "ID")
+    @GeneratedValue
+    private long id;
+
+    @Column(name = "NAME")
     private String name;
+
+    @Column(name = "CATEGORY")
+    @Enumerated(EnumType.STRING)
     private ChessStrategyCategory category;
+
+    @OneToMany(cascade = CascadeType.ALL)
     private List<ChessStrategyEntityModel> moves;
 
     public String getName() {
@@ -32,5 +43,13 @@ public class ChessStrategyModel {
 
     public void setMoves(List<ChessStrategyEntityModel> moves) {
         this.moves = moves;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }

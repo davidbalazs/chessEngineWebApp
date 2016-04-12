@@ -16,6 +16,9 @@
     <alias name="defaultChessProblemDao" alias="chessProblemDao"/>
     <bean id="defaultChessProblemDao" class="com.davidbalazs.chess.daos.impl.DefaultChessProblemDao"/>
 
+    <alias name="defaultChessStrategyDao" alias="chessStrategyDao"/>
+    <bean id="defaultChessStrategyDao" class="com.davidbalazs.chess.daos.impl.DefaultChessStrategyDao"/>
+
     <alias name="defaultLatestNewsSideBarService" alias="latestNewsSideBarService"/>
     <bean id="defaultLatestNewsSideBarService"
           class="com.davidbalazs.chess.services.impl.DefaultLatestNewsSideBarService">
@@ -30,5 +33,10 @@
     <alias name="defaultChessProblemService" alias="chessProblemService"/>
     <bean id="defaultChessProblemService" class="com.davidbalazs.chess.services.impl.DefaultChessProblemService">
         <property name="chessProblemDao" ref="chessProblemDao"/>
+    </bean>
+
+    <alias name="defaultChessStrategyService" alias="chessStrategyService"/>
+    <bean id="defaultChessStrategyService" class="com.davidbalazs.chess.services.impl.DefaultChessStrategyService">
+        <property name="chessStrategyDao" ref="chessStrategyDao"/>
     </bean>
 </beans>

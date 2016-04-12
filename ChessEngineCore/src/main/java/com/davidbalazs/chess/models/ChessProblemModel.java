@@ -26,6 +26,10 @@ public class ChessProblemModel {
     @Column(name = "IS_PROBLEM_OF_THE_DAY")
     private boolean isProblemOfTheDay;
 
+    @Column(name = "DIFFICULTY_LEVEL")
+    @Enumerated(EnumType.STRING)
+    private ChessProblemDifficultyLevel difficultyLevel;
+
     @OneToMany(cascade = CascadeType.ALL)
     private List<MoveEntityModel> movesForSolution;
 
@@ -75,5 +79,13 @@ public class ChessProblemModel {
 
     public void setIsProblemOfTheDay(boolean isProblemOfTheDay) {
         this.isProblemOfTheDay = isProblemOfTheDay;
+    }
+
+    public ChessProblemDifficultyLevel getDifficultyLevel() {
+        return difficultyLevel;
+    }
+
+    public void setDifficultyLevel(ChessProblemDifficultyLevel difficultyLevel) {
+        this.difficultyLevel = difficultyLevel;
     }
 }

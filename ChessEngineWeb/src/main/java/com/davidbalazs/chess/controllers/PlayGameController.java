@@ -13,9 +13,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
 import java.text.MessageFormat;
 
-/**
- * Created by David on 3/24/2016.
- */
 @Controller
 @RequestMapping(value = "playgame/")
 public class PlayGameController {
@@ -35,6 +32,7 @@ public class PlayGameController {
                                           @RequestParam("sideToMove") String sideToMove,
                                           @RequestParam("virtualPlayerLevel") String virtualPlayerLevel) {
         LOGGER.info(MessageFormat.format(RECEIVED_REQUEST_LOG_MESSAGE, chessPositionFen, sideToMove, virtualPlayerLevel));
+
         PlayerColorData sideToMoveEnum = PlayerColorData.valueOf(sideToMove);
 
         ChessMoveData chessMoveData = chessMoveFacade.getNextMove(chessPositionFen, sideToMoveEnum, Integer.parseInt(virtualPlayerLevel));
