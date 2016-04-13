@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.text.MessageFormat;
 
 public class ResponseTimeMeasurerFilter implements Filter {
     public static final Logger LOGGER = Logger.getLogger(ResponseTimeMeasurerFilter.class);
@@ -29,6 +30,6 @@ public class ResponseTimeMeasurerFilter implements Filter {
             name = ((HttpServletRequest) request).getRequestURI();
         }
 
-        LOGGER.info(name + " took " + elapsed + " ms");
+        LOGGER.info(MessageFormat.format("request {0} took {1} ms.", name, elapsed));
     }
 }
