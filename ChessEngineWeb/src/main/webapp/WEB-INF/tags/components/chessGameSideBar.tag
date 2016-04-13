@@ -19,8 +19,9 @@
             <span>Moves</span>
         </div>
         <div class="aside-box-content">
-            <%--TODO highlight the current move, by using this example: http://jsfiddle.net/65JPw/2/--%>
+
             <script type="text/javascript" src="<c:url value="/resources/js/chess-strategy.js"/>"></script>
+                <input type="button" name="nextMoveButton" class="nextMoveButton" value="Next move"/>
             <table class="chess-strategy-move-table">
                 <tr>
                     <td>1.</td>
@@ -43,6 +44,41 @@
                     <td onClick="move('rnbqk2r/ppp11ppp/4pn2/3p4/1bPP4/2N2N2/PP11PPPP/R1BQKB1R')">bB4</td>
                 </tr>
             </table>
+                <script>
+                    <%--TODO fix this script. It was made using this tutorial: http://jsfiddle.net/65JPw/2/--%>
+                    $("#movesTable td").click(function () {
+                        var columnNumber = $(this).parent().children().index($(this));
+                        if (columnNumber != 0) {
+                            $("#movesTable td").removeClass('selected');
+                            $(this).addClass('selected');
+                            var value = $(this);
+                        }
+                    });
+
+                    $('.nextMoveButton').on('click', function (e) {
+                        var currentSelectedTableCell = $("#movesTable td.selected");
+                        var columnNumber = currentSelectedTableCell.parent().children().index(currentSelectedTableCell);
+                        if (columnNumber == 1) {
+                            var nextMoveTableRow = currentSelectedTableCell.next();
+
+                            if (nextMoveTableRow == null) {
+                                nextMoveTableRow = $("#movesTable tr:first");
+                            }
+
+                            nextMoveTableRow.addClass('selected').siblings().removeClass('selected');
+                        }
+                        else if (columnNumber == 2) {
+                            var nextMoveTableRow = currentSelectedTableCell.parent().next().children().first().next();
+
+                            if (nextMoveTableRow == null) {
+                                nextMoveTableRow = $("#movesTable tr:first");
+                            }
+
+                            $("#movesTable td").removeClass('selected');
+                            nextMoveTableRow.addClass('selected');
+                        }
+                    });
+                </script>
         </div>
     </div>
 </aside>

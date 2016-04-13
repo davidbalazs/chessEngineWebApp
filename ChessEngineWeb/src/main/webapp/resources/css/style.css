@@ -576,6 +576,11 @@ width:45%;
    cursor:default;
 }
 
+.selected {
+	background-color: brown;
+	color: #FFF;
+}
+
 .chess-strategy-move-table td:nth-child(1){
 width:10%;
 }
