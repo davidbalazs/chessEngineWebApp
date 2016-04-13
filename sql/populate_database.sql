@@ -5,3 +5,4 @@ INSERT INTO `chessenginedatabase`.`latest_news` (`ID`, `TEXT`, `TITLE`) VALUES (
 INSERT INTO `chessenginedatabase`.`latest_news` (`ID`, `TEXT`, `TITLE`) VALUES ('2', 'Virtual player is working!', 'Virtual Player');
 
 INSERT INTO `chessenginedatabase`.`chess_problem` (`ID`, `DESCRIPTION`, `INITIAL_POSITION_FEN`, `IS_PROBLEM_OF_THE_DAY`, `NAME`) VALUES ('1', 'first chess problem description', 'r1bqkbnr/ppQQ1ppp/2n5/1B2p3/4P3/5R2/PPPP1PPP/RNBQK2R', true, 'first chess problem');
+INSERT INTO `chessenginedatabase`.`chess_strategy` (`ID`, `CATEGORY`, `NAME`) VALUES ('1', 'OPENING', 'Queen\'s gambit');
