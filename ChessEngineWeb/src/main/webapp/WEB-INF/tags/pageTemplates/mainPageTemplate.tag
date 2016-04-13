@@ -10,7 +10,6 @@
 
         <!-- Main Content area -->
         <section id="content">
-
             <component:circlesMenu/>
 
             <h1>${pageTitle}</h1>
@@ -19,6 +18,6 @@
 
         </section>
 
-        <component:sideBar/>
+        <component:mainSideBar/>
     </div>
 </template:genericPageTemplate>

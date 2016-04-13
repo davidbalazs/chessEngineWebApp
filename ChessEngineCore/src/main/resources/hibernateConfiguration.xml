@@ -22,7 +22,7 @@ http://www.springframework.org/schema/tx/spring-tx.xsd">
         <property name="jpaProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
-                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.show_sql">false</prop>
                 <prop key="hibernate.hbm2ddl.auto">update</prop>
 
                 <!-- Configuring Connection Pool -->
@@ -38,9 +38,9 @@ http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <!--DataSource -->
     <!--<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">-->
-        <!--<property name="location">-->
-            <!--<value>database.properties</value>-->
-        <!--</property>-->
+    <!--<property name="location">-->
+    <!--<value>database.properties</value>-->
+    <!--</property>-->
     <!--</bean>-->
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">

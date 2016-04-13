@@ -9,12 +9,15 @@ import com.davidbalazs.chess.service.FriendlyChessBoardService;
 import com.davidbalazs.chess.service.MoveService;
 import com.davidbalazs.chess.services.impl.DefaultFriendlyChessBoardService;
 import com.davidbalazs.chess.services.impl.DefaultMoveService;
+import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  */
 public class Main {
+    public static final Logger LOGGER = Logger.getLogger(Main.class);
+
     public static void main(String[] args) {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("virtualPlayerApplicationContext.xml");
         FriendlyChessBoardService friendlyChessBoardService = applicationContext.getBean("friendlyChessBoardService", DefaultFriendlyChessBoardService.class);

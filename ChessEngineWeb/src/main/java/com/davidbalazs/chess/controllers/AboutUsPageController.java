@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.annotation.Resource;
 
 @Controller
-@RequestMapping(value = "aboutus/")
+@RequestMapping(value = "about-us/")
 public class AboutUsPageController {
     @Resource(name = "mainPageEnhancer")
     private MainPageEnhancer mainPageEnhancer;

@@ -16,3 +16,4 @@ var cfg = {
 board = ChessBoard('board', cfg);
 
 updateStatus();
+
