@@ -6,13 +6,13 @@
 <template:mainPageTemplate pageTitle="Contact us">
     <form:form method="POST" action="send-message" class="contact-us-form" modelAttribute="contactUsForm">
         <form:input path="username" placeholder="Name"/>
-        <form:errors path="username"/>
+        <form:errors path="username" cssClass="formValidationErrorMessage"/>
 
         <form:input path="email" placeholder="Email"/>
-        <form:errors path="email"/>
+        <form:errors path="email" cssClass="formValidationErrorMessage"/>
 
         <form:textarea path="message" placeholder="Message"/>
-        <form:errors path="message"/>
+        <form:errors path="message" cssClass="formValidationErrorMessage"/>
 
         <form:button type="submit">Send message</form:button>
     </form:form>

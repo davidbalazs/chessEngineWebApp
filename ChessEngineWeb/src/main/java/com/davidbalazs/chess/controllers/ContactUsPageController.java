@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -31,15 +32,15 @@ public class ContactUsPageController {
     }
 
     @RequestMapping(value = "send-message", method = RequestMethod.POST)
-    public String sendMessage(Model model, @Valid ContactUsForm contactUsForm, BindingResult result) {
+    public String sendMessage(Model model, @Valid @ModelAttribute("contactUsForm") ContactUsForm contactUsForm, BindingResult result) {
         mainPageEnhancer.enhanceModelWithSideBar(model);
-        model.addAttribute("contactUsForm", generateContactUsForm());
 
         if (result.hasErrors()) {
             LOGGER.error("error submitting contactUsForm");
             return "pages/contactUsPage";
         }
 
+        model.addAttribute("contactUsForm", generateContactUsForm());
         LOGGER.info("received message from user " + contactUsForm.getUsername());
         return "pages/contactUsPage";
     }

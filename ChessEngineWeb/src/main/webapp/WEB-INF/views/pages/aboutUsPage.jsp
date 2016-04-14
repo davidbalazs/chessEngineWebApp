@@ -8,12 +8,14 @@
         continuously update the virtual chess player to offer you the best experience and
         a good opponent.
     </p>
+
     <h2>What you can do on this site</h2>
+
     <p>
         You have the chance to <a href="login.html">register</a> and play chess games against the virtual chess player
         as a registered user. You will have a set o statistics and you will be able to save your
         games and come back to them later.
     </p>
+
     <p>If you have any questions, don't hesitate to <a href="<c:url value="/contact-us/"/>">Contact us</a>!</p>
 </template:mainPageTemplate>
-

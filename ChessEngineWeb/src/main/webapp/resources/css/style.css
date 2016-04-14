@@ -586,6 +586,11 @@ width:10%;
 }
 /*Contact us 
 --------------------------------------------- */
+.formValidationErrorMessage {
+	color: #E64A19;
+	font-size:1em;
+}
+
 .contact-us-form input {
 	width:50%;
 	border-radius: 10px;
