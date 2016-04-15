@@ -1,14 +1,30 @@
 package com.davidbalazs.chess.models;
 
+import javax.persistence.*;
 import java.util.Date;
 
 /**
  * @author: david.balazs@iquestgroup.com
  */
+@Entity
+@Table(name = "MESSAGE")
 public class MessageModel {
+
+    @Id
+    @Column(name = "ID")
+    @GeneratedValue
+    private long id;
+
+    @Column(name = "EMAIL")
     private String email;
+
+    @Column(name = "USERNAME")
     private String username;
-    private String message;
+
+    @Column(name = "TEXT")
+    private String text;
+
+    @Column(name = "DATE")
     private Date date;
 
     public String getEmail() {
@@ -27,12 +43,13 @@ public class MessageModel {
         this.username = username;
     }
 
-    public String getMessage() {
-        return message;
+
+    public String getText() {
+        return text;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setText(String text) {
+        this.text = text;
     }
 
     public Date getDate() {
@@ -41,5 +58,13 @@ public class MessageModel {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }

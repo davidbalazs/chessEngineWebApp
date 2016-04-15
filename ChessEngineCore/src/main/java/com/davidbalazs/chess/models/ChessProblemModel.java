@@ -31,7 +31,7 @@ public class ChessProblemModel {
     private ChessProblemDifficultyLevel difficultyLevel;
 
     @OneToMany(cascade = CascadeType.ALL)
-    private List<MoveEntityModel> movesForSolution;
+    private List<ChessMovePairModel> movePairsForSolution;
 
     public String getName() {
         return name;
@@ -57,14 +57,6 @@ public class ChessProblemModel {
         this.initialPositionFen = initialPositionFen;
     }
 
-    public List<MoveEntityModel> getMovesForSolution() {
-        return movesForSolution;
-    }
-
-    public void setMovesForSolution(List<MoveEntityModel> movesForSolution) {
-        this.movesForSolution = movesForSolution;
-    }
-
     public long getId() {
         return id;
     }
@@ -87,5 +79,13 @@ public class ChessProblemModel {
 
     public void setDifficultyLevel(ChessProblemDifficultyLevel difficultyLevel) {
         this.difficultyLevel = difficultyLevel;
+    }
+
+    public List<ChessMovePairModel> getMovePairsForSolution() {
+        return movePairsForSolution;
+    }
+
+    public void setMovePairsForSolution(List<ChessMovePairModel> movePairsForSolution) {
+        this.movePairsForSolution = movePairsForSolution;
     }
 }

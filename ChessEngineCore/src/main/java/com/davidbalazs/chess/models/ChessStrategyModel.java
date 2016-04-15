@@ -19,7 +19,7 @@ public class ChessStrategyModel {
     private ChessStrategyCategory category;
 
     @OneToMany(cascade = CascadeType.ALL)
-    private List<ChessStrategyEntityModel> moves;
+    private List<ChessStrategyMovePairModel> movePairs;
 
     public String getName() {
         return name;
@@ -37,12 +37,12 @@ public class ChessStrategyModel {
         this.category = category;
     }
 
-    public List<ChessStrategyEntityModel> getMoves() {
-        return moves;
+    public List<ChessStrategyMovePairModel> getMovePairs() {
+        return movePairs;
     }
 
-    public void setMoves(List<ChessStrategyEntityModel> moves) {
-        this.moves = moves;
+    public void setMovePairs(List<ChessStrategyMovePairModel> movePairs) {
+        this.movePairs = movePairs;
     }
 
     public long getId() {

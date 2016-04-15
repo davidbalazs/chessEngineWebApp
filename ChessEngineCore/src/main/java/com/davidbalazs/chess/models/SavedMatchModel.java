@@ -1,22 +1,41 @@
 package com.davidbalazs.chess.models;
 
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
 /**
  * @author: david.balazs@iquestgroup.com
  */
+@Entity
+@Table(name = "SAVED_MATCH")
 public class SavedMatchModel {
+
+    @Id
+    @Column(name = "ID")
+    @GeneratedValue
+    private long id;
+
+    @Column(name = "NAME")
     private String name;
+
+    @Column(name = "PLAYER_COLOR")
+    @Enumerated(EnumType.STRING)
     private PlayerColor playerColor;
+
+    @Column(name = "DATE")
     private Date date;
 
+    @Column(name = "STATUS")
     @Enumerated(EnumType.STRING)
     private MatchStatus status;
+
+    @Column(name = "VIRTUAL_PLAYER_LEVEL")
+    @Enumerated(EnumType.STRING)
     private VirtualPlayerLevel virtualPlayerLevel;
-    private List<MoveEntityModel> moves;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<ChessMovePairModel> movePairs;
 
     public String getName() {
         return name;
@@ -58,11 +77,19 @@ public class SavedMatchModel {
         this.virtualPlayerLevel = virtualPlayerLevel;
     }
 
-    public List<MoveEntityModel> getMoves() {
-        return moves;
+    public List<ChessMovePairModel> getMovePairs() {
+        return movePairs;
     }
 
-    public void setMoves(List<MoveEntityModel> moves) {
-        this.moves = moves;
+    public void setMovePairs(List<ChessMovePairModel> movePairs) {
+        this.movePairs = movePairs;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }

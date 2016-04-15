@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.davidbalazs.chess.models</OriginalElement>
+  <nodes>
+    <node x="0.0" y="222.0">com.davidbalazs.chess.models.ChessProblemModel</node>
+    <node x="0.0" y="444.0">com.davidbalazs.chess.models.PlayerColor</node>
+    <node x="348.0" y="296.0">com.davidbalazs.chess.models.VirtualPlayerLevel</node>
+    <node x="606.0" y="114.0">com.davidbalazs.chess.models.MessageModel</node>
+    <node x="-396.0" y="361.0">com.davidbalazs.chess.models.ChessStrategyCategory</node>
+    <node x="612.0" y="68.0">com.davidbalazs.chess.models.QuoteModel</node>
+    <node x="-367.0" y="287.0">com.davidbalazs.chess.models.ChessStrategyModel</node>
+    <node x="-367.0" y="213.0">com.davidbalazs.chess.models.ChessStrategyEntityModel</node>
+    <node x="244.0" y="172.0">com.davidbalazs.chess.models.SavedMatchModel</node>
+    <node x="-24.0" y="112.0">com.davidbalazs.chess.models.ChessMovePairModel</node>
+    <node x="583.0" y="157.0">com.davidbalazs.chess.models.LatestNewsEntityModel</node>
+    <node x="-319.0" y="106.0">com.davidbalazs.chess.models.ChessStrategyMoveModel</node>
+    <node x="241.0" y="357.0">com.davidbalazs.chess.models.MatchStatus</node>
+    <node x="-117.0" y="295.0">com.davidbalazs.chess.models.ChessProblemDifficultyLevel</node>
+    <node x="-272.0" y="8.0">com.davidbalazs.chess.models.ChessMoveModel</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.davidbalazs.chess.models.ChessStrategyModel" target="com.davidbalazs.chess.models.ChessStrategyCategory">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.davidbalazs.chess.models.SavedMatchModel" target="com.davidbalazs.chess.models.MatchStatus">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.davidbalazs.chess.models.SavedMatchModel" target="com.davidbalazs.chess.models.PlayerColor">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.davidbalazs.chess.models.ChessStrategyMoveModel" target="com.davidbalazs.chess.models.ChessMoveModel">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.davidbalazs.chess.models.SavedMatchModel" target="com.davidbalazs.chess.models.VirtualPlayerLevel">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.davidbalazs.chess.models.SavedMatchModel" target="com.davidbalazs.chess.models.ChessMovePairModel">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.davidbalazs.chess.models.ChessProblemModel" target="com.davidbalazs.chess.models.ChessProblemDifficultyLevel">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.davidbalazs.chess.models.ChessStrategyModel" target="com.davidbalazs.chess.models.ChessStrategyEntityModel">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.davidbalazs.chess.models.ChessProblemModel" target="com.davidbalazs.chess.models.ChessMovePairModel">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.davidbalazs.chess.models.ChessMovePairModel" target="com.davidbalazs.chess.models.ChessMoveModel">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.davidbalazs.chess.models.ChessStrategyEntityModel" target="com.davidbalazs.chess.models.ChessStrategyMoveModel">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="236.5" y="236.5" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

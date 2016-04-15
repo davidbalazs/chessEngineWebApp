@@ -5,6 +5,7 @@ import com.davidbalazs.chess.models.ChessStrategyModel;
 import com.davidbalazs.chess.services.ChessStrategyService;
 import org.springframework.beans.factory.annotation.Required;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 /**
@@ -14,6 +15,7 @@ public class DefaultChessStrategyService implements ChessStrategyService {
     private ChessStrategyDao chessStrategyDao;
 
     @Override
+    @Transactional
     public List<ChessStrategyModel> getChessStrategies() {
         return chessStrategyDao.getAll();
     }

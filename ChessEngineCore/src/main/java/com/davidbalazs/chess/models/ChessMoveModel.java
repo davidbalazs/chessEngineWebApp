@@ -6,8 +6,8 @@ import javax.persistence.*;
  * @author: david.balazs@iquestgroup.com
  */
 @Entity
-@Table(name = "MOVE_ENTITY")
-public class MoveEntityModel {
+@Table(name = "CHESS_MOVE")
+public class ChessMoveModel {
 
     @Id
     @Column(name = "ID")

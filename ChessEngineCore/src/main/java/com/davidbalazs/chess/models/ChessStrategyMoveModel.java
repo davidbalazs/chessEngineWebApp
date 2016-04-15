@@ -6,27 +6,26 @@ import javax.persistence.*;
  * @author: david.balazs@iquestgroup.com
  */
 @Entity
-@Table(name = "CHESS_STRATEGY_ENTITY")
-public class ChessStrategyEntityModel {
-
+@Table(name = "CHESS_STRATEGY_MOVE")
+public class ChessStrategyMoveModel {
     @Id
     @Column(name = "ID")
     @GeneratedValue
     private long id;
 
-    @OneToOne(cascade=CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
-    private MoveEntityModel moveEntity;
+    private ChessMoveModel move;
 
     @Column(name = "DESCRIPTION")
     private String description;
 
-    public MoveEntityModel getMoveEntity() {
-        return moveEntity;
+    public ChessMoveModel getMove() {
+        return move;
     }
 
-    public void setMoveEntity(MoveEntityModel moveEntity) {
-        this.moveEntity = moveEntity;
+    public void setMove(ChessMoveModel move) {
+        this.move = move;
     }
 
     public String getDescription() {
