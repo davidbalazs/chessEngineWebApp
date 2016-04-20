@@ -34,7 +34,7 @@ public class SavedMatchModel {
     @Enumerated(EnumType.STRING)
     private VirtualPlayerLevel virtualPlayerLevel;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<ChessMovePairModel> movePairs;
 
     public String getName() {

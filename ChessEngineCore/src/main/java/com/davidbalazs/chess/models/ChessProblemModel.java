@@ -30,7 +30,7 @@ public class ChessProblemModel {
     @Enumerated(EnumType.STRING)
     private ChessProblemDifficultyLevel difficultyLevel;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<ChessMovePairModel> movePairsForSolution;
 
     public String getName() {

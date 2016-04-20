@@ -9,26 +9,13 @@
         <script type="text/javascript" src="<c:url value="/resources/js/chess-strategy.js"/>"></script>
         <input type="button" name="nextMoveButton" class="nextMoveButton" value="Next move"/>
         <table class="chess-strategy-move-table">
-            <tr>
-                <td>1.</td>
-                <td onClick="move('rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR')">d4</td>
-                <td onClick="move('rnbqkbnr/ppp1pppp/8/3p4/3P4/8/PPP1PPPP/RNBQKBNR')">d5</td>
-            </tr>
-            <tr>
-                <td>2.</td>
-                <td onClick="move('rnbqkbnr/ppp1pppp/8/3p4/3P4/5N2/PPP1PPPP/RNBQKB1R')">nF3</td>
-                <td onClick="move('rnbqkb1r/ppp1pppp/5n2/3p4/3P4/5N2/PPP1PPPP/RNBQKB1R')">nF6</td>
-            </tr>
-            <tr>
-                <td>3.</td>
-                <td onClick="move('rnbqkb1r/ppp1pppp/5n2/3p4/2PP4/5N2/PP11PPPP/RNBQKB1R')">c4</td>
-                <td onClick="move('rnbqkb1r/ppp11ppp/4pn2/3p4/2PP4/5N2/PP11PPPP/RNBQKB1R')">e6</td>
-            </tr>
-            <tr>
-                <td>4.</td>
-                <td onClick="move('rnbqkb1r/ppp11ppp/4pn2/3p4/2PP4/2N2N2/PP11PPPP/R1BQKB1R')">nC3</td>
-                <td onClick="move('rnbqk2r/ppp11ppp/4pn2/3p4/1bPP4/2N2N2/PP11PPPP/R1BQKB1R')">bB4</td>
-            </tr>
+            <c:forEach items="${chessStrategy.movePairs}" var="movePair" varStatus="loopStatus">
+                <tr>
+                    <td>${loopStatus.index}.</td>
+                    <td onClick="move('${movePair.whiteMove.move.fenPosition}')">${movePair.whiteMove.description}</td>
+                    <td onClick="move('${movePair.blackMove.move.fenPosition}')">${movePair.blackMove.description}</td>
+                </tr>
+            </c:forEach>
         </table>
         <script>
             <%--TODO fix this script.

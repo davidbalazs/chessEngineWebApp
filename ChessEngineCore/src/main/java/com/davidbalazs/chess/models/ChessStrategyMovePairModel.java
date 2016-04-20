@@ -1,5 +1,7 @@
 package com.davidbalazs.chess.models;
 
+import org.hibernate.annotations.IndexColumn;
+
 import javax.persistence.*;
 
 @Entity
@@ -10,12 +12,14 @@ public class ChessStrategyMovePairModel {
     @GeneratedValue
     private long id;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "join_table_strategy_white_move")
+    @IndexColumn(base = 1, name = "dnr")
     private ChessStrategyMoveModel whiteMove;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "join_table_strategy_black_move")
+    @IndexColumn(base = 1, name = "pmnr")
     private ChessStrategyMoveModel blackMove;
 
     public ChessStrategyMoveModel getWhiteMove() {

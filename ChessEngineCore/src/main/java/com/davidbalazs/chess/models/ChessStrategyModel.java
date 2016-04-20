@@ -18,7 +18,7 @@ public class ChessStrategyModel {
     @Enumerated(EnumType.STRING)
     private ChessStrategyCategory category;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<ChessStrategyMovePairModel> movePairs;
 
     public String getName() {
