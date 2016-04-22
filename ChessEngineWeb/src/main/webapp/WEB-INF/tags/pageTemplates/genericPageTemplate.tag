@@ -25,6 +25,7 @@
         <script src="<c:url value="/resources/js/json3.min.js" />"></script>
         <script src="<c:url value="/resources/js/jquery-1.10.1.min.js" />"></script>
         <script src="<c:url value="/resources/js/chessboard.js" />"></script>
+        <script src="<c:url value="/resources/js/mainJavaScript.js" />"></script>
         <!-- end chess table related -->
     </c:if>
 </head>
