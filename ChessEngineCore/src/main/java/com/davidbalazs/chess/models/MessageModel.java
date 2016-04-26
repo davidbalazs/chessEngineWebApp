@@ -27,6 +27,9 @@ public class MessageModel {
     @Column(name = "DATE")
     private Date date;
 
+    @Column(name = "IS_READ")
+    private boolean isRead;
+
     public String getEmail() {
         return email;
     }
@@ -66,5 +69,13 @@ public class MessageModel {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public boolean isRead() {
+        return isRead;
+    }
+
+    public void setRead(boolean read) {
+        isRead = read;
     }
 }

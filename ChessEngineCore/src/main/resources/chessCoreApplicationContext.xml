@@ -10,6 +10,9 @@
     <alias name="defaultLatestNewsSideBarDao" alias="latestNewsSideBarDao"/>
     <bean id="defaultLatestNewsSideBarDao" class="com.davidbalazs.chess.daos.impl.DefaultLatestNewsSideBarDao"/>
 
+    <alias name="defaultMessageDao" alias="messageDao"/>
+    <bean id="defaultMessageDao" class="com.davidbalazs.chess.daos.impl.DefaultMessageDao"/>
+
     <alias name="defaultQuoteOfTheDayDao" alias="quoteOfTheDayDao"/>
     <bean id="defaultQuoteOfTheDayDao" class="com.davidbalazs.chess.daos.impl.DefaultQuoteOfTheDayDao"/>
 
@@ -23,6 +26,12 @@
     <bean id="defaultLatestNewsSideBarService"
           class="com.davidbalazs.chess.services.impl.DefaultLatestNewsSideBarService">
         <property name="latestNewsSideBarDao" ref="latestNewsSideBarDao"/>
+    </bean>
+
+    <alias name="defaultMessageService" alias="messageService"/>
+    <bean id="defaultMessageService"
+          class="com.davidbalazs.chess.services.impl.DefaultMessageService">
+        <property name="messageDao" ref="messageDao"/>
     </bean>
 
     <alias name="defaultQuoteOfTheDayService" alias="quoteOfTheDayService"/>

@@ -2,6 +2,7 @@ package com.davidbalazs.chess.controllers;
 
 import com.davidbalazs.chess.controllers.enhancers.MainPageEnhancer;
 import com.davidbalazs.chess.data.ContactUsForm;
+import com.davidbalazs.chess.facades.MessageFacade;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
+import java.text.MessageFormat;
 
 /**
  * @author: david.balazs@iquestgroup.com
@@ -23,6 +25,9 @@ public class ContactUsPageController {
 
     @Resource(name = "mainPageEnhancer")
     private MainPageEnhancer mainPageEnhancer;
+
+    @Resource(name = "messageFacade")
+    private MessageFacade messageFacade;
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String loadPage(Model model) {
@@ -40,8 +45,11 @@ public class ContactUsPageController {
             return "pages/contactUsPage";
         }
 
-        model.addAttribute("contactUsForm", generateContactUsForm());
-        LOGGER.info("received message from user " + contactUsForm.getUsername());
+        LOGGER.info(MessageFormat.format("received message from user [{0}] and message: [{1}]",
+                contactUsForm.getUsername(), contactUsForm.getMessage().replace(System.getProperty("line.separator"), " ")));
+
+        messageFacade.create(contactUsForm);
+        model.addAttribute("contactUsMessageSentSuccessfuly", true);
         return "pages/contactUsPage";
     }
 

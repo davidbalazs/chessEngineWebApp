@@ -10,7 +10,15 @@
         <property name="moveAlgorithm" ref="moveAlgorithm"/>
     </bean>
 
+    <alias name="defaultMessageFacade" alias="messageFacade"/>
+    <bean id="defaultMessageFacade" class="com.davidbalazs.chess.facades.impl.DefaultMessageFacade">
+        <property name="messageService" ref="messageService"/>
+        <property name="messageConverter" ref="messageConverter"/>
+    </bean>
+
     <bean id="chessPositionConverter" class="com.davidbalazs.chess.converters.ChessPositionConverter"/>
+
+    <bean id="messageConverter" class="com.davidbalazs.chess.converters.MessageConverter"/>
 
     <bean id="chessMoveConverter" class="com.davidbalazs.chess.converters.ChessMoveConverter">
         <property name="moveService" ref="moveService"/>
