@@ -1,16 +1,17 @@
 package com.davidbalazs.chess.controllers;
 
 import com.davidbalazs.chess.data.ChessMoveData;
+import com.davidbalazs.chess.data.PlayGameForm;
 import com.davidbalazs.chess.data.PlayerColorData;
 import com.davidbalazs.chess.facades.ChessMoveFacade;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.validation.Valid;
 import java.text.MessageFormat;
 
 @Controller
@@ -22,7 +23,10 @@ public class PlayGameController {
     private ChessMoveFacade chessMoveFacade;
 
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public String getPage() {
+    public String getPage(Model model, @Valid @ModelAttribute("playGameForm") PlayGameForm playGameForm, BindingResult result) {
+
+
+        //try to add match entry in db. If it fails, log an error message, but let player play the game without saving it.
         return "pages/playGamePage";
     }
 
