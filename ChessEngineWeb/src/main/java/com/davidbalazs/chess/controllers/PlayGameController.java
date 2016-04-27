@@ -23,8 +23,15 @@ public class PlayGameController {
     private ChessMoveFacade chessMoveFacade;
 
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public String getPage(Model model, @Valid @ModelAttribute("playGameForm") PlayGameForm playGameForm, BindingResult result) {
+    public String playGame(Model model) {
+        PlayGameForm playGameForm = new PlayGameForm();
+        model.addAttribute("playGameForm", playGameForm);
 
+        return "pages/playGameFormPage";
+    }
+
+    @RequestMapping(value = "start-game", method = RequestMethod.POST)
+    public String startGame(Model model, @Valid @ModelAttribute("playGameForm") PlayGameForm playGameForm, BindingResult result) {
 
         //try to add match entry in db. If it fails, log an error message, but let player play the game without saving it.
         return "pages/playGamePage";
