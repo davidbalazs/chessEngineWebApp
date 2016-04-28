@@ -3,6 +3,7 @@ package com.davidbalazs.chess.controllers;
 import com.davidbalazs.chess.data.ChessMoveData;
 import com.davidbalazs.chess.data.PlayGameForm;
 import com.davidbalazs.chess.data.PlayerColorData;
+import com.davidbalazs.chess.data.VirtualPlayerLevelData;
 import com.davidbalazs.chess.facades.ChessMoveFacade;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
@@ -26,13 +27,14 @@ public class PlayGameController {
     public String playGame(Model model) {
         PlayGameForm playGameForm = new PlayGameForm();
         model.addAttribute("playGameForm", playGameForm);
+        model.addAttribute("possibleVirtualPlayerLevels", VirtualPlayerLevelData.values());
+        model.addAttribute("possiblePlayerColorValues", PlayerColorData.values());
 
         return "pages/playGameFormPage";
     }
 
     @RequestMapping(value = "start-game", method = RequestMethod.POST)
-    public String startGame(Model model, @Valid @ModelAttribute("playGameForm") PlayGameForm playGameForm, BindingResult result) {
-
+    public String startGame(Model model, @ModelAttribute("playGameForm") PlayGameForm playGameForm) {
         //try to add match entry in db. If it fails, log an error message, but let player play the game without saving it.
         return "pages/playGamePage";
     }
