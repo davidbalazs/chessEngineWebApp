@@ -7,12 +7,11 @@
             <p>The chess problem you have requested is unavailable.</p>
         </c:when>
         <c:otherwise>
-            ${chessProblem.name}
-            ${chessProblem.description}
-
-            <script src="<c:url value="/resources/js/chess.js"/>"></script>
-            <div id="board" style="width:650px;" class="play-chess-table"></div>
-            <script type="text/javascript" src="<c:url value="/resources/js/custom.js"/>"></script>
+            <div id="board" style="width:650px;"></div>
+            <script>  var board = ChessBoard('board', {
+                position: '${chessProblem.initialPositionFen}',
+                showNotation: false
+            });</script>
         </c:otherwise>
     </c:choose>
 </template:chessTablePageTemplate>
