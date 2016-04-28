@@ -12,6 +12,14 @@ public class PlayGameForm {
     @NotEmpty(message = "Please select a player color.")
     private PlayerColorData playerColor;
 
+    /**
+     * Using constructor to set default values for fields.
+     */
+    public PlayGameForm() {
+        virtualPlayerLevel = VirtualPlayerLevelData.LEVEL_1;
+        playerColor = PlayerColorData.WHITE;
+    }
+
     public VirtualPlayerLevelData getVirtualPlayerLevel() {
         return virtualPlayerLevel;
     }

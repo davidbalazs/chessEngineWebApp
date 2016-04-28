@@ -22,6 +22,8 @@ import java.text.MessageFormat;
 @RequestMapping(value = "contact-us/")
 public class ContactUsPageController {
     public static final Logger LOGGER = Logger.getLogger(ContactUsPageController.class);
+    private static final String RECEIVED_MESSAGE_LOG_MESSAGE = "received message from user [{0}] and message: [{1}]";
+    private static final String ERROR_SUBMITTING_MESSAGE_FORM_LOG_MESSAGE = "error submitting contactUsForm";
 
     @Resource(name = "mainPageEnhancer")
     private MainPageEnhancer mainPageEnhancer;
@@ -41,11 +43,11 @@ public class ContactUsPageController {
         mainPageEnhancer.enhanceModelWithSideBar(model);
 
         if (result.hasErrors()) {
-            LOGGER.error("error submitting contactUsForm");
+            LOGGER.error(ERROR_SUBMITTING_MESSAGE_FORM_LOG_MESSAGE);
             return "pages/contactUsPage";
         }
 
-        LOGGER.info(MessageFormat.format("received message from user [{0}] and message: [{1}]",
+        LOGGER.info(MessageFormat.format(RECEIVED_MESSAGE_LOG_MESSAGE,
                 contactUsForm.getUsername(), contactUsForm.getMessage().replace(System.getProperty("line.separator"), " ")));
 
         messageFacade.create(contactUsForm);

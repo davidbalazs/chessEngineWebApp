@@ -27,7 +27,6 @@ public abstract class DefaultGenericDao<T> implements GenericDao<T> {
     @Override
     public void create(T t) {
         entityManager.merge(t);
-
     }
 
     @Override
