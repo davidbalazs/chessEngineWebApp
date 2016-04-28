@@ -11,4 +11,6 @@ public interface ChessProblemService {
     List<ChessProblemModel> getAll();
 
     ChessProblemModel getProblemOfTheDay();
+
+    ChessProblemModel getById(long id);
 }

@@ -23,6 +23,11 @@ public class DefaultChessProblemService implements ChessProblemService {
         return chessProblemDao.getProblemOfTheDay();
     }
 
+    @Override
+    public ChessProblemModel getById(long id) {
+        return chessProblemDao.getById(id);
+    }
+
     @Required
     public void setChessProblemDao(ChessProblemDao chessProblemDao) {
         this.chessProblemDao = chessProblemDao;

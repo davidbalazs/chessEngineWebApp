@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 
@@ -29,5 +30,12 @@ public class ChessProblemPageController {
 
         model.addAttribute("chessProblems", chessProblemService.getAll());
         return "pages/problemsPage";
+    }
+
+    @RequestMapping(value = "problem", method = RequestMethod.GET)
+    public String getProblemById(@RequestParam("problem-id") long problemId, Model model) {
+        model.addAttribute("chessProblem", chessProblemService.getById(problemId));
+
+        return "pages/problemPage";
     }
 }
