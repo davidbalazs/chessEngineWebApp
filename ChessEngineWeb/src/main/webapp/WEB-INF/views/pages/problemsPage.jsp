@@ -8,17 +8,19 @@
         </c:when>
         <c:otherwise>
             <c:forEach items="${chessProblems}" var="chessProblem">
-                <a href="<c:url value="problem?problem-id=${chessProblem.id}"/>" class="center">
-                    <div id="chessProblem${chessProblem.id}" style="width: 267px;"></div>
-                    <p>${chessProblem.description}</p>
+                <div class="chess-problem-item">
+                    <a href="<c:url value="problem?problem-id=${chessProblem.id}"/>" class="center">
+                        <div id="chessProblem${chessProblem.id}" style="width: 150px;"></div>
+                        <span>${chessProblem.description}</span>
 
-                    <p>${chessProblem.difficultyLevel}</p>
-                </a>
+                        <span>${chessProblem.difficultyLevel}</span>
+                    </a>
 
-                <script>  var chessProblem${chessProblem.id} = ChessBoard('chessProblem${chessProblem.id}', {
-                    position: '${chessProblem.initialPositionFen}',
-                    showNotation: false
-                });</script>
+                    <script>  var chessProblem${chessProblem.id} = ChessBoard('chessProblem${chessProblem.id}', {
+                        position: '${chessProblem.initialPositionFen}',
+                        showNotation: false
+                    });</script>
+                </div>
             </c:forEach>
         </c:otherwise>
     </c:choose>
