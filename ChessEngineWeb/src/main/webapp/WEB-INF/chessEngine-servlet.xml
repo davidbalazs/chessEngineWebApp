@@ -12,6 +12,7 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
     <import resource="classpath:virtualPlayerApplicationContext.xml"/>
     <import resource="spring/ChessEngineWebApplicationContext.xml"/>
     <import resource="classpath*:chessCoreApplicationContext.xml"/>
+    <import resource="spring/spring-security.xml"/>
 
     <mvc:annotation-driven/>
     <context:annotation-config/>
