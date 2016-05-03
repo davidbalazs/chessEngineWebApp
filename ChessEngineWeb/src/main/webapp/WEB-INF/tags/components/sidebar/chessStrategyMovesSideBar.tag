@@ -8,7 +8,7 @@
 
         <script type="text/javascript" src="<c:url value="/resources/js/chess-strategy.js"/>"></script>
         <input type="button" name="nextMoveButton" class="nextMoveButton" value="Next move"/>
-        <table class="chess-strategy-move-table">
+        <table class="chess-strategy-move-table" id="movesTable">
             <c:forEach items="${chessStrategy.movePairs}" var="movePair" varStatus="loopStatus">
                 <tr>
                     <td>${loopStatus.index}.</td>
@@ -34,6 +34,9 @@
 
             $('.nextMoveButton').on('click', function (e) {
                 var currentSelectedTableCell = $("#movesTable td.selected");
+                if(!currentSelectedTableCell.is("td")) {
+                    alert('!!!!!!!!!!!!!!!!!!!!!!!!!!!!there is no TD tag selected. you havce to replace this alert with a jquery statement that selects the first TD in the table!!!!!!!!!!!!');
+                }
                 var columnNumber = currentSelectedTableCell.parent().children().index(currentSelectedTableCell);
                 if (columnNumber == 1) {
                     var nextMoveTableRow = currentSelectedTableCell.next();
