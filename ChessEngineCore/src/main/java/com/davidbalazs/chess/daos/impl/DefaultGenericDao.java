@@ -32,7 +32,6 @@ public abstract class DefaultGenericDao<T> implements GenericDao<T> {
     @Override
     public T getById(Long id) {
         return entityManager.find(type, id);
-
     }
 
     @Override
