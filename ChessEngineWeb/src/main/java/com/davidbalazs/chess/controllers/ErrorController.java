@@ -28,4 +28,11 @@ public class ErrorController {
 
         return "pages/internalErrorPage";
     }
+
+    @RequestMapping(value = "access-denied", method = RequestMethod.GET)
+    public String accessDenied(Model model) {
+        mainPageEnhancer.enhanceModelWithSideBar(model);
+
+        return "pages/security/accessDeniedPage";
+    }
 }

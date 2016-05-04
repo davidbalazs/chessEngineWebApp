@@ -12,8 +12,8 @@ import javax.annotation.Resource;
  * @author: david.balazs@iquestgroup.com
  */
 @Controller
-@RequestMapping(value = "/how-it-works")
-public class HowItWorksPageController {
+@RequestMapping(value = "/statistics")
+public class StatisticsPageController {
 
     @Resource(name = "mainPageEnhancer")
     private MainPageEnhancer mainPageEnhancer;
@@ -22,6 +22,6 @@ public class HowItWorksPageController {
     public String loadPage(Model model) {
         mainPageEnhancer.enhanceModelWithSideBar(model);
 
-        return "pages/howItWorks";
+        return "pages/statisticsPage";
     }
 }

@@ -16,9 +16,17 @@
         <property name="messageConverter" ref="messageConverter"/>
     </bean>
 
+    <alias name="defaultUserFacade" alias="userFacade"/>
+    <bean id="defaultUserFacade" class="com.davidbalazs.chess.facades.impl.DefaultUserFacade">
+        <property name="userService" ref="userService"/>
+        <property name="userConverter" ref="userConverter"/>
+    </bean>
+
     <bean id="chessPositionConverter" class="com.davidbalazs.chess.converters.ChessPositionConverter"/>
 
     <bean id="messageConverter" class="com.davidbalazs.chess.converters.MessageConverter"/>
+
+    <bean id="userConverter" class="com.davidbalazs.chess.converters.UserConverter"/>
 
     <bean id="chessMoveConverter" class="com.davidbalazs.chess.converters.ChessMoveConverter">
         <property name="moveService" ref="moveService"/>

@@ -11,7 +11,7 @@
     </ul>
 
     You can use this platform both as anonymous player or authenticated player. To create your own account, have a
-    loog at the <a href="#">Register page</a>.
+    loog at the <a href="<c:url value="/user/register-form"/>">Register page</a>.
 
     Features available for authenticated players are:
     <ul>

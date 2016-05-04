@@ -1,35 +1,14 @@
-package com.davidbalazs.chess.models;
-
-import javax.persistence.*;
+package com.davidbalazs.chess.data;
 
 /**
  * @author: david.balazs@iquestgroup.com
  */
-@Entity
-@Table(name = "USER")
-public class UserModel {
-    @Id
-    @Column(name = "USERNAME", unique = true)
+public class UserData {
     private String username;
-
-    @Column(name = "PASSWORD", nullable = false)
     private String password;
-
-    @Column(name = "ROLE", nullable = false)
-    @Enumerated(EnumType.STRING)
-    private UserRole role;
-
-    @Column(name = "STATE", nullable = false)
-    @Enumerated(EnumType.STRING)
-    private UserState state;
-
-    @Column(name = "FIRST_NAME")
+    private String reTypedPassword;
     private String firstName;
-
-    @Column(name = "LAST_NAME")
     private String lastName;
-
-    @Column(name = "EMAIL")
     private String email;
 
     public String getUsername() {
@@ -48,20 +27,12 @@ public class UserModel {
         this.password = password;
     }
 
-    public UserRole getRole() {
-        return role;
+    public String getReTypedPassword() {
+        return reTypedPassword;
     }
 
-    public void setRole(UserRole role) {
-        this.role = role;
-    }
-
-    public UserState getState() {
-        return state;
-    }
-
-    public void setState(UserState state) {
-        this.state = state;
+    public void setReTypedPassword(String reTypedPassword) {
+        this.reTypedPassword = reTypedPassword;
     }
 
     public String getFirstName() {

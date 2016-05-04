@@ -6,8 +6,8 @@
         <ul>
             <li><a href="<c:url value="/"/>">Home</a></li>
             <li><a href="<c:url value="/chessStrategy/display-all"/>">Strategies</a></li>
-            <li><a href="<c:url value="/how-it-works/"/>">How it works</a></li>
-            <li><a href="statistics.html">Statistics</a></li>
+            <li><a href="<c:url value="/how-it-works"/>">How it works</a></li>
+            <li><a href="<c:url value="/statistics"/>">Statistics</a></li>
             <li><a href="<c:url value="/about-us/"/>">About us</a></li>
             <li><a href="<c:url value="/contact-us/"/>">Contact us</a></li>
         </ul>

@@ -7,4 +7,6 @@ import com.davidbalazs.chess.models.UserModel;
  */
 public interface UserDao {
     UserModel getByUsername(String username);
+
+    void create(UserModel user);
 }

@@ -9,8 +9,11 @@
     <http auto-config="true">
         <intercept-url pattern="/" access="permitAll"/>
         <intercept-url pattern="/administration**" access="hasRole('ROLE_ADMIN')"/>
-        <form-login authentication-failure-url="/access-denied"/>
-        <logout logout-url="perform-logout" logout-success-url="/play-game"/>
+        <intercept-url pattern="/statistics**" access="hasRole('ROLE_USER')"/>
+        <form-login login-page="/login" username-parameter="username" password-parameter="password"
+                    authentication-failure-url="/login-failure"/>
+        <csrf/>
+        <access-denied-handler error-page="/access-denied"/>
     </http>
 
     <authentication-manager>
