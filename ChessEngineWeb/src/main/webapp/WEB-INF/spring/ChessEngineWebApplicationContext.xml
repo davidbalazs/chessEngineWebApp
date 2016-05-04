@@ -32,6 +32,14 @@
         <property name="moveService" ref="moveService"/>
     </bean>
 
+    <bean id="userHelper" class="com.davidbalazs.chess.helpers.UserHelper">
+        <property name="userService" ref="userService"/>
+    </bean>
+
+    <bean id="additionalUserValidator" class="com.davidbalazs.chess.validators.AdditionalUserValidator">
+        <property name="userService" ref="userService"/>
+    </bean>
+
     <bean id="mainPageEnhancer" class="com.davidbalazs.chess.controllers.enhancers.MainPageEnhancer">
         <property name="latestNewsSideBarService" ref="latestNewsSideBarService"/>
         <property name="quoteOfTheDayService" ref="quoteOfTheDayService"/>
