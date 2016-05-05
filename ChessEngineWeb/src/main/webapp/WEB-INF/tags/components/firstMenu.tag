@@ -6,8 +6,15 @@
         <ul>
             <li><a href="<c:url value="/"/>">Home</a></li>
             <li><a href="<c:url value="/chessStrategy/display-all"/>">Strategies</a></li>
+            <c:choose>
+                <c:when test="${isUserLoggedIn}">
+                    <li><a href="<c:url value="/statistics"/>">Statistics</a></li>
+                </c:when>
+                <c:otherwise>
+                    <li><a href="<c:url value="/login"/>">Login/Register</a></li>
+                </c:otherwise>
+            </c:choose>
             <li><a href="<c:url value="/how-it-works"/>">How it works</a></li>
-            <li><a href="<c:url value="/statistics"/>">Statistics</a></li>
             <li><a href="<c:url value="/about-us/"/>">About us</a></li>
             <li><a href="<c:url value="/contact-us/"/>">Contact us</a></li>
         </ul>

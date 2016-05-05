@@ -4,6 +4,7 @@ import com.davidbalazs.chess.data.ChessMoveData;
 import com.davidbalazs.chess.data.PlayGameForm;
 import com.davidbalazs.chess.data.PlayerColorData;
 import com.davidbalazs.chess.data.VirtualPlayerLevelData;
+import com.davidbalazs.chess.enhancers.UserEnhancer;
 import com.davidbalazs.chess.facades.ChessMoveFacade;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
@@ -11,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.security.Principal;
 import java.text.MessageFormat;
 
 @Controller
@@ -20,11 +22,17 @@ public class PlayGameController {
     private static final String RECEIVED_REQUEST_LOG_MESSAGE = "received request to generate next move for [fen position: {0}, sideToMove {1}, virtualPlayerLevel {2}.";
     private static final String START_GAME_LOG_MESSAGE = "Received request to start game with virtualPlayerLevel={0} and playerColor={1}";
     private static final String GET_PLAY_GAME_FORM_LOG_MESSAGE = "Received request to retrieve playGameForm.";
+
     @Resource(name = "chessMoveFacade")
     private ChessMoveFacade chessMoveFacade;
 
+    @Resource(name = "userEnhancer")
+    private UserEnhancer userEnhancer;
+
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public String playGame(Model model) {
+    public String playGame(Model model, Principal principal) {
+        userEnhancer.enhanceModelWithLoggedInUser(model, principal);
+
         LOGGER.info(GET_PLAY_GAME_FORM_LOG_MESSAGE);
         PlayGameForm playGameForm = new PlayGameForm();
         model.addAttribute("playGameForm", playGameForm);
@@ -35,7 +43,9 @@ public class PlayGameController {
     }
 
     @RequestMapping(value = "start-game", method = RequestMethod.POST)
-    public String startGame(Model model, @ModelAttribute("playGameForm") PlayGameForm playGameForm) {
+    public String startGame(Model model, @ModelAttribute("playGameForm") PlayGameForm playGameForm, Principal principal) {
+        userEnhancer.enhanceModelWithLoggedInUser(model, principal);
+
         LOGGER.info(MessageFormat.format(START_GAME_LOG_MESSAGE, playGameForm.getVirtualPlayerLevel(), playGameForm.getPlayerColor()));
         //try to add match entry in db. If it fails, log an error message, but let player play the game without saving it.
         return "pages/playGamePage";

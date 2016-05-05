@@ -1,4 +1,4 @@
-package com.davidbalazs.chess.controllers.enhancers;
+package com.davidbalazs.chess.enhancers;
 
 import com.davidbalazs.chess.services.ChessProblemService;
 import com.davidbalazs.chess.services.LatestNewsSideBarService;
@@ -6,7 +6,7 @@ import com.davidbalazs.chess.services.QuoteOfTheDayService;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.ui.Model;
 
-public class MainPageEnhancer {
+public class SideBarEnhancer {
     private LatestNewsSideBarService latestNewsSideBarService;
     private QuoteOfTheDayService quoteOfTheDayService;
     private ChessProblemService chessProblemService;

@@ -40,7 +40,11 @@
         <property name="userService" ref="userService"/>
     </bean>
 
-    <bean id="mainPageEnhancer" class="com.davidbalazs.chess.controllers.enhancers.MainPageEnhancer">
+    <bean id="userEnhancer" class="com.davidbalazs.chess.enhancers.UserEnhancer">
+        <property name="userHelper" ref="userHelper"/>
+    </bean>
+
+    <bean id="sideBarEnhancer" class="com.davidbalazs.chess.enhancers.SideBarEnhancer">
         <property name="latestNewsSideBarService" ref="latestNewsSideBarService"/>
         <property name="quoteOfTheDayService" ref="quoteOfTheDayService"/>
         <property name="chessProblemService" ref="chessProblemService"/>

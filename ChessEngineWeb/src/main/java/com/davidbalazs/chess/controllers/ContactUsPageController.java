@@ -1,7 +1,8 @@
 package com.davidbalazs.chess.controllers;
 
-import com.davidbalazs.chess.controllers.enhancers.MainPageEnhancer;
 import com.davidbalazs.chess.data.ContactUsForm;
+import com.davidbalazs.chess.enhancers.SideBarEnhancer;
+import com.davidbalazs.chess.enhancers.UserEnhancer;
 import com.davidbalazs.chess.facades.MessageFacade;
 import com.davidbalazs.chess.helpers.UserHelper;
 import com.davidbalazs.chess.models.UserModel;
@@ -29,8 +30,11 @@ public class ContactUsPageController {
     private static final String ERROR_SUBMITTING_MESSAGE_FORM_LOG_MESSAGE = "error submitting contactUsForm";
     private static final String USING_USER_DETAILS_TO_AUTOCOMPLETE_CONTACT_US_FORM_LOG_MESSAGE = "User [ username = {0} ] is logged in, using his profile details to autocomplete contactUsForm.";
 
-    @Resource(name = "mainPageEnhancer")
-    private MainPageEnhancer mainPageEnhancer;
+    @Resource(name = "sideBarEnhancer")
+    private SideBarEnhancer sideBarEnhancer;
+
+    @Resource(name = "userEnhancer")
+    private UserEnhancer userEnhancer;
 
     @Resource(name = "messageFacade")
     private MessageFacade messageFacade;
@@ -40,7 +44,8 @@ public class ContactUsPageController {
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String loadPage(Model model, Principal principal) {
-        mainPageEnhancer.enhanceModelWithSideBar(model);
+        userEnhancer.enhanceModelWithLoggedInUser(model, principal);
+        sideBarEnhancer.enhanceModelWithSideBar(model);
         ContactUsForm contactUsForm = new ContactUsForm();
 
         UserModel loggedInUser = userHelper.getLoggedInUser(principal);
@@ -59,8 +64,9 @@ public class ContactUsPageController {
     }
 
     @RequestMapping(value = "send-message", method = RequestMethod.POST)
-    public String sendMessage(Model model, @Valid @ModelAttribute("contactUsForm") ContactUsForm contactUsForm, BindingResult result) {
-        mainPageEnhancer.enhanceModelWithSideBar(model);
+    public String sendMessage(Model model, @Valid @ModelAttribute("contactUsForm") ContactUsForm contactUsForm, BindingResult result, Principal principal) {
+        userEnhancer.enhanceModelWithLoggedInUser(model, principal);
+        sideBarEnhancer.enhanceModelWithSideBar(model);
 
         if (result.hasErrors()) {
             LOGGER.error(ERROR_SUBMITTING_MESSAGE_FORM_LOG_MESSAGE);

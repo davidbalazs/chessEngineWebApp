@@ -1,8 +1,8 @@
 package com.davidbalazs.chess.controllers;
 
 import com.davidbalazs.chess.data.UserData;
+import com.davidbalazs.chess.enhancers.UserEnhancer;
 import com.davidbalazs.chess.facades.UserFacade;
-import com.davidbalazs.chess.models.UserModel;
 import com.davidbalazs.chess.validators.AdditionalUserValidator;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
+import java.security.Principal;
 import java.text.MessageFormat;
 import java.util.List;
 
@@ -31,18 +32,24 @@ public class UserController {
     @Resource(name = "userFacade")
     private UserFacade userFacade;
 
+    @Resource(name = "userEnhancer")
+    private UserEnhancer userEnhancer;
+
     @Resource(name = "additionalUserValidator")
     private AdditionalUserValidator additionalUserValidator;
 
     @RequestMapping(value = "register-form", method = RequestMethod.GET)
-    public String loadPage(Model model) {
+    public String loadPage(Model model, Principal principal) {
+        userEnhancer.enhanceModelWithLoggedInUser(model, principal);
         UserData user = new UserData();
         model.addAttribute("user", user);
         return "pages/registerUserPage";
     }
 
     @RequestMapping(value = "register-user", method = RequestMethod.POST)
-    public String registerUser(Model model, @Valid @ModelAttribute("user") UserData userData, BindingResult result) {
+    public String registerUser(Model model, @Valid @ModelAttribute("user") UserData userData, BindingResult result, Principal principal) {
+        userEnhancer.enhanceModelWithLoggedInUser(model, principal);
+
         if (result.hasErrors()) {
             LOGGER.error(REGISTER_USER_VALIDATION_ERRORS_LOG_MESSAGE);
             return "pages/registerUserPage";
