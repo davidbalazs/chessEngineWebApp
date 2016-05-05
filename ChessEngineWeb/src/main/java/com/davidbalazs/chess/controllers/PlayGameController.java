@@ -22,6 +22,7 @@ public class PlayGameController {
     private static final String RECEIVED_REQUEST_LOG_MESSAGE = "received request to generate next move for [fen position: {0}, sideToMove {1}, virtualPlayerLevel {2}.";
     private static final String START_GAME_LOG_MESSAGE = "Received request to start game with virtualPlayerLevel={0} and playerColor={1}";
     private static final String GET_PLAY_GAME_FORM_LOG_MESSAGE = "Received request to retrieve playGameForm.";
+    private static final String STARTING_GAME_LOG_MESSAGE = "Starting game with the following config: [playerColor: {0} and virtualPlayerLevel: {1}]";
 
     @Resource(name = "chessMoveFacade")
     private ChessMoveFacade chessMoveFacade;
@@ -42,25 +43,38 @@ public class PlayGameController {
         return "pages/playGameFormPage";
     }
 
-    @RequestMapping(value = "start-game", method = RequestMethod.POST)
-    public String startGame(Model model, @ModelAttribute("playGameForm") PlayGameForm playGameForm, Principal principal) {
-        userEnhancer.enhanceModelWithLoggedInUser(model, principal);
-
+    @RequestMapping(value = "save-game-config", method = RequestMethod.POST)
+    public String saveGameConfig(Model model, @ModelAttribute("playGameForm") PlayGameForm playGameForm) {
         LOGGER.info(MessageFormat.format(START_GAME_LOG_MESSAGE, playGameForm.getVirtualPlayerLevel(), playGameForm.getPlayerColor()));
+
         //try to add match entry in db. If it fails, log an error message, but let player play the game without saving it.
+        return "redirect:start-game?playerColor=" + playGameForm.getPlayerColor() + "&virtualPlayerLevel=" + playGameForm.getVirtualPlayerLevel();
+    }
+
+    @RequestMapping(value = "start-game", method = RequestMethod.GET)
+    public String startGame(Model model, Principal principal,
+                            @RequestParam("playerColor") PlayerColorData playerColor,
+                            @RequestParam("virtualPlayerLevel") VirtualPlayerLevelData virtualPlayerLevel) {
+        userEnhancer.enhanceModelWithLoggedInUser(model, principal);
+        LOGGER.info(MessageFormat.format(STARTING_GAME_LOG_MESSAGE, playerColor, virtualPlayerLevel));
+        model.addAttribute("virtualPlayerLevel", virtualPlayerLevel);
+        model.addAttribute("playerColor", playerColor);
+        model.addAttribute("tableOrientation", playerColor.toString().toLowerCase());
+        model.addAttribute("virtualPlayerColor", PlayerColorData.WHITE.equals(playerColor) ? PlayerColorData.BLACK : PlayerColorData.WHITE);
+
         return "pages/playGamePage";
     }
 
     @RequestMapping(value = "next-move", method = RequestMethod.GET)
     @ResponseBody
     public ChessMoveData generateNextMove(@RequestParam("chessPositionFen") String chessPositionFen,
-                                          @RequestParam("sideToMove") String sideToMove,
-                                          @RequestParam("virtualPlayerLevel") String virtualPlayerLevel) {
+                                          @RequestParam("sideToMove") PlayerColorData sideToMove,
+                                          @RequestParam("virtualPlayerLevel") VirtualPlayerLevelData virtualPlayerLevel) {
         LOGGER.info(MessageFormat.format(RECEIVED_REQUEST_LOG_MESSAGE, chessPositionFen, sideToMove, virtualPlayerLevel));
 
-        PlayerColorData sideToMoveEnum = PlayerColorData.valueOf(sideToMove);
+        PlayerColorData sideToMoveEnum = sideToMove;
 
-        ChessMoveData chessMoveData = chessMoveFacade.getNextMove(chessPositionFen, sideToMoveEnum, Integer.parseInt(virtualPlayerLevel));
+        ChessMoveData chessMoveData = chessMoveFacade.getNextMove(chessPositionFen, sideToMoveEnum, virtualPlayerLevel);
         LOGGER.info("move:" + chessMoveData.getInitialPosition().getX() + "" + chessMoveData.getInitialPosition().getY()
                 + "final: " + chessMoveData.getFinalPosition().getX() + "" + chessMoveData.getFinalPosition().getY());
         return chessMoveData;

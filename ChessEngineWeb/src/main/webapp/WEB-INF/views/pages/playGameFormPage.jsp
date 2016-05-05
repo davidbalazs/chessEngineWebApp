@@ -3,7 +3,7 @@
 <%@taglib prefix="template" tagdir="/WEB-INF/tags/pageTemplates" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <template:mainPageTemplate pageTitle="Play game">
-    <c:url value="start-game/" var="startGameUrl"/>
+    <c:url value="/playgame/save-game-config" var="startGameUrl"/>
     <form:form method="POST" action="${startGameUrl}" class="" modelAttribute="playGameForm">
 
         <label>Select your color:</label>

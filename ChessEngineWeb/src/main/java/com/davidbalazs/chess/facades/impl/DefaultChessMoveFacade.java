@@ -5,6 +5,7 @@ import com.davidbalazs.chess.converters.ChessMoveConverter;
 import com.davidbalazs.chess.converters.ChessPositionConverter;
 import com.davidbalazs.chess.data.ChessMoveData;
 import com.davidbalazs.chess.data.PlayerColorData;
+import com.davidbalazs.chess.data.VirtualPlayerLevelData;
 import com.davidbalazs.chess.facades.ChessMoveFacade;
 import com.davidbalazs.chess.model.ChessPosition;
 import org.springframework.beans.factory.annotation.Required;
@@ -17,15 +18,15 @@ public class DefaultChessMoveFacade implements ChessMoveFacade {
     private MoveAlgorithm moveAlgorithm;
     private ChessMoveConverter chessMoveConverter;
 
-    public ChessMoveData getNextMove(String chessPositionFen, PlayerColorData sideToMove, int virtualPlayerLevel) {
+    public ChessMoveData getNextMove(String chessPositionFen, PlayerColorData sideToMove, VirtualPlayerLevelData virtualPlayerLevel) {
         ChessPosition chessPosition = chessPositionConverter.convert(chessPositionFen);
 
         int move;
 
         if (PlayerColorData.WHITE.equals(sideToMove)) {
-            move = moveAlgorithm.getNextWhiteMove(chessPosition, virtualPlayerLevel);
+            move = moveAlgorithm.getNextWhiteMove(chessPosition, virtualPlayerLevel.getValue());
         } else {
-            move = moveAlgorithm.getNextBlackMove(chessPosition, virtualPlayerLevel);
+            move = moveAlgorithm.getNextBlackMove(chessPosition, virtualPlayerLevel.getValue());
         }
 
         return chessMoveConverter.convert(move);
