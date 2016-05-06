@@ -18,7 +18,7 @@
             <ul>
                 <c:choose>
                     <c:when test="${isUserLoggedIn}">
-                        <li><a href="<c:url value="user-profile/"/>">Hi, ${loggedInUser.username}!</a></li>
+                        <li><a href="<c:url value="/user-profile/"/>">Hi, ${loggedInUser.username}!</a></li>
                         <li><a href="<c:url value="/logout"/>">Logout</a></li>
                     </c:when>
                     <c:otherwise>

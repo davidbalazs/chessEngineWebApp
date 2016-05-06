@@ -207,7 +207,7 @@ nav ul li a:hover {
     float: left;
     padding: 1%;
     width: 64%;
-    min-height:67%;
+    min-height: 67%;
 }
 
 #main-page-chess-table {
@@ -724,4 +724,27 @@ body {
     transform: translate(50%, -50%) rotate(180deg);
     background: rgba(0, 0, 0, 1);
     text-decoration: none;
+}
+
+/*------------------user profile -----------------*/
+.user-profile-table {
+    width: 60%;
+    margin-left: 20%;
+}
+
+.user-profile-table td {
+    margin: 2px;
+    width: 45%;
+}
+
+.user-profile-table td:nth-child(1) {
+    text-align: right;
+    padding-right: 10px;
+    background-color: #212121;
+}
+
+.user-profile-table td:nth-child(2) {
+    text-align: left;
+    padding-left: 10px;
+    background-color: #333333;
 }
