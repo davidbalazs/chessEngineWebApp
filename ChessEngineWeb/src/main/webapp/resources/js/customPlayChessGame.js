@@ -50,7 +50,7 @@ function makeAjaxCallForNextMove() {
             } else {
                 board.position(game.fen());
                 counter++;
-                $("#message").html(counter);
+                $("#number-of-moves-made").html(counter);
                 updateStatus();
             }
         }

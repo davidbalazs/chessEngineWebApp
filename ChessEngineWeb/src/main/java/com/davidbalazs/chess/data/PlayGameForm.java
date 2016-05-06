@@ -16,7 +16,7 @@ public class PlayGameForm {
      * Using constructor to set default values for fields.
      */
     public PlayGameForm() {
-        virtualPlayerLevel = VirtualPlayerLevelData.LEVEL_1;
+        virtualPlayerLevel = VirtualPlayerLevelData.LEVEL_4;
         playerColor = PlayerColorData.WHITE;
     }
 

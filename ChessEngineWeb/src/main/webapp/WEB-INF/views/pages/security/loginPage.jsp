@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="template" tagdir="/WEB-INF/tags/pageTemplates" %>
-<template:mainPageTemplate pageTitle="Login">
+<template:pageTemplateWithoutCircles pageTitle="Login">
     <c:if test="${not empty message}">
         ${message}
     </c:if>
@@ -18,4 +18,4 @@
             <div style="clear:both;"></div>
         </form>
     </div>
-</template:mainPageTemplate>
+</template:pageTemplateWithoutCircles>

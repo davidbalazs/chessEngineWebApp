@@ -4,6 +4,7 @@ import com.davidbalazs.chess.data.ChessMoveData;
 import com.davidbalazs.chess.data.PlayGameForm;
 import com.davidbalazs.chess.data.PlayerColorData;
 import com.davidbalazs.chess.data.VirtualPlayerLevelData;
+import com.davidbalazs.chess.enhancers.SideBarEnhancer;
 import com.davidbalazs.chess.enhancers.UserEnhancer;
 import com.davidbalazs.chess.facades.ChessMoveFacade;
 import org.apache.log4j.Logger;
@@ -30,8 +31,12 @@ public class PlayGameController {
     @Resource(name = "userEnhancer")
     private UserEnhancer userEnhancer;
 
+    @Resource(name = "sideBarEnhancer")
+    private SideBarEnhancer sideBarEnhancer;
+
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String playGame(Model model, Principal principal) {
+        sideBarEnhancer.enhanceModelWithSideBar(model);
         userEnhancer.enhanceModelWithLoggedInUser(model, principal);
 
         LOGGER.info(GET_PLAY_GAME_FORM_LOG_MESSAGE);

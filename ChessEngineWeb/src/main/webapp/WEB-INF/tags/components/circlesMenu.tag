@@ -11,9 +11,9 @@
              onmouseover="this.src='<c:url value="/resources/img/circles/circle2hover.png"/>'"
              onmouseout="this.src='<c:url value="/resources/img/circles/circle2.png"/>'"/>
     </a>
-    <a href="#">
-        <img src="<c:url value="/resources/img/circles/circle3.png"/>"
-             onmouseover="this.src='<c:url value="/resources/img/circles/circle3hover.png"/>'"
-             onmouseout="this.src='<c:url value="/resources/img/circles/circle3.png"/>'"/>
+    <a href="<c:url value="/chessStrategy/display-all"/>">
+        <img src="<c:url value="/resources/img/circles/circle6.png"/>"
+             onmouseover="this.src='<c:url value="/resources/img/circles/circle6hover.png"/>'"
+             onmouseout="this.src='<c:url value="/resources/img/circles/circle6.png"/>'"/>
     </a>
 </div>

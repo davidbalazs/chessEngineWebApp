@@ -1,6 +1,7 @@
 package com.davidbalazs.chess.controllers;
 
 import com.davidbalazs.chess.data.UserData;
+import com.davidbalazs.chess.enhancers.SideBarEnhancer;
 import com.davidbalazs.chess.enhancers.UserEnhancer;
 import com.davidbalazs.chess.facades.UserFacade;
 import com.davidbalazs.chess.validators.AdditionalUserValidator;
@@ -35,11 +36,15 @@ public class UserController {
     @Resource(name = "userEnhancer")
     private UserEnhancer userEnhancer;
 
+    @Resource(name = "sideBarEnhancer")
+    private SideBarEnhancer sideBarEnhancer;
+
     @Resource(name = "additionalUserValidator")
     private AdditionalUserValidator additionalUserValidator;
 
     @RequestMapping(value = "register-form", method = RequestMethod.GET)
     public String loadPage(Model model, Principal principal) {
+        sideBarEnhancer.enhanceModelWithSideBar(model);
         userEnhancer.enhanceModelWithLoggedInUser(model, principal);
         UserData user = new UserData();
         model.addAttribute("user", user);
@@ -48,6 +53,7 @@ public class UserController {
 
     @RequestMapping(value = "register-user", method = RequestMethod.POST)
     public String registerUser(Model model, @Valid @ModelAttribute("user") UserData userData, BindingResult result, Principal principal) {
+        sideBarEnhancer.enhanceModelWithSideBar(model);
         userEnhancer.enhanceModelWithLoggedInUser(model, principal);
 
         if (result.hasErrors()) {

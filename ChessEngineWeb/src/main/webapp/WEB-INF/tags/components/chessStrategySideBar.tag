@@ -4,5 +4,5 @@
 <aside id="sidebar">
     <sideBarItem:chessStrategyMenuSideBar/>
 
-    <sideBarItem:gameStatusSideBar/>
+    <sideBarItem:chessStrategyMovesSideBar/>
 </aside>

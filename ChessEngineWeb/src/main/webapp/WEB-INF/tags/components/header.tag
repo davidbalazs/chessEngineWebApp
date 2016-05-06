@@ -7,7 +7,7 @@
     <header id="header">
 
         <div id="header-column-logo">
-            <img src="<c:url value="/resources/img/logo.png"/>"/>
+            <a href="/"><img src="<c:url value="/resources/img/logo.png"/>"/></a>
         </div>
 
         <div id="header-image-center">
@@ -18,14 +18,16 @@
             <ul>
                 <c:choose>
                     <c:when test="${isUserLoggedIn}">
-                        <li><a href="<c:url value="/user-profile/display"/>">Hi, ${loggedInUser.username}!</a></li>
+                        <li><a href="<c:url value="user-profile/"/>">Hi, ${loggedInUser.username}!</a></li>
+                        <li><a href="<c:url value="/logout"/>">Logout</a></li>
                     </c:when>
                     <c:otherwise>
                         <li><a href="<c:url value="/login"/>">Login</a></li>
+                        <li><a href="#">English</a></li>
                     </c:otherwise>
                 </c:choose>
 
-                <li><a href="#">English</a></li>
+
             </ul>
         </div>
 

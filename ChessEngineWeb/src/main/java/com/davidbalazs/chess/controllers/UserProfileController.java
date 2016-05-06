@@ -30,7 +30,7 @@ public class UserProfileController {
     @Resource(name = "sideBarEnhancer")
     private SideBarEnhancer sideBarEnhancer;
 
-    @RequestMapping(value = "display", method = RequestMethod.GET)
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public String loadPage(Model model, Principal principal) {
         userEnhancer.enhanceModelWithLoggedInUser(model, principal);
         sideBarEnhancer.enhanceModelWithSideBar(model);

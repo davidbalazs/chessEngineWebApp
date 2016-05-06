@@ -4,4 +4,3 @@
 <template:mainPageTemplate pageTitle="Statistics">
 
 </template:mainPageTemplate>
-a
