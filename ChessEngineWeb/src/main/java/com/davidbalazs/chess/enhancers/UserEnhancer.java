@@ -19,6 +19,7 @@ public class UserEnhancer {
         if (loggedInUser != null) {
             model.addAttribute("loggedInUser", loggedInUser);
             model.addAttribute("isUserLoggedIn", true);
+            model.addAttribute("loggedInUserRole", loggedInUser.getRole());
         }
     }
 

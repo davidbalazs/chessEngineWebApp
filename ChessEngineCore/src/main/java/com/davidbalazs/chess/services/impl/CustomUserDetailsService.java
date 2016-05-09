@@ -1,6 +1,7 @@
 package com.davidbalazs.chess.services.impl;
 
 import com.davidbalazs.chess.models.UserModel;
+import com.davidbalazs.chess.models.UserState;
 import com.davidbalazs.chess.services.UserService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Required;
@@ -42,7 +43,11 @@ public class CustomUserDetailsService implements UserDetailsService {
     }
 
     private User generateSpringUser(UserModel userModel) {
-        return new User(userModel.getUsername(), userModel.getPassword(), true, true, true, true, getGrantedAuthorities(userModel));
+        return new User(userModel.getUsername(), userModel.getPassword(), true, true, true, isAccountNonLocked(userModel), getGrantedAuthorities(userModel));
+    }
+
+    private boolean isAccountNonLocked(UserModel userModel) {
+        return !UserState.LOCKED.equals(userModel.getState());
     }
 
     private List<GrantedAuthority> getGrantedAuthorities(UserModel userModel) {

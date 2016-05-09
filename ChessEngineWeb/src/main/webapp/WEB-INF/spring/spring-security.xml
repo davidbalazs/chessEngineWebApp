@@ -8,7 +8,7 @@
 
     <http auto-config="true">
         <intercept-url pattern="/" access="permitAll"/>
-        <intercept-url pattern="/administration**" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/administration/**" access="hasRole('ROLE_ADMIN')"/>
         <intercept-url pattern="/statistics**" access="hasRole('ROLE_USER')"/>
         <intercept-url pattern="/user-profile**" access="hasRole('ROLE_USER')"/>
         <form-login login-page="/login" username-parameter="username" password-parameter="password"
@@ -19,10 +19,5 @@
 
     <authentication-manager>
         <authentication-provider user-service-ref="customUserDetailsService"/>
-        <authentication-provider>
-            <user-service>
-                <user name="admin" password="admin" authorities="ROLE_ADMIN"/>
-            </user-service>
-        </authentication-provider>
     </authentication-manager>
 </beans:beans>

@@ -13,6 +13,10 @@ public interface MessageService {
 
     MessageModel getById(long id);
 
+    void markAsRead(long id);
+
+    void markAsUnread(long id);
+
     @Transactional
     void create(MessageModel message);
 }

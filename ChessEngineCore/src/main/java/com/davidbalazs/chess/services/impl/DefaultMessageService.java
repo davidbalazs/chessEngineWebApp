@@ -5,6 +5,7 @@ import com.davidbalazs.chess.models.MessageModel;
 import com.davidbalazs.chess.services.MessageService;
 import org.springframework.beans.factory.annotation.Required;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 /**
@@ -21,6 +22,22 @@ public class DefaultMessageService implements MessageService {
     @Override
     public MessageModel getById(long id) {
         return messageDao.getById(id);
+    }
+
+    @Override
+    @Transactional
+    public void markAsRead(long id) {
+        MessageModel messageToBeMarkedAsRead = getById(id);
+        messageToBeMarkedAsRead.setRead(true);
+        messageDao.update(messageToBeMarkedAsRead);
+    }
+
+    @Override
+    @Transactional
+    public void markAsUnread(long id) {
+        MessageModel messageToBeMarkedAsUnread = getById(id);
+        messageToBeMarkedAsUnread.setRead(false);
+        messageDao.update(messageToBeMarkedAsUnread);
     }
 
     @Override

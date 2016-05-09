@@ -1,4 +1,4 @@
-package com.davidbalazs.chess.controllers;
+package com.davidbalazs.chess.controllers.administration;
 
 import com.davidbalazs.chess.enhancers.UserEnhancer;
 import org.springframework.stereotype.Controller;
@@ -13,12 +13,11 @@ import java.security.Principal;
  * @author: david.balazs@iquestgroup.com
  */
 @Controller
-@RequestMapping(value = "administration")
 public class AdministrationPageController {
     @Resource(name = "userEnhancer")
     private UserEnhancer userEnhancer;
 
-    @RequestMapping(value = "", method = RequestMethod.GET)
+    @RequestMapping(value = "/administration/", method = RequestMethod.GET)
     public String getPage(Model model, Principal principal) {
         userEnhancer.enhanceModelWithLoggedInUser(model, principal);
         return "pages/administration/mainAdministrationPage";
