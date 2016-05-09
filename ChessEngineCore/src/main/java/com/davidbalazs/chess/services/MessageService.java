@@ -17,6 +17,8 @@ public interface MessageService {
 
     void markAsUnread(long id);
 
+    void delete(long id);
+
     @Transactional
     void create(MessageModel message);
 }

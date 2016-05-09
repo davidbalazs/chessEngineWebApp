@@ -6,7 +6,7 @@
         <ul>
             <c:choose>
                 <c:when test="${isUserLoggedIn and loggedInUserRole eq 'ROLE_ADMIN'}">
-                    <li><a href="<c:url value="/administration/messages/show-messages"/>">Messages</a></li>
+                    <li><a href="<c:url value="/administration/messages/show-all"/>">Messages</a></li>
                     <li><a href="#">Users</a></li>
                     <li><a href="#">General statistics</a></li>
                     <li><a href="#">Add strategy</a></li>

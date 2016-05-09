@@ -41,6 +41,12 @@ public class DefaultMessageService implements MessageService {
     }
 
     @Override
+    @Transactional
+    public void delete(long id) {
+        messageDao.delete(id);
+    }
+
+    @Override
     public void create(MessageModel message) {
         messageDao.create(message);
     }

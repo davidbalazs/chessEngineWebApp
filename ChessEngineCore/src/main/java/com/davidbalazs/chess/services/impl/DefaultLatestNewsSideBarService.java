@@ -5,6 +5,7 @@ import com.davidbalazs.chess.models.LatestNewsEntityModel;
 import com.davidbalazs.chess.services.LatestNewsSideBarService;
 import org.springframework.beans.factory.annotation.Required;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 /**
@@ -25,10 +26,12 @@ public class DefaultLatestNewsSideBarService implements LatestNewsSideBarService
         latestNewsSideBarDao.create(latestNewsEntity);
     }
 
+    @Transactional
     public void update(LatestNewsEntityModel latestNewsEntity) {
         latestNewsSideBarDao.update(latestNewsEntity);
     }
 
+    @Transactional
     public void delete(long latestNewsEntityId) {
         latestNewsSideBarDao.delete(latestNewsEntityId);
     }

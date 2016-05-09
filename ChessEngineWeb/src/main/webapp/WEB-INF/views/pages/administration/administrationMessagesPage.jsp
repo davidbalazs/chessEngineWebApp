@@ -24,13 +24,19 @@
                         <td>${message.date}</td>
                         <c:choose>
                             <c:when test="${message.read eq true}">
-                                <td><a href="<c:url value="/administration/messages/mark-message-as-unread"/>?message-id=${message.id}">Mark as unread</a></td>
+                                <td>
+                                    <a href="<c:url value="/administration/messages/mark-as-unread"/>?message-id=${message.id}">Mark
+                                        as unread</a></td>
                             </c:when>
                             <c:otherwise>
-                                <td><a href="<c:url value="/administration/messages/mark-message-as-read"/>?message-id=${message.id}">Mark as read</a></td>
+                                <td>
+                                    <a href="<c:url value="/administration/messages/mark-as-read"/>?message-id=${message.id}">Mark
+                                        as read</a></td>
                             </c:otherwise>
                         </c:choose>
-                        <td><a href="">delete</a></td>
+                        <td>
+                            <a href="<c:url value="/administration/messages/delete"/>?message-id=${message.id}">delete</a>
+                        </td>
                     </tr>
                 </c:forEach>
             </table>

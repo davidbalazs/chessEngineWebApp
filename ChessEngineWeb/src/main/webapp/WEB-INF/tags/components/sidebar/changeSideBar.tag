@@ -6,8 +6,8 @@
     </div>
     <div class="aside-box-content">
         <ul>
-            <li><a href="#">Add news</a></li>
-            <li><a href="#">Add quote of the day</a></li>
+            <li><a href="<c:url value="/administration/news/show-all"/>">Add news</a></li>
+            <li><a href=" #">Add quote of the day</a></li>
             <li><a href="#">Select problem of the day</a></li>
         </ul>
     </div>
