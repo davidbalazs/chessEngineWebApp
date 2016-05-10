@@ -7,4 +7,8 @@ import com.davidbalazs.chess.models.ChessStrategyModel;
  * @author: david.balazs@iquestgroup.com
  */
 public class DefaultChessStrategyDao extends DefaultGenericDao<ChessStrategyModel> implements ChessStrategyDao {
+    @Override
+    public long createAndGetId(ChessStrategyModel chessStrategyModel) {
+        return entityManager.merge(chessStrategyModel).getId();
+    }
 }

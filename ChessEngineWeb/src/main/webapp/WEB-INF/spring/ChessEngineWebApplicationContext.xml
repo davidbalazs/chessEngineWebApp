@@ -16,6 +16,12 @@
         <property name="latestNewsConverter" ref="latestNewsConverter"/>
     </bean>
 
+    <alias name="defaultChessStrategyFacade" alias="chessStrategyFacade"/>
+    <bean id="defaultChessStrategyFacade" class="com.davidbalazs.chess.facades.impl.DefaultChessStrategyFacade">
+        <property name="strategyConverter" ref="strategyConverter"/>
+        <property name="chessStrategyService" ref="chessStrategyService"/>
+    </bean>
+
     <alias name="defaultMessageFacade" alias="messageFacade"/>
     <bean id="defaultMessageFacade" class="com.davidbalazs.chess.facades.impl.DefaultMessageFacade">
         <property name="messageService" ref="messageService"/>
@@ -40,6 +46,8 @@
     <bean id="messageConverter" class="com.davidbalazs.chess.converters.MessageConverter"/>
 
     <bean id="quoteConverter" class="com.davidbalazs.chess.converters.QuoteConverter"/>
+
+    <bean id="strategyConverter" class="com.davidbalazs.chess.converters.StrategyConverter"/>
 
     <bean id="userConverter" class="com.davidbalazs.chess.converters.UserConverter"/>
 
