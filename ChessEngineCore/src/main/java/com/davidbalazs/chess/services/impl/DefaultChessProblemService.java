@@ -24,8 +24,34 @@ public class DefaultChessProblemService implements ChessProblemService {
     }
 
     @Override
+    public void markAsProblemOfTheDay(long id) {
+        unmarkCurrentProblemOfTheDay();
+        ChessProblemModel newProblemOfTheDay = chessProblemDao.getById(id);
+        newProblemOfTheDay.setIsProblemOfTheDay(true);
+        chessProblemDao.update(newProblemOfTheDay);
+    }
+
+    @Override
+    public void unmarkAsProblemOfTheDay(long id) {
+        ChessProblemModel newProblemOfTheDay = chessProblemDao.getById(id);
+        newProblemOfTheDay.setIsProblemOfTheDay(false);
+        chessProblemDao.update(newProblemOfTheDay);
+    }
+
+    @Override
     public ChessProblemModel getById(long id) {
         return chessProblemDao.getById(id);
+    }
+
+    @Override
+    public void delete(long id) {
+        chessProblemDao.delete(id);
+    }
+
+    private void unmarkCurrentProblemOfTheDay() {
+        ChessProblemModel currentProblemOfTheDay = chessProblemDao.getProblemOfTheDay();
+        currentProblemOfTheDay.setIsProblemOfTheDay(false);
+        chessProblemDao.update(currentProblemOfTheDay);
     }
 
     @Required

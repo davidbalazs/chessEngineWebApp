@@ -8,7 +8,7 @@
         <ul>
             <li><a href="<c:url value="/administration/news/show-all"/>">Add news</a></li>
             <li><a href="<c:url value="/administration/quote/show-all"/>">Add quote of the day</a></li>
-            <li><a href="#">Select problem of the day</a></li>
+            <li><a href="<c:url value="/administration/problem/show-all"/>" >Select problem of the day</a></li>
         </ul>
     </div>
 </div>

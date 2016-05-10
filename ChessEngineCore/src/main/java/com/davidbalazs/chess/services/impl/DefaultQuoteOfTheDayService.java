@@ -33,7 +33,9 @@ public class DefaultQuoteOfTheDayService implements QuoteOfTheDayService {
 
     @Override
     public void unmarkAsQuoteOfTheDay(long id) {
-        unmarkCurrentQuoteOfTheDay();
+        QuoteModel quote = quoteOfTheDayDao.getById(id);
+        quote.setQuoteOfTheDay(false);
+        quoteOfTheDayDao.update(quote);
     }
 
     @Override

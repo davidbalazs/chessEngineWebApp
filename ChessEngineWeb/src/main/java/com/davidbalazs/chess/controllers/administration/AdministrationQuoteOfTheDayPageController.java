@@ -47,7 +47,7 @@ public class AdministrationQuoteOfTheDayPageController {
     }
 
     @RequestMapping(value = "delete", method = RequestMethod.GET)
-    public String deleteNews(@RequestParam("quote-id") long quoteId) {
+    public String deleteQuote(@RequestParam("quote-id") long quoteId) {
         LOGGER.info(MessageFormat.format(DELETE_QUOTE_LOG_MESSAGE, quoteId));
         quoteOfTheDayFacade.delete(quoteId);
         return "redirect:show-all";
