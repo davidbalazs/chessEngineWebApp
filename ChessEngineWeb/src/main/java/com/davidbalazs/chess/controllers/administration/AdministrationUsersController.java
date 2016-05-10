@@ -21,7 +21,7 @@ import java.text.MessageFormat;
 @RequestMapping(value = "administration/users/")
 public class AdministrationUsersController {
     public static final Logger LOGGER = Logger.getLogger(AdministrationUsersController.class);
-    private static final String DELETE_USER_LOG_MESSAGE = "Received requiest to delete user with username {0}.";
+    private static final String DELETE_USER_LOG_MESSAGE = "Received request to delete user with username {0}.";
 
     @Resource(name = "userEnhancer")
     private UserEnhancer userEnhancer;
