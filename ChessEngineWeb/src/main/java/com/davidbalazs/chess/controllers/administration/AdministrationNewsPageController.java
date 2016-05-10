@@ -55,7 +55,7 @@ public class AdministrationNewsPageController {
     public String addNews(RedirectAttributes redirectAttrs, @Valid @ModelAttribute("newsData") LatestNewsItemData latestNewsItemData, BindingResult result) {
         if (result.hasErrors()) {
             LOGGER.error(ERROR_SUBMITTING_THE_ADD_NEWS_FORM_LOG_MESSAGE);
-            redirectAttrs.addFlashAttribute("message", "Error submitting form. Please try again with valida data.");
+            redirectAttrs.addFlashAttribute("message", "Error submitting form. Please try again with valid data.");
             return "redirect:show-all";
         }
 

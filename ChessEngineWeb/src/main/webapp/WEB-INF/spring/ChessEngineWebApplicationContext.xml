@@ -22,6 +22,12 @@
         <property name="messageConverter" ref="messageConverter"/>
     </bean>
 
+    <alias name="defaultQuoteOfTheDayFacade" alias="quoteOfTheDayFacade"/>
+    <bean id="defaultQuoteOfTheDayFacade" class="com.davidbalazs.chess.facades.impl.DefaultQuoteOfTheDayFacade">
+        <property name="quoteOfTheDayService" ref="quoteOfTheDayService"/>
+        <property name="quoteConverter" ref="quoteConverter"/>
+    </bean>
+
     <alias name="defaultUserFacade" alias="userFacade"/>
     <bean id="defaultUserFacade" class="com.davidbalazs.chess.facades.impl.DefaultUserFacade">
         <property name="userService" ref="userService"/>
@@ -32,6 +38,8 @@
     <bean id="latestNewsConverter" class="com.davidbalazs.chess.converters.LatestNewsConverter"/>
 
     <bean id="messageConverter" class="com.davidbalazs.chess.converters.MessageConverter"/>
+
+    <bean id="quoteConverter" class="com.davidbalazs.chess.converters.QuoteConverter"/>
 
     <bean id="userConverter" class="com.davidbalazs.chess.converters.UserConverter"/>
 
