@@ -26,7 +26,7 @@ public class SideBarEnhancer {
     }
 
     private void enhanceModelWithLatestNewsSideBar(Model model) {
-        model.addAttribute("latestNews", latestNewsService.getLatestNews());
+        model.addAttribute("latestNews", latestNewsService.getAll());
     }
 
     @Required

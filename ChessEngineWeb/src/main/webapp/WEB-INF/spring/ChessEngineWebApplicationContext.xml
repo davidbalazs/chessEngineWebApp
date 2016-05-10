@@ -10,6 +10,12 @@
         <property name="moveAlgorithm" ref="moveAlgorithm"/>
     </bean>
 
+    <alias name="defaultLatestNewsFacade" alias="latestNewsFacade"/>
+    <bean id="defaultLatestNewsFacade" class="com.davidbalazs.chess.facades.impl.DefaultLatestNewsFacade">
+        <property name="latestNewsService" ref="latestNewsService"/>
+        <property name="latestNewsConverter" ref="latestNewsConverter"/>
+    </bean>
+
     <alias name="defaultMessageFacade" alias="messageFacade"/>
     <bean id="defaultMessageFacade" class="com.davidbalazs.chess.facades.impl.DefaultMessageFacade">
         <property name="messageService" ref="messageService"/>
@@ -23,6 +29,7 @@
     </bean>
 
     <bean id="chessPositionConverter" class="com.davidbalazs.chess.converters.ChessPositionConverter"/>
+    <bean id="latestNewsConverter" class="com.davidbalazs.chess.converters.LatestNewsConverter"/>
 
     <bean id="messageConverter" class="com.davidbalazs.chess.converters.MessageConverter"/>
 

@@ -9,7 +9,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "LATEST_NEWS")
-public class LatestNewsEntityModel {
+public class LatestNewsItemModel {
     @Id
     @Column(name="ID")
     @GeneratedValue
