@@ -11,4 +11,10 @@ public class DefaultUserDao extends DefaultGenericDao<UserModel> implements User
     public UserModel getByUsername(String username) {
         return entityManager.find(UserModel.class, username);
     }
+
+    @Override
+    public void deleteByUsername(String username) {
+        UserModel userModel = entityManager.find(UserModel.class, username);
+        entityManager.remove(userModel);
+    }
 }

@@ -47,7 +47,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     }
 
     private boolean isAccountNonLocked(UserModel userModel) {
-        return !UserState.LOCKED.equals(userModel.getState());
+        return !UserState.BLOCKED.equals(userModel.getState());
     }
 
     private List<GrantedAuthority> getGrantedAuthorities(UserModel userModel) {
