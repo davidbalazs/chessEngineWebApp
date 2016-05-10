@@ -1,13 +1,13 @@
 package com.davidbalazs.chess.enhancers;
 
 import com.davidbalazs.chess.services.ChessProblemService;
-import com.davidbalazs.chess.services.LatestNewsSideBarService;
+import com.davidbalazs.chess.services.LatestNewsService;
 import com.davidbalazs.chess.services.QuoteOfTheDayService;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.ui.Model;
 
 public class SideBarEnhancer {
-    private LatestNewsSideBarService latestNewsSideBarService;
+    private LatestNewsService latestNewsService;
     private QuoteOfTheDayService quoteOfTheDayService;
     private ChessProblemService chessProblemService;
 
@@ -26,12 +26,12 @@ public class SideBarEnhancer {
     }
 
     private void enhanceModelWithLatestNewsSideBar(Model model) {
-        model.addAttribute("latestNews", latestNewsSideBarService.getLatestNews());
+        model.addAttribute("latestNews", latestNewsService.getLatestNews());
     }
 
     @Required
-    public void setLatestNewsSideBarService(LatestNewsSideBarService latestNewsSideBarService) {
-        this.latestNewsSideBarService = latestNewsSideBarService;
+    public void setLatestNewsService(LatestNewsService latestNewsService) {
+        this.latestNewsService = latestNewsService;
     }
 
     @Required

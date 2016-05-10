@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by David on 4/5/2016.
  */
-public interface LatestNewsSideBarService {
+public interface LatestNewsService {
     List<LatestNewsEntityModel> getLatestNews();
 
     LatestNewsEntityModel getById(long latestNewsEntityId);

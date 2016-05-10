@@ -7,8 +7,8 @@
 
     <import resource="hibernateConfiguration.xml"/>
 
-    <alias name="defaultLatestNewsSideBarDao" alias="latestNewsSideBarDao"/>
-    <bean id="defaultLatestNewsSideBarDao" class="com.davidbalazs.chess.daos.impl.DefaultLatestNewsSideBarDao"/>
+    <alias name="defaultLatestNewsDao" alias="latestNewsDao"/>
+    <bean id="defaultLatestNewsDao" class="com.davidbalazs.chess.daos.impl.DefaultLatestNewsDao"/>
 
     <alias name="defaultMessageDao" alias="messageDao"/>
     <bean id="defaultMessageDao" class="com.davidbalazs.chess.daos.impl.DefaultMessageDao"/>
@@ -26,10 +26,10 @@
     <alias name="defaultChessStrategyDao" alias="chessStrategyDao"/>
     <bean id="defaultChessStrategyDao" class="com.davidbalazs.chess.daos.impl.DefaultChessStrategyDao"/>
 
-    <alias name="defaultLatestNewsSideBarService" alias="latestNewsSideBarService"/>
-    <bean id="defaultLatestNewsSideBarService"
-          class="com.davidbalazs.chess.services.impl.DefaultLatestNewsSideBarService">
-        <property name="latestNewsSideBarDao" ref="latestNewsSideBarDao"/>
+    <alias name="defaultLatestNewsService" alias="latestNewsService"/>
+    <bean id="defaultLatestNewsService"
+          class="com.davidbalazs.chess.services.impl.DefaultLatestNewsService">
+        <property name="latestNewsDao" ref="latestNewsDao"/>
     </bean>
 
     <alias name="defaultMessageService" alias="messageService"/>

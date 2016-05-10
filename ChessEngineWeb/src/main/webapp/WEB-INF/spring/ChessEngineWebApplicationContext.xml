@@ -45,7 +45,7 @@
     </bean>
 
     <bean id="sideBarEnhancer" class="com.davidbalazs.chess.enhancers.SideBarEnhancer">
-        <property name="latestNewsSideBarService" ref="latestNewsSideBarService"/>
+        <property name="latestNewsService" ref="latestNewsService"/>
         <property name="quoteOfTheDayService" ref="quoteOfTheDayService"/>
         <property name="chessProblemService" ref="chessProblemService"/>
     </bean>
