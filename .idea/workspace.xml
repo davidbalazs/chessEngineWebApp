@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="chessEngineWebApp:war2" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="d7c1bd0e-94f2-4c19-88ce-92bca951f907" name="Default" comment="test">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/ChessEngineWeb_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/ChessEngineWeb_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChessEngineCore/ChessEngineCore.iml" afterPath="$PROJECT_DIR$/ChessEngineCore/ChessEngineCore.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChessEngineVirtualPlayer/ChessEngineVirtualPlayer.iml" afterPath="$PROJECT_DIR$/ChessEngineVirtualPlayer/ChessEngineVirtualPlayer.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChessEngineWeb/ChessEngineWeb.iml" afterPath="$PROJECT_DIR$/ChessEngineWeb/ChessEngineWeb.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/controllers/PlayGameController.java" afterPath="$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/controllers/PlayGameController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/data/PlayerColorData.java" afterPath="$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/data/PlayerColorData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/data/VirtualPlayerLevelData.java" afterPath="$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/data/VirtualPlayerLevelData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChessEngineCore/src/main/java/com/davidbalazs/chess/dummydata/DummyDataGenerator.java" afterPath="$PROJECT_DIR$/ChessEngineCore/src/main/java/com/davidbalazs/chess/dummydata/DummyDataGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/service/MoveService.java" afterPath="$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/service/MoveService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/circlesMenu.tag" afterPath="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/circlesMenu.tag" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/sidebar/chessStrategyMenuSideBar.tag" afterPath="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/sidebar/chessStrategyMenuSideBar.tag" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/sidebar/chessStrategyMovesSideBar.tag" afterPath="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/sidebar/chessStrategyMovesSideBar.tag" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/administration/AdministrationUsersPage.jsp" afterPath="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/administration/AdministrationUsersPage.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/administration/mainAdministrationPage.jsp" afterPath="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/administration/mainAdministrationPage.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/playGameFormPage.jsp" afterPath="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/playGameFormPage.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chessEngineWebApp.iml" afterPath="$PROJECT_DIR$/chessEngineWebApp.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/resources/css/style.css" afterPath="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/resources/css/style.css" />
     </list>
     <ignored path="chessEngineWebApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,6 +26,7 @@
     <ignored path="$PROJECT_DIR$/ChessEngineVirtualPlayer/target/" />
     <ignored path="$PROJECT_DIR$/ChessEngineWeb/target/" />
     <ignored path="$PROJECT_DIR$/ChessEngineCore/target/" />
+    <ignored path=".idea/artifacts/chessEngineWebApp_war2.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,31 +49,81 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="circlesMenu.tag" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/circlesMenu.tag">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="39" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gameStatusSideBar.tag" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/sidebar/gameStatusSideBar.tag">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="playGameFormPage.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/playGameFormPage.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="70">
+              <caret line="6" column="91" selection-start-line="6" selection-start-column="91" selection-end-line="6" selection-end-column="91" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chessGameSideBar.tag" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/chessGameSideBar.tag">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chessStrategyMenuSideBar.tag" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/sidebar/chessStrategyMenuSideBar.tag">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="contactUsPage.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/contactUsPage.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="53">
+              <caret line="13" column="81" selection-start-line="13" selection-start-column="66" selection-end-line="13" selection-end-column="81" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/resources/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="376">
+              <caret line="757" column="22" selection-start-line="757" selection-start-column="22" selection-end-line="757" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="PlayGameController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/controllers/PlayGameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="30" column="71" selection-start-line="30" selection-start-column="71" selection-end-line="30" selection-end-column="71" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VirtualPlayerLevelData.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/data/VirtualPlayerLevelData.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlayGameForm.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/data/PlayGameForm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            <state relative-caret-position="158">
+              <caret line="45" column="68" selection-start-line="45" selection-start-column="68" selection-end-line="45" selection-end-column="68" />
               <folding />
             </state>
           </provider>
@@ -77,32 +132,18 @@
       <file leaf-file-name="PlayerColorData.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/data/PlayerColorData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-              <folding>
-                <element signature="e#216#217#0" expanded="true" />
-                <element signature="e#248#249#0" expanded="true" />
-                <element signature="e#306#307#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="playGameFormPage.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/playGameFormPage.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="85">
+              <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chessStrategiesPage.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/chessStrategiesPage.jsp">
+      <file leaf-file-name="firstMenu.tag" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/firstMenu.tag">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="97" />
+            <state relative-caret-position="230">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="18" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -136,29 +177,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/movegenerator/impl/LineSlidingPiecePossibleMovesGenerator.java" />
-        <option value="$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/pseudolegalmoves/impl/BishopPseudoLegalMovesGenerator.java" />
-        <option value="$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/pseudolegalmoves/impl/QueenPseudoLegalMovesGenerator.java" />
-        <option value="$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/movegenerator/impl/QueenPossibleMovesGenerator.java" />
-        <option value="$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/service/impl/DefaultFriendlyChessBoardService.java" />
-        <option value="$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/movegenerator/impl/DiagonalSlidingPiecePossibleMovesGenerator.java" />
-        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/resources/log4j.xml" />
-        <option value="$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/pseudolegalmoves/impl/KnightPseudoLegalMovesGenerator.java" />
-        <option value="$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/Main.java" />
-        <option value="$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/pseudolegalmoves/impl/LineSlidingPseudoLegalMovesGenerator.java" />
-        <option value="$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/pseudolegalmoves/impl/DiagonalSlidingPseudoLegalMovesGenerator.java" />
-        <option value="$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/resources/virtualPlayerApplicationContext.xml" />
-        <option value="$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/constants/DummyChessPositions.java" />
-        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/resources/js/customPlayChessGame.js" />
-        <option value="$PROJECT_DIR$/ChessEngineCore/src/main/java/com/davidbalazs/chess/models/QuoteOfTheDayModel.java" />
-        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/sidebar/latestNewsSideBar.tag.jsp" />
-        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/sidebar/latestNewsSideBar.tag" />
-        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/controllers/enhancers/MainPageEnhancer.java" />
-        <option value="$PROJECT_DIR$/ChessEngineCore/src/main/java/com/davidbalazs/chess/daos/impl/DefaultQuoteOfTheDayDao.java" />
-        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/sidebar/quoteOfTheDaySideBar.tag" />
-        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/pageTemplates/mainPageTemplate.tag" />
-        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/sideBar.tag" />
-        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/data/ContactUsForm.java" />
         <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/aboutUsPage.jsp" />
         <option value="$PROJECT_DIR$/ChessEngineCore/src/main/resources/hibernateConfiguration.xml" />
         <option value="$PROJECT_DIR$/ChessEngineCore/src/main/java/com/davidbalazs/chess/daos/MessageDao.java" />
@@ -173,20 +191,43 @@
         <option value="$PROJECT_DIR$/ChessEngineCore/src/main/java/com/davidbalazs/chess/services/MessageService.java" />
         <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/controllers/ContactUsPageController.java" />
         <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/contactUsPage.jsp" />
-        <option value="$PROJECT_DIR$/ChessEngineCore/src/main/java/com/davidbalazs/chess/services/impl/DefaultChessStrategyService.java" />
         <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/chessProblemsPage.jsp" />
         <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/myjsp.jsp" />
         <option value="$PROJECT_DIR$/ChessEngineCore/src/main/java/com/davidbalazs/chess/services/ChessProblemService.java" />
         <option value="$PROJECT_DIR$/ChessEngineCore/src/main/java/com/davidbalazs/chess/services/impl/DefaultChessProblemService.java" />
         <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/controllers/ChessProblemPageController.java" />
-        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/resources/css/style.css" />
         <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/problemsPage.jsp" />
-        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/circlesMenu.tag" />
         <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/data/VirtualPlayerLevelData.java" />
         <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/controllers/ErrorController.java" />
         <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/data/PlayerColorData.java" />
+        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/spring/spring-security.xml" />
+        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/statisticsPage.jsp" />
+        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/data/PlayGameForm.java" />
+        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/pageTemplates/chessGamePageTemplate.tag" />
+        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/chessGameSideBar.tag" />
+        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/pageTemplates/genericPageTemplate.tag" />
+        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/playGamePage.jsp" />
+        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/sidebar/gameStatusSideBar.tag" />
+        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/controllers/UserController.java" />
+        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/security/loginPage.jsp" />
+        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/pageTemplates/pageTemplateWithoutCircles.tag" />
+        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/firstMenu.tag" />
+        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/controllers/UserProfileController.java" />
+        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/resources/js/customPlayChessGame.js" />
+        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/header.tag" />
+        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/userProfilePage.jsp" />
+        <option value="$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/service/MoveService.java" />
         <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/controllers/PlayGameController.java" />
+        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/administration/administrationUsersPage.jsp" />
+        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/administration/mainAdministrationPage.jsp" />
+        <option value="$PROJECT_DIR$/ChessEngineCore/src/main/java/com/davidbalazs/chess/dummydata/DummyDataGenerator.java" />
+        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/controllers/AboutUsPageController.java" />
+        <option value="$PROJECT_DIR$/ChessEngineCore/src/main/java/com/davidbalazs/chess/services/impl/DefaultChessStrategyService.java" />
+        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/sidebar/chessStrategyMovesSideBar.tag" />
+        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/circlesMenu.tag" />
         <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/playGameFormPage.jsp" />
+        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/resources/css/style.css" />
+        <option value="$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/sidebar/chessStrategyMenuSideBar.tag" />
       </list>
     </option>
   </component>
@@ -215,10 +256,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
-    <option name="y" value="1" />
-    <option name="width" value="1918" />
-    <option name="height" value="1038" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -260,20 +301,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="chessEngineWebApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="chessEngineWebApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="chessEngineWebApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sql" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -408,10 +435,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="tags" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pageTemplates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -555,7 +578,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="img" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -675,6 +698,78 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="facades" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chessEngineWebApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chessEngineWebApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ChessEngineWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="facades" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chessEngineWebApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chessEngineWebApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ChessEngineWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -747,7 +842,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="enhancers" />
+              <option name="myItemId" value="administration" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -865,7 +960,45 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
+              <option name="myItemId" value="algorithms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chessEngineWebApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chessEngineWebApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ChessEngineVirtualPlayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algorithms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impl" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -986,12 +1119,118 @@
               <option name="myItemId" value="chess" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chessEngineWebApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chessEngineWebApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ChessEngineCore" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chessEngineWebApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chessEngineWebApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ChessEngineCore" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dummydata" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chessEngineWebApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chessEngineWebApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ChessEngineCore" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -999,27 +1238,27 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15234375" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.1970046" />
     <property name="recentsLimit" value="5" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Facultate\Licenta\chessEngineWebApp\ChessEngineWeb\src\main\webapp\WEB-INF\views\pages" />
-      <recent name="F:\Facultate\Licenta\chessEngineWebApp\ChessEngineCore\src\main\java\com\davidbalazs\chess\daos" />
-      <recent name="F:\Facultate\Licenta\chessEngineWebApp\ChessEngineCore\src\main\resources" />
-      <recent name="F:\Facultate\Licenta\chessEngineWebApp\ChessEngineVirtualPlayer\src\main\resources" />
-      <recent name="F:\Facultate\Licenta\chessEngineWebApp\src\main\webapp\WEB-INF\views" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\Facultate\Licenta\chessEngineWebApp\ChessEngineCore\src\main\java\com\davidbalazs\chess\daos\impl" />
       <recent name="F:\Facultate\Licenta\chessEngineWebApp\src\main\webapp\WEB-INF\views\pages" />
       <recent name="F:\Facultate\Licenta\chessEngineWebApp\src\main\webapp\WEB-INF\views" />
       <recent name="F:\Facultate\Licenta\chessEngineWebApp\src\main\webapp\WEB-INF\tags\pageTemplates" />
       <recent name="F:\Facultate\Licenta\chessEngineWebApp\src\main\webapp\WEB-INF\tags" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Facultate\Licenta\chessEngineWebApp\ChessEngineWeb\src\main\webapp\WEB-INF\tags\pageTemplates" />
+      <recent name="E:\Facultate\Licenta\chessEngineWebApp\ChessEngineWeb\src\main\webapp\WEB-INF\views\pages" />
+      <recent name="F:\Facultate\Licenta\chessEngineWebApp\ChessEngineCore\src\main\java\com\davidbalazs\chess\daos" />
+      <recent name="F:\Facultate\Licenta\chessEngineWebApp\ChessEngineCore\src\main\resources" />
+      <recent name="F:\Facultate\Licenta\chessEngineWebApp\ChessEngineVirtualPlayer\src\main\resources" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.ChessEngineWebApp">
@@ -1163,43 +1402,6 @@
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
-      <module name="" />
-      <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="PM_INSTALL_OPTIONS" value="" />
-      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
-      <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="EXTRA_OPTIONS" value="" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -1712,6 +1914,12 @@
       <workItem from="1461690727450" duration="3880000" />
       <workItem from="1461694671186" duration="1766000" />
       <workItem from="1461776801392" duration="5675000" />
+      <workItem from="1462326003774" duration="12955000" />
+      <workItem from="1462842229239" duration="666000" />
+      <workItem from="1465311088631" duration="1005000" />
+      <workItem from="1465833155674" duration="13424000" />
+      <workItem from="1466604235241" duration="3946000" />
+      <workItem from="1466619374002" duration="8069000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1460573060534</created>
@@ -1756,7 +1964,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116889000" />
+    <option name="totallyTimeSpent" value="156954000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1768,43 +1976,43 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="1" width="1918" height="1038" extended-state="0" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32596686" sideWeight="0.49573562" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32394367" sideWeight="0.49573562" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3261105" sideWeight="0.5042644" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3261105" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33370167" sideWeight="0.49573562" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32502708" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.49729145" sideWeight="0.49573562" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2320442" sideWeight="0.4978678" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23160173" sideWeight="0.4978678" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22604951" sideWeight="0.49346405" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.023987208" sideWeight="0.4863124" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19989339" sideWeight="0.50653595" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22867803" sideWeight="0.5136876" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="CodotaView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1748401" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1824,7 +2032,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1833,275 +2041,24 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/converters/ChessPositionConverter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineCore/src/main/java/com/davidbalazs/chess/models/MessageModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="73" column="29" selection-start-line="73" selection-start-column="29" selection-end-line="73" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/converters/MessageConverter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/facades/impl/DefaultChessMoveFacade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/spring/ChessEngineWebApplicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="66" selection-start-line="15" selection-start-column="66" selection-end-line="15" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/facades/impl/DefaultMessageFacade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="74" selection-start-line="17" selection-start-column="74" selection-end-line="17" selection-end-column="74" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#829#830#0" expanded="false" />
-            <element signature="e#881#882#0" expanded="false" />
-            <element signature="e#969#970#0" expanded="false" />
-            <element signature="e#1025#1026#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/facades/MessageFacade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineCore/src/main/java/com/davidbalazs/chess/services/impl/DefaultMessageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="56" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineCore/src/main/java/com/davidbalazs/chess/services/MessageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineCore/src/main/java/com/davidbalazs/chess/services/impl/DefaultChessStrategyService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineCore/src/main/java/com/davidbalazs/chess/models/ChessProblemModel.java">
+    <entry file="file://$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/services/impl/DefaultMoveService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
-          <caret line="30" column="45" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
+          <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/controllers/AboutUsPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/controllers/ChessStrategiesPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/aboutUsPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/howItWorks.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/problemsPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="17" selection-start-line="0" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/notFoundPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/controllers/enhancers/MainPageEnhancer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineCore/src/main/java/com/davidbalazs/chess/services/impl/DefaultChessProblemService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/controllers/ChessProblemPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/sidebar/chessProblemOfTheDaySideBar.tag">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="17" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/sidebar/chessStrategyMenuSideBar.tag">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/sidebar/chessStrategyMovesSideBar.tag">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="11" column="61" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/populate_database.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="161" selection-start-line="6" selection-start-column="161" selection-end-line="6" selection-end-column="161" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/resources/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11883">
-          <caret line="699" column="0" selection-start-line="699" selection-start-column="0" selection-end-line="699" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/pageTemplates/mainPageTemplate.tag">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/problemsPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/resources/js/custom-chess-problem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/resources/js/customPlayChessGame.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="46" column="42" selection-start-line="46" selection-start-column="42" selection-end-line="46" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/circlesMenu.tag">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/playGamePage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/contactUsPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="53" selection-start-line="13" selection-start-column="53" selection-end-line="13" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/model/Player.java">
+    <entry file="file://$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/model/FriendlyPieceType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/model/PiecePosition.java">
+    <entry file="file://$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/service/MoveService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="510">
+          <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -2109,138 +2066,179 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/model/KingState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineCore/src/main/java/com/davidbalazs/chess/services/ChessProblemService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/model/ChessPosition.java">
+    <entry file="file://$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/algorithms/EvaluationFunction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/model/FriendlyPiecePosition.java">
+    <entry file="file://$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/algorithms/impl/DefaultEvaluationFunction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="111">
+          <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/model/FriendlyChessPosition.java">
+    <entry file="file://$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/service/KingService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="119">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/services/impl/DefaultKingService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="18" column="64" selection-start-line="18" selection-start-column="64" selection-end-line="18" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/model/FriendlyPieceType.java">
+    <entry file="file://$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/movegenerator/impl/DiagonalSlidingPiecePossibleMovesGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="14" column="55" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/movegenerator/impl/KingPossibleMovesGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="22" column="39" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/movegenerator/impl/MainPossibleMovesGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="13" column="39" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/movegenerator/impl/PawnPossibleMovesGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="41" column="5" selection-start-line="39" selection-start-column="3" selection-end-line="41" selection-end-column="5" />
-          <folding>
-            <element signature="e#1087#1088#0" expanded="false" />
-            <element signature="e#1121#1122#0" expanded="false" />
-          </folding>
+          <caret line="19" column="39" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/controllers/ErrorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/controllers/ContactUsPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2191#2192#0" expanded="true" />
-            <element signature="e#2233#2234#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/data/ContactUsForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/chessStrategiesPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="97" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/data/VirtualPlayerLevelData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/data/PlayGameForm.java">
+    <entry file="file://$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/movegenerator/impl/QueenPossibleMovesGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
+          <caret line="12" column="40" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/data/PlayerColorData.java">
+    <entry file="file://$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/movegenerator/impl/RookPossibleMovesGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" column="39" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/movegenerator/impl/LineSlidingPiecePossibleMovesGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="17" column="51" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/movegenerator/impl/KnightPossibleMovesGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-          <folding>
-            <element signature="e#216#217#0" expanded="true" />
-            <element signature="e#248#249#0" expanded="true" />
-            <element signature="e#306#307#0" expanded="true" />
-          </folding>
+          <caret line="26" column="41" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/controllers/PlayGameController.java">
+    <entry file="file://$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/movegenerator/impl/BishopPossibleMovesGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="30" column="71" selection-start-line="30" selection-start-column="71" selection-end-line="30" selection-end-column="71" />
+        <state relative-caret-position="425">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineCore/src/main/java/com/davidbalazs/chess/models/ChessStrategyCategory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/sidebar/latestNewsSideBar.tag">
+    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/facades/ChessMoveFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/facades/impl/DefaultChessMoveFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/algorithms/MoveAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineVirtualPlayer/src/main/java/com/davidbalazs/chess/algorithms/impl/MinimaxMoveAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/controllers/administration/AdministrationPageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/controllers/administration/AdministrationStrategyPageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="24" column="51" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/controllers/administration/AdministrationUsersController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="36" column="50" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/administration/administrationUsersPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="64" selection-start-line="4" selection-start-column="64" selection-end-line="4" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/administration/administrationQuoteOfTheDayPage.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -2248,10 +2246,183 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/playGameFormPage.jsp">
+    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/administration/mainAdministrationPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/chessEngine-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="65" selection-start-line="23" selection-start-column="65" selection-end-line="23" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineCore/src/main/java/com/davidbalazs/chess/models/UserModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineCore/src/main/java/com/davidbalazs/chess/models/ChessStrategyMovePairModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/controllers/AboutUsPageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="22" column="61" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineCore/src/main/java/com/davidbalazs/chess/dummydata/DummyDataGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineCore/src/main/java/com/davidbalazs/chess/services/impl/DefaultChessStrategyService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineCore/src/main/java/com/davidbalazs/chess/models/ChessStrategyMoveModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineCore/src/main/java/com/davidbalazs/chess/models/ChessMoveModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/sidebar/chessStrategyMovesSideBar.tag">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="48" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/footer.tag">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/resources/img/black-king.JPG">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/data/PlayerColorData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/contactUsPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="13" column="81" selection-start-line="13" selection-start-column="66" selection-end-line="13" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/firstMenu.tag">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="18" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/resources/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="757" column="22" selection-start-line="757" selection-start-column="22" selection-end-line="757" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/java/com/davidbalazs/chess/controllers/PlayGameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="45" column="68" selection-start-line="45" selection-start-column="68" selection-end-line="45" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/sidebar/gameStatusSideBar.tag">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/chessGameSideBar.tag">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/circlesMenu.tag">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="39" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/views/pages/playGameFormPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="6" column="91" selection-start-line="6" selection-start-column="91" selection-end-line="6" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChessEngineWeb/src/main/webapp/WEB-INF/tags/components/sidebar/chessStrategyMenuSideBar.tag">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -2266,7 +2437,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.1970046" />
                 <option value="0.5" />
               </list>
             </option>
@@ -2310,7 +2481,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>ChessEngineVirtualPlayer</last-edited>
+          <last-edited>ChessEngineWeb</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

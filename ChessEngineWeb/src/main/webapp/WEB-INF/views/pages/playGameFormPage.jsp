@@ -4,18 +4,22 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <template:mainPageTemplate pageTitle="Play game">
     <c:url value="/playgame/save-game-config" var="startGameUrl"/>
-    <form:form method="POST" action="${startGameUrl}" class="" modelAttribute="playGameForm">
+    <form:form method="POST" action="${startGameUrl}" class="contact-us-form play-game-form" modelAttribute="playGameForm">
 
         <label>Select your color:</label>
         <c:forEach items="${possiblePlayerColorValues}" var="possiblePlayerColorValuesItem" varStatus="loopStatus">
-            <form:radiobutton path="playerColor" value="${possiblePlayerColorValuesItem}"
-                              label="${possiblePlayerColorValuesItem.name}"/>
+            <div class="play-game-form-radio">
+                <form:radiobutton path="playerColor" value="${possiblePlayerColorValuesItem}"
+                                  label="${possiblePlayerColorValuesItem.name}"/>
+            </div>
         </c:forEach>
         <br/>
         <label>Select virtual player level:</label>
         <c:forEach items="${possibleVirtualPlayerLevels}" var="possibleVirtualPlayerLevelsItem" varStatus="loopStatus">
-            <form:radiobutton path="virtualPlayerLevel" value="${possibleVirtualPlayerLevelsItem}"
-                              label="${possibleVirtualPlayerLevelsItem.name}"/>
+            <div class="play-game-form-radio">
+                <form:radiobutton path="virtualPlayerLevel" value="${possibleVirtualPlayerLevelsItem}"
+                                  label="${possibleVirtualPlayerLevelsItem.name}"/>
+            </div>
         </c:forEach>
         <form:button type="submit">Start game</form:button>
     </form:form>

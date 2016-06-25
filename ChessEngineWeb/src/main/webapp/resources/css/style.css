@@ -748,3 +748,12 @@ body {
     padding-left: 10px;
     background-color: #333333;
 }
+
+.play-game-form-radio {
+    display: block;
+}
+
+.play-game-form {
+    width: 300px;
+    padding-left: 37%;
+}
