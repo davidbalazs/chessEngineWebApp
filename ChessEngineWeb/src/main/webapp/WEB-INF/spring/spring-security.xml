@@ -9,8 +9,8 @@
     <http auto-config="true">
         <intercept-url pattern="/" access="permitAll"/>
         <intercept-url pattern="/administration/**" access="hasRole('ROLE_ADMIN')"/>
-        <intercept-url pattern="/statistics**" access="hasRole('ROLE_USER')"/>
-        <intercept-url pattern="/user-profile**" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/statistics/**" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/user-profile/**" access="hasRole('ROLE_USER')"/>
         <form-login login-page="/login" username-parameter="username" password-parameter="password"
                     authentication-failure-url="/login-failure"/>
         <csrf/>

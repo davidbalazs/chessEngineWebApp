@@ -7,7 +7,7 @@
             <p>There are no messages.</p>
         </c:when>
         <c:otherwise>
-            <table>
+            <table class="administration-table">
                 <tr>
                     <th>Username</th>
                     <th>Email</th>

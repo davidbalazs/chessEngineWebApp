@@ -19,14 +19,14 @@
             <p>There are no quotes.</p>
         </c:when>
         <c:otherwise>
-            <table>
-                <tr>
-                    <th>Quote</th>
-                    <th>Author</th>
-                    <th>is quote of the day</th>
-                    <th></th>
-                    <th></th>
-                </tr>
+            <table class="administration-table">
+            <tr>
+                <th>Quote</th>
+                <th>Author</th>
+                <th>is quote of the day</th>
+                <th></th>
+                <th></th>
+            </tr>
                 <c:forEach items="${quoteList}" var="quote">
                     <tr>
                         <td>${quote.quote}</td>

@@ -3,5 +3,4 @@
 <%@taglib prefix="template" tagdir="/WEB-INF/tags/pageTemplates" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <template:administrationPageTemplate pageTitle="Administration">
-    <h1>Users</h1>
 </template:administrationPageTemplate>

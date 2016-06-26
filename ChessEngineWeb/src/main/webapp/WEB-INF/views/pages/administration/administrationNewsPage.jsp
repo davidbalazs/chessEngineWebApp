@@ -19,7 +19,7 @@
             <p>There are no news.</p>
         </c:when>
         <c:otherwise>
-            <table>
+            <table class="administration-table">
                 <tr>
                     <th>Title</th>
                     <th>Text</th>

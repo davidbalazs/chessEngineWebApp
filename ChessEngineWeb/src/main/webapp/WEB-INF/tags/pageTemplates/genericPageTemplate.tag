@@ -4,7 +4,7 @@
 
 <%@ attribute name="pageTitle" type="java.lang.String" required="true" %>
 <%@ attribute name="includeChessScripts" type="java.lang.Boolean" %>
-
+<!DOCTYPE html>
 <html>
 <head>
     <title>
