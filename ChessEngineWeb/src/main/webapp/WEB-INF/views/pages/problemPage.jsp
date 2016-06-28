@@ -7,7 +7,7 @@
             <p>The chess problem you have requested is unavailable.</p>
         </c:when>
         <c:otherwise>
-            <p id="chess-problem-message">White moves. Make a single move for check mate<br/><br/></p>
+            <p id="chess-problem-message">${chessProblem.description}<br/><br/></p>
             <script src="<c:url value="/resources/js/chess.js"/>"></script>
             <div id="board" style="width:650px;" class="play-chess-table"></div>
             <script>
@@ -26,6 +26,8 @@
                 };
 
                 var onDrop = function (source, target) {
+                    <c:set var="solutionMoveX" value="${chessProblem.movePairsForSolution[0].whiteMove.moveThatWasMade}"/>
+                    <c:set var="solutionMoveX" value="${chessProblem.movePairsForSolution[0].whiteMove.moveThatWasMade}"/>
                     if (source === 'c8' && target === 'a8') {
                         chessProblemMessage.html('Check mate. Well done! <br/> <a href="chess-problem-item.html">Try another problem</a>');
                         chessProblemMessage.css({'color': '#00ff1e'});

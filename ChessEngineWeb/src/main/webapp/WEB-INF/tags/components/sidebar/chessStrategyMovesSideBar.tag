@@ -9,9 +9,14 @@
         <script type="text/javascript" src="<c:url value="/resources/js/chess-strategy.js"/>"></script>
         <%--<input type="button" name="nextMoveButton" class="nextMoveButton" value="Next move"/>--%>
         <table class="chess-strategy-move-table" id="movesTable">
+            <tr>
+                <th></th>
+                <th>White</th>
+                <th>Black</th>
+            </tr>
             <c:forEach items="${chessStrategy.movePairs}" var="movePair" varStatus="loopStatus">
                 <tr>
-                    <td>${loopStatus.index}.</td>
+                    <td>${loopStatus.index+1}.</td>
                     <td onClick="move('${movePair.whiteMove.move.fenPosition}')">${movePair.whiteMove.move.moveThatWasMade}</td>
                     <td onClick="move('${movePair.blackMove.move.fenPosition}')">${movePair.blackMove.move.moveThatWasMade}</td>
                 </tr>
