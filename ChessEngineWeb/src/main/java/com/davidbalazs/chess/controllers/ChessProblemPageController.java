@@ -2,6 +2,7 @@ package com.davidbalazs.chess.controllers;
 
 import com.davidbalazs.chess.enhancers.SideBarEnhancer;
 import com.davidbalazs.chess.enhancers.UserEnhancer;
+import com.davidbalazs.chess.models.ChessProblemModel;
 import com.davidbalazs.chess.services.ChessProblemService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 import java.security.Principal;
+import java.util.List;
+import java.util.Random;
 
 /**
  * Created by David B on 4/26/2016.
@@ -43,5 +46,19 @@ public class ChessProblemPageController {
         model.addAttribute("chessProblem", chessProblemService.getById(problemId));
 
         return "pages/problemPage";
+    }
+
+    @RequestMapping(value = "another-problem", method = RequestMethod.GET)
+    public String getAnotherProblem(@RequestParam("problem-id") long problemId, Model model, Principal principal) {
+        List<ChessProblemModel> problemsList = chessProblemService.getAll();
+        Random rand = new Random();
+        int generatedRandomNumber = rand.nextInt(problemsList.size());
+        long newProblemId = problemsList.get(generatedRandomNumber).getId();
+
+        if (newProblemId == problemId) {
+            generatedRandomNumber = rand.nextInt(problemsList.size());
+            newProblemId = problemsList.get(generatedRandomNumber).getId();
+        }
+        return "redirect:problem?problem-id=" + newProblemId;
     }
 }

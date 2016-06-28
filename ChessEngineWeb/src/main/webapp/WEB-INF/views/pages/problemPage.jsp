@@ -26,12 +26,13 @@
                 };
 
                 var onDrop = function (source, target) {
+                    <c:url value="/chess-problem/another-problem?problem-id=${chessProblem.id}" var="getAnotherProblemUrl"/>
                     if (source === '${chessProblem.solutionMoveFrom}' && target === '${chessProblem.solutionMoveTo}') {
-                        chessProblemMessage.html('Check mate. Well done! <br/> <a href="chess-problem-item.html">Try another problem</a>');
+                        chessProblemMessage.html('Check mate. Well done! <br/> <a href="${getAnotherProblemUrl}">Try another problem</a>');
                         chessProblemMessage.css({'color': '#00ff1e'});
                     }
                     else {
-                        chessProblemMessage.html('Wrong move. Try again! <br/> <a href="chess-problem-item.html">Try another problem</a>');
+                        chessProblemMessage.html('Wrong move. Try again! <br/> <a href="${getAnotherProblemUrl}">Try another problem</a>');
                         chessProblemMessage.css({'color': '#ff0000'});
                         return 'snapback';
                     }
