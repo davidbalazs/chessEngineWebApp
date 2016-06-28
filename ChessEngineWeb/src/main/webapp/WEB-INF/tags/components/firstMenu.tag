@@ -9,7 +9,7 @@
                     <li><a href="<c:url value="/administration/messages/show-all"/>">Messages</a></li>
                     <li><a href="<c:url value="/administration/users/show-all"/>">Users</a></li>
                     <li><a href="#">General statistics</a></li>
-                    <li><a href="<c:url value="/administration/strategy/add-strategy-details-form"/>">Add strategy</a></li>
+                    <li><a href="<c:url value="/administration/news/show-all"/>">Add news</a></li>
                     <li><a href="#">Add problem</a></li>
                 </c:when>
                 <c:otherwise>

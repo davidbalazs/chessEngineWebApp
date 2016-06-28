@@ -1,4 +1,5 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:if test="${not empty latestNews}">
     <div class="aside-box">
         <div class="aside-box-header">
@@ -9,7 +10,7 @@
                 <h5>${latestNewsEntity.title}</h5>
 
                 <p>${latestNewsEntity.text}</p>
-                <span class="latest-news-date">${latestNewsEntity.date}</span>
+                <span class="latest-news-date"><fmt:formatDate value="${latestNewsEntity.date}" pattern="dd/MM/yyyy" /></span>
                 <c:if test="${!loopStatus.last}">
                     <hr/>
                 </c:if>

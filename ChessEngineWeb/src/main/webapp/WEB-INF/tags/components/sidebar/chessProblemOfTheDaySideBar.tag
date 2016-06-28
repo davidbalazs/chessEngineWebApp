@@ -7,7 +7,7 @@
             <span>Problem of the day</span>
         </div>
         <div class="aside-box-content">
-            <a href="#" class="center">
+            <a href="<c:url value="/chess-problem/problem?problem-id=${chessProblemOfTheDay.id}"/>" class="center">
                 <div id="problemOfTheDayBoard" style="width: 267px;"></div>
                 <h5>Solve it!</h5>
             </a>

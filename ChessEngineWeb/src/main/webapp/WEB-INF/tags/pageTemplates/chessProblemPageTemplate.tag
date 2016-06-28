@@ -16,6 +16,6 @@
 
         </section>
 
-            <%--<component:chessGameSideBar/>--%>
+        <component:chessProblemSideBar/>
     </div>
 </template:genericPageTemplate>

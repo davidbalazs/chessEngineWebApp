@@ -50,8 +50,10 @@ public class DefaultChessProblemService implements ChessProblemService {
 
     private void unmarkCurrentProblemOfTheDay() {
         ChessProblemModel currentProblemOfTheDay = chessProblemDao.getProblemOfTheDay();
-        currentProblemOfTheDay.setIsProblemOfTheDay(false);
-        chessProblemDao.update(currentProblemOfTheDay);
+        if (currentProblemOfTheDay != null) {
+            currentProblemOfTheDay.setIsProblemOfTheDay(false);
+            chessProblemDao.update(currentProblemOfTheDay);
+        }
     }
 
     @Required

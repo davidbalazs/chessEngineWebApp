@@ -10,25 +10,30 @@ import java.util.List;
  */
 public class DummyDataGenerator {
 
-    public List<ChessProblemModel> generateChessProblems() {
+    public ChessProblemModel generateChessProblem1() {
         List<ChessProblemModel> chessProblems = new ArrayList<>();
 
         ChessProblemModel chessProblem = new ChessProblemModel();
         chessProblem.setDifficultyLevel(ChessProblemDifficultyLevel.EASY);
-        chessProblem.setName("First chess problem");
+        chessProblem.setName("Check mate with the rook");
         chessProblem.setDescription("Make one move for check mate.");
-        chessProblem.setInitialPositionFen("r1bqkbnr/ppQQ1ppp/2n5/1B2p3/4P3/5R2/PPPP1PPP/RNBQK2R");
+        chessProblem.setInitialPositionFen("2R5/8/8/k1K5/8/8/8/8");
+        chessProblem.setSolutionMoveFrom("c8");
+        chessProblem.setSolutionMoveTo("a8");
 
+        return chessProblem;
+    }
+
+    public ChessProblemModel generateChessProblem2() {
         ChessProblemModel chessProblem2 = new ChessProblemModel();
         chessProblem2.setDifficultyLevel(ChessProblemDifficultyLevel.HARD);
-        chessProblem2.setName("Second chess problem");
+        chessProblem2.setName("Check mate with the Queen");
         chessProblem2.setDescription("Make one move for check mate.");
-        chessProblem2.setInitialPositionFen("r1bqkbnr/ppQQ4/8/8/4P3/5R2/8/RNBQK2R");
+        chessProblem2.setInitialPositionFen("1kq2r2/2r1n2p/1p3p2/6p1/Q3N1P1/5P2/2P4P/RK3R2");
+        chessProblem2.setSolutionMoveFrom("a4");
+        chessProblem2.setSolutionMoveTo("a8");
 
-        chessProblems.add(chessProblem);
-        chessProblems.add(chessProblem2);
-
-        return chessProblems;
+        return chessProblem2;
     }
 
     public ChessStrategyModel generateChessStrategy() {

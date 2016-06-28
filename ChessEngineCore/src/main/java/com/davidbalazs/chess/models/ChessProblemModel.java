@@ -1,7 +1,6 @@
 package com.davidbalazs.chess.models;
 
 import javax.persistence.*;
-import java.util.List;
 
 /**
  * @author: david.balazs@iquestgroup.com
@@ -30,8 +29,11 @@ public class ChessProblemModel {
     @Enumerated(EnumType.STRING)
     private ChessProblemDifficultyLevel difficultyLevel;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<ChessMovePairModel> movePairsForSolution;
+    @Column(name = "SOLUTION_MOVE_FROM")
+    private String solutionMoveFrom;
+
+    @Column(name = "SOLUTION_MOVE_TO")
+    private String solutionMoveTo;
 
     public String getName() {
         return name;
@@ -81,11 +83,19 @@ public class ChessProblemModel {
         this.difficultyLevel = difficultyLevel;
     }
 
-    public List<ChessMovePairModel> getMovePairsForSolution() {
-        return movePairsForSolution;
+    public String getSolutionMoveFrom() {
+        return solutionMoveFrom;
     }
 
-    public void setMovePairsForSolution(List<ChessMovePairModel> movePairsForSolution) {
-        this.movePairsForSolution = movePairsForSolution;
+    public void setSolutionMoveFrom(String solutionMoveFrom) {
+        this.solutionMoveFrom = solutionMoveFrom;
+    }
+
+    public String getSolutionMoveTo() {
+        return solutionMoveTo;
+    }
+
+    public void setSolutionMoveTo(String solutionMoveTo) {
+        this.solutionMoveTo = solutionMoveTo;
     }
 }

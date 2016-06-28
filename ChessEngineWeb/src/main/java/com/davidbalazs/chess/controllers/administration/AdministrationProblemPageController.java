@@ -52,8 +52,8 @@ public class AdministrationProblemPageController {
         return "redirect:show-all";
     }
 
-    @RequestMapping(value = "UNmark-as-problem-of-the-day", method = RequestMethod.GET)
-    public String UNmarkAsProblemOfTheDay(@RequestParam("problem-id") long problemId) {
+    @RequestMapping(value = "unmark-as-problem-of-the-day", method = RequestMethod.GET)
+    public String unmarkAsProblemOfTheDay(@RequestParam("problem-id") long problemId) {
         LOGGER.info(MessageFormat.format(UNMARK_AS_PROBLEM_OF_THE_DAY_LOG_MESSAGE, problemId));
         chessProblemService.unmarkAsProblemOfTheDay(problemId);
         return "redirect:show-all";

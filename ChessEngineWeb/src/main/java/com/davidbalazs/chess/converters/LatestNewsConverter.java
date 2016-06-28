@@ -4,6 +4,7 @@ import com.davidbalazs.chess.data.LatestNewsItemData;
 import com.davidbalazs.chess.models.LatestNewsItemModel;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -35,7 +36,7 @@ public class LatestNewsConverter {
         latestNewsItemModel.setId(latestNewsItemData.getId());
         latestNewsItemModel.setTitle(latestNewsItemData.getTitle());
         latestNewsItemModel.setText(latestNewsItemData.getText());
-        latestNewsItemModel.setDate(latestNewsItemData.getDate());
+        latestNewsItemModel.setDate(new Date());
 
         return latestNewsItemModel;
     }

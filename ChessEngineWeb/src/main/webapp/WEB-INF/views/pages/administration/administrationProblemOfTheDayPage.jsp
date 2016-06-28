@@ -16,8 +16,17 @@
                     </a>
                     <span>Is problem of the day: ${chessProblem.problemOfTheDay}</span>
                     <span>
-                        <a href="<c:url value="/administration/problem/mark-as-problem-of-the-day"/>?problem-id=${chessProblem.id}">mark
-                            as problem of the day</a></span>
+                        <c:choose>
+                            <c:when test="${chessProblem.problemOfTheDay}">
+                                    <a href="<c:url value="/administration/problem/unmark-as-problem-of-the-day"/>?problem-id=${chessProblem.id}">unmark
+                                        as problem of the day</a>
+                            </c:when>
+                            <c:otherwise>
+                                    <a href="<c:url value="/administration/problem/mark-as-problem-of-the-day"/>?problem-id=${chessProblem.id}">mark
+                                        as problem of the day</a>
+                            </c:otherwise>
+                        </c:choose>
+                    </span>
                     <span>
                         <a href="<c:url value="/administration/problem/delete"/>?problem-id=${chessProblem.id}">delete</a></span>
                     <span>${chessProblem.difficultyLevel}</span>

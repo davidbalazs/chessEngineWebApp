@@ -26,9 +26,7 @@
                 };
 
                 var onDrop = function (source, target) {
-                    <c:set var="solutionMoveX" value="${chessProblem.movePairsForSolution[0].whiteMove.moveThatWasMade}"/>
-                    <c:set var="solutionMoveX" value="${chessProblem.movePairsForSolution[0].whiteMove.moveThatWasMade}"/>
-                    if (source === 'c8' && target === 'a8') {
+                    if (source === '${chessProblem.solutionMoveFrom}' && target === '${chessProblem.solutionMoveTo}') {
                         chessProblemMessage.html('Check mate. Well done! <br/> <a href="chess-problem-item.html">Try another problem</a>');
                         chessProblemMessage.css({'color': '#00ff1e'});
                     }
