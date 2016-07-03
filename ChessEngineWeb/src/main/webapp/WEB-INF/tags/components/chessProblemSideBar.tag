@@ -2,7 +2,7 @@
 <%@taglib prefix="sideBarItem" tagdir="/WEB-INF/tags/components/sidebar" %>
 <!-- Sidebar -->
 <aside id="sidebar">
-    <sideBarItem:chessGameMenuSideBar/>
+    <sideBarItem:chessStrategyMenuSideBar/>
 
     <sideBarItem:chessProblemStatusSideBar/>
 </aside>
